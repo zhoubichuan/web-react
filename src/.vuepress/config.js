@@ -84,19 +84,19 @@ module.exports = {
           {
             text: '源码知识',
             items: [{
-                text: '1.vue源码解析',
+                text: '1.react源码解析',
                 link: '/source/vue/1.preparation'
               },
               {
-                text: '2.vuex源码解析',
+                text: '2.redux源码解析',
                 link: '/source/vuex'
               },
               {
-                text: '3.vue-router源码解析',
+                text: '3.react-router源码解析',
                 link: '/source/vue-router'
               },
               {
-                text: '4.element源码解析',
+                text: '4.antd源码解析',
                 link: '/source/element/Pagination'
               },
             ]
