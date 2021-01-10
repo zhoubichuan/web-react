@@ -144,11 +144,11 @@ module.exports = {
           '/senior/npm/': [],
           '/source/React/': [
             '1.preparation',
-            '2.dataDriven',
-            '3.componentization',
-            '4.deepResponsePrinciple',
-            '5.compile',
-            '6.extend',
+            '2.react',
+            '3.scheduler',
+            '4.shared',
+            '5.legacy-events',
+            '6.Renderer',
             '7.vueRouter',
             '8.vuex'
           ],
