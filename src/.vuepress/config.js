@@ -149,7 +149,7 @@ module.exports = {
             '4.shared',
             '5.legacy-events',
             '6.Renderer',
-            '7.vueRouter',
+            '7.reactReconciler',
             '8.vuex'
           ],
           '/source/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
