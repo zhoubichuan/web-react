@@ -88,16 +88,16 @@ module.exports = {
                 link: '/source/React/1.preparation'
               },
               {
-                text: '2.redux源码解析',
-                link: '/source/vuex'
-              },
-              {
-                text: '3.react-router源码解析',
+                text: '2.react-router源码解析',
                 link: '/source/vue-router'
               },
               {
+                text: '3.redux源码解析',
+                link: '/source/vuex'
+              },
+              {
                 text: '4.antd源码解析',
-                link: '/source/element/Pagination'
+                link: '/source/antd/Pagination'
               },
             ]
           }
@@ -152,7 +152,7 @@ module.exports = {
             '7.reactReconciler',
             '8.vuex'
           ],
-          '/source/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
+          '/source/antd/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
             'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
             'Switch', 'Option', 'OptionGroup', 'Button', 'ButtonGroup', 'Table', 'TableColumn', 'DatePicker', 'TimeSelect', 'TimePicker', 'Popover', 'Tooltip', 'Breadcrumb', 'BreadcrumbItem',
             'Form', 'FormItem', 'Tabs', 'TabPane', 'Tag', 'Tree', 'Alert', 'Slider', 'Icon', 'Row', 'Col', 'Upload', 'Progress',
