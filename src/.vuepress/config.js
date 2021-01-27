@@ -89,11 +89,11 @@ module.exports = {
               },
               {
                 text: '2.react-router源码解析',
-                link: '/source/vue-router'
+                link: '/source/React-router'
               },
               {
                 text: '3.redux源码解析',
-                link: '/source/vuex'
+                link: '/source/Redux'
               },
               {
                 text: '4.antd源码解析',
@@ -150,7 +150,7 @@ module.exports = {
             '5.legacy-events',
             '6.Renderer',
             '7.reactReconciler',
-            '8.vuex'
+            '8.Redux'
           ],
           '/source/antd/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
             'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
