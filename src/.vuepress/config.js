@@ -85,15 +85,15 @@ module.exports = {
             text: '源码知识',
             items: [{
                 text: '1.react源码解析',
-                link: '/source/React/1.preparation'
+                link: '/source/react/1.preparation'
               },
               {
                 text: '2.react-router源码解析',
-                link: '/source/React-router'
+                link: '/source/1'
               },
               {
                 text: '3.redux源码解析',
-                link: '/source/Redux'
+                link: '/source/1'
               },
               {
                 text: '4.antd源码解析',
@@ -142,15 +142,15 @@ module.exports = {
             '11.tree'
           ],
           '/senior/npm/': [],
-          '/source/React/': [
+          '/source/react/': [
             '1.preparation',
             '2.react',
-            '3.scheduler',
+            '3.fiber',
             '4.shared',
             '5.legacy-events',
             '6.Renderer',
             '7.reactReconciler',
-            '8.Redux'
+            '8.redux'
           ],
           '/source/antd/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
             'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
