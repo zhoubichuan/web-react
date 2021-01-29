@@ -64,8 +64,8 @@ module.exports = {
                 link: '/base/build/1.config'
               },
               {
-                text: '2.React相关实践',
-                link: '/base/practice/1.docker',
+                text: '2.React基础知识',
+                link: '/base/practice/base',
               }
             ]
           },
@@ -120,13 +120,14 @@ module.exports = {
             '15.api'
           ],
           '/base/practice/': [
-            '1.docker',
-            '2.Jenkins',
-            '3.gitlab',
-            'vscode',
-            'test',
+            'base',
+            'component',
+            'cli',
+            'ajax',
+            'ui',
+            'router',
             'prem',
-            'i18n'
+            'redux'
           ],
           '/senior/use/': [
             '1.recursionAndDynamics',
