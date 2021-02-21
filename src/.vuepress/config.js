@@ -88,15 +88,19 @@ module.exports = {
                 link: '/source/react/1.preparation'
               },
               {
-                text: '2.react-router源码解析',
+                text: '2.react-dom源码解析',
+                link: '/source/react-dom/1.preparation'
+              },
+              {
+                text: '3.react-router源码解析',
                 link: '/source/1'
               },
               {
-                text: '3.redux源码解析',
+                text: '4.redux源码解析',
                 link: '/source/1'
               },
               {
-                text: '4.antd源码解析',
+                text: '5.antd源码解析',
                 link: '/source/antd/Pagination'
               },
             ]
@@ -144,14 +148,18 @@ module.exports = {
           ],
           '/senior/npm/': [],
           '/source/react/': [
+            '1.preparation'
+          ],
+          '/source/react-dom/': [
             '1.preparation',
-            '2.react',
             '3.ReactRoot',
             '4.renderRoot',
             '5.commitRoot',
+            '5.1lcommitBeforeMutationLifecycles',
+            '5.2commitAllHostEffects',
+            '5.3lcommitAllLifeCycles',
             '6.Renderer',
-            '7.reactReconciler',
-            '8.redux'
+            '7.reactReconciler'
           ],
           '/source/antd/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
             'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
