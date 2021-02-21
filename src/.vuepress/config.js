@@ -146,9 +146,9 @@ module.exports = {
           '/source/react/': [
             '1.preparation',
             '2.react',
-            '3.fiber',
-            '4.shared',
-            '5.legacy-events',
+            '3.ReactRoot',
+            '4.renderRoot',
+            '5.commitRoot',
             '6.Renderer',
             '7.reactReconciler',
             '8.redux'
