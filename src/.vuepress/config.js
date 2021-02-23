@@ -153,13 +153,18 @@ module.exports = {
           '/source/react-dom/': [
             '1.preparation',
             '3.ReactRoot',
+            '3.1root',
+            '3.2expirationTime',
+            '3.3UpdateQueue',
             '4.renderRoot',
+            '4.1createWorkInProgress',
+            '4.2workLoop',
+            '4.3onComplete',
             '5.commitRoot',
             '5.1lcommitBeforeMutationLifecycles',
             '5.2commitAllHostEffects',
             '5.3lcommitAllLifeCycles',
-            '6.Renderer',
-            '7.reactReconciler'
+            // '7.reactReconciler'
           ],
           '/source/antd/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
             'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
