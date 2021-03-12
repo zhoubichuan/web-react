@@ -77,30 +77,30 @@ module.exports = {
               },
               {
                 text: '2.TypeScript',
-                link: '/senior/typeScript'
+                link: '/senior/typeScript/base'
               },
             ]
           },
           {
             text: '源码知识',
             items: [{
-                text: '1.react源码解析',
+                text: '1.React',
                 link: '/source/react/1.preparation'
               },
               {
-                text: '2.react-dom源码解析',
+                text: '2.React-dom',
                 link: '/source/react-dom/1.preparation'
               },
               {
-                text: '3.react-router源码解析',
+                text: '3.React-router',
                 link: '/source/1'
               },
               {
-                text: '4.redux源码解析',
+                text: '4.Redux',
                 link: '/source/1'
               },
               {
-                text: '5.antd源码解析',
+                text: '5.Antdesign',
                 link: '/source/antd/Pagination'
               },
             ]
