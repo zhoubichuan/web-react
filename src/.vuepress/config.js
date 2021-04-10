@@ -93,11 +93,11 @@ module.exports = {
               },
               {
                 text: '3.react-router源码解析',
-                link: '/source/1'
+                link: '/source/react-router/1'
               },
               {
                 text: '4.redux源码解析',
-                link: '/source/1'
+                link: '/source/react-router/1'
               },
               {
                 text: '5.antd源码解析',
