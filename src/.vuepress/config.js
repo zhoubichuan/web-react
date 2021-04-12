@@ -77,7 +77,7 @@ module.exports = {
               },
               {
                 text: '2.TypeScript',
-                link: '/senior/typeScript'
+                link: '/senior/typeScript/1'
               },
             ]
           },
@@ -145,6 +145,11 @@ module.exports = {
             '9.alert',
             '10.table',
             '11.tree'
+          ],
+          '/senior/typeScript/': [
+            '1',
+            '2',
+            '3'
           ],
           '/senior/npm/': [],
           '/source/react/': [

@@ -29,7 +29,7 @@ meta:
         </div>
         <div class="feature">
             <h2>React优化和服务器布署</h2> 
-            <p>React优化预渲染、骨架屏、Nuxt.js服务端渲染 使用typescript构建vue应用 Docker + nginx实现React的布署和持续集成</p>
+            <p>React优化预渲染、骨架屏、Nuxt.js服务端渲染 使用typescript构建React应用 Docker + nginx实现React的布署和持续集成</p>
         </div>
         </div>
     </div>
