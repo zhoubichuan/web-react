@@ -92,12 +92,12 @@ module.exports = {
                 link: '/source/react-dom/1.preparation'
               },
               {
-                text: '3.React-router',
-                link: '/source/1'
+                text: '3.react-router源码解析',
+                link: '/source/react-router/1'
               },
               {
-                text: '4.Redux',
-                link: '/source/1'
+                text: '4.redux源码解析',
+                link: '/source/react-router/1'
               },
               {
                 text: '5.Antdesign',
@@ -145,6 +145,11 @@ module.exports = {
             '9.alert',
             '10.table',
             '11.tree'
+          ],
+          '/senior/typeScript/': [
+            '1',
+            '2',
+            '3'
           ],
           '/senior/npm/': [],
           '/source/react/': [
