@@ -77,18 +77,18 @@ module.exports = {
               },
               {
                 text: '2.TypeScript',
-                link: '/senior/typeScript/1'
+                link: '/senior/typeScript/base'
               },
             ]
           },
           {
             text: '源码知识',
             items: [{
-                text: '1.react源码解析',
+                text: '1.React',
                 link: '/source/react/1.preparation'
               },
               {
-                text: '2.react-dom源码解析',
+                text: '2.React-dom',
                 link: '/source/react-dom/1.preparation'
               },
               {
@@ -100,7 +100,7 @@ module.exports = {
                 link: '/source/react-router/1'
               },
               {
-                text: '5.antd源码解析',
+                text: '5.Antdesign',
                 link: '/source/antd/Pagination'
               },
             ]
@@ -171,7 +171,8 @@ module.exports = {
             '5.3lcommitAllLifeCycles',
             // '7.reactReconciler'
           ],
-          '/source/antd/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
+          '/source/antd/': [
+            'Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
             'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
             'Switch', 'Option', 'OptionGroup', 'Button', 'ButtonGroup', 'Table', 'TableColumn', 'DatePicker', 'TimeSelect', 'TimePicker', 'Popover', 'Tooltip', 'Breadcrumb', 'BreadcrumbItem',
             'Form', 'FormItem', 'Tabs', 'TabPane', 'Tag', 'Tree', 'Alert', 'Slider', 'Icon', 'Row', 'Col', 'Upload', 'Progress',
