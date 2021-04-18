@@ -60,7 +60,7 @@ module.exports = {
         nav: [{
             text: '基础知识',
             items: [{
-                text: '1.React实践指南',
+                text: '1.React前端工程化',
                 link: '/base/build/1.config'
               },
               {
