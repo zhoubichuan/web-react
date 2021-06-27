@@ -25,7 +25,7 @@ meta:
         </div>
         <div class="feature">
             <h2>React源码实现</h2> 
-            <p>Vue权限菜单及按钮权限 React-router、Redux源码实现 React原理剖析</p>
+            <p>React原理剖析、React-router、Redux源码实现</p>
         </div>
         <div class="feature">
             <h2>React优化和服务器布署</h2> 
