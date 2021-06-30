@@ -104,6 +104,14 @@ module.exports = {
                 link: '/source/antd/Pagination'
               },
             ]
+          },
+          {
+            text: '书籍阅读',
+            items: [{
+                text: '1.React 前端技术与工程实践',
+                link: '/read/1/inde'
+              }
+            ]
           }
         ],
         sidebar: {
