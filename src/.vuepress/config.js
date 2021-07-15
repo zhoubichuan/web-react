@@ -60,11 +60,11 @@ module.exports = {
         nav: [{
             text: '基础知识',
             items: [{
-                text: '1.前端工程化',
+                text: '1.React的工程化',
                 link: '/base/build/1.config'
               },
               {
-                text: '2.基础知识',
+                text: '2.企业管理系统',
                 link: '/base/practice/base',
               }
             ]

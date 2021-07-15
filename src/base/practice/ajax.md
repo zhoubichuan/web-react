@@ -8,8 +8,4 @@ meta:
     content: vuepress,最新技术文档,vuepress语法,markdown语法
 ---
 
-# react ajax
-## 4.1. React 异步请求理解
-## 4.2. axios
-## 4.3. Fetch
-## 4.4. demo: github users
+# 页面布局方案

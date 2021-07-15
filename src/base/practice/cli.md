@@ -8,6 +8,4 @@ meta:
     content: vuepress,最新技术文档,vuepress语法,markdown语法
 ---
 
-# react应用(基于react脚手架)
-## 3.1. 使用create-react-app创建react应用
-## 3.2. demo: 评论管理
+# 权限管理方案
