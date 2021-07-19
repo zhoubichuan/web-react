@@ -60,11 +60,11 @@ module.exports = {
         nav: [{
             text: '基础知识',
             items: [{
-                text: '1.React的工程化',
+                text: '一.React的工程化',
                 link: '/base/build/1.config'
               },
               {
-                text: '2.企业管理系统',
+                text: '二.企业管理系统',
                 link: '/base/practice/1.index',
               }
             ]
@@ -72,37 +72,37 @@ module.exports = {
           {
             text: '高级知识',
             items: [{
-                text: '1.专项知识',
+                text: '一.专项知识',
                 link: '/senior/use/1.recursionAndDynamics'
               },
               {
-                text: '2.TypeScript',
-                link: '/senior/typeScript/base'
+                text: '二.组件开发',
+                link: '/senior/component/init'
+              },
+              {
+                text: '三.TypeScript',
+                link: '/senior/ts/init'
               },
             ]
           },
           {
             text: '源码知识',
             items: [{
-                text: '1.React',
+                text: '一.react',
                 link: '/source/react/1.preparation'
               },
               {
-                text: '2.React-dom',
+                text: '二.react-dom',
                 link: '/source/react-dom/1.preparation'
               },
               {
-                text: '3.react-router源码解析',
+                text: '三.react-router',
                 link: '/source/react-router/1'
               },
               {
-                text: '4.redux源码解析',
+                text: '四.redux',
                 link: '/source/react-router/1'
-              },
-              {
-                text: '5.Antdesign',
-                link: '/source/antd/Pagination'
-              },
+              }
             ]
           },
           {
@@ -154,7 +154,11 @@ module.exports = {
             '10.table',
             '11.tree'
           ],
-          '/senior/typeScript/': [
+          '/senior/component/': [
+            'init'
+          ],
+          '/senior/ts/': [
+            'init',
             '1',
             '2',
             '3'
@@ -178,15 +182,7 @@ module.exports = {
             '5.2commitAllHostEffects',
             '5.3lcommitAllLifeCycles',
             // '7.reactReconciler'
-          ],
-          '/source/antd/': [
-            'Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
-            'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
-            'Switch', 'Option', 'OptionGroup', 'Button', 'ButtonGroup', 'Table', 'TableColumn', 'DatePicker', 'TimeSelect', 'TimePicker', 'Popover', 'Tooltip', 'Breadcrumb', 'BreadcrumbItem',
-            'Form', 'FormItem', 'Tabs', 'TabPane', 'Tag', 'Tree', 'Alert', 'Slider', 'Icon', 'Row', 'Col', 'Upload', 'Progress',
-            'Spinner', 'Badge', 'Card', 'Rate', 'Steps', 'Step', 'Carousel', 'Scrollbar', 'CarouselItem', 'Collapse', 'CollapseItem', 'Cascader', 'ColorPicker', 'Transfer',
-            'Container', 'Header', 'Aside', 'Main', 'Footer', 'Timeline', 'TimelineItem', 'Link', 'Divider', 'Image', 'Calendar', 'Backtop', 'PageHeader', 'CascaderPanel', 'Avatar', 'Drawer', 'Popconfirm', 'CollapseTransition', 'MessageBox'
-          ],
+          ]
         }
       }
     }
