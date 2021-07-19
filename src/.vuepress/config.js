@@ -65,7 +65,7 @@ module.exports = {
               },
               {
                 text: '2.企业管理系统',
-                link: '/base/practice/base',
+                link: '/base/practice/1.index',
               }
             ]
           },
@@ -132,14 +132,14 @@ module.exports = {
             '15.api'
           ],
           '/base/practice/': [
-            'base',
-            'component',
-            'cli',
-            'ajax',
-            'ui',
-            'router',
-            'prem',
-            'redux'
+            '1.index',
+            '1.init',
+            '2.cli',
+            '3.layout',
+            '4.perm',
+            '5.menu',
+            '6.message',
+            '7.language'
           ],
           '/senior/use/': [
             '1.recursionAndDynamics',
