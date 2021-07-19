@@ -1,7 +1,7 @@
 module.exports = {
   // 基础配置
   base: '/Web-React/', // 部署站点的基础路径
-  description: 'React相关知识点',
+  description: '以大多数人的努力程度之低，根本轮不到拼天赋',
   locales: {
     // 默认标题
     '/': {
