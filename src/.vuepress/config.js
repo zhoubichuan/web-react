@@ -65,7 +65,7 @@ module.exports = {
               },
               {
                 text: '二.企业管理系统',
-                link: '/base/practice/1.index',
+                link: '/base/manager/1.index',
               }
             ]
           },
@@ -139,7 +139,7 @@ module.exports = {
             '14.data',
             '15.api'
           ],
-          '/base/practice/': [
+          '/base/manager/': [
             '1.index',
             '1.init',
             '2.cli',
