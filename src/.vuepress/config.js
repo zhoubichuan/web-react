@@ -83,6 +83,14 @@ module.exports = {
                 text: '三.TypeScript',
                 link: '/senior/ts/init'
               },
+              {
+                text: '四.umi',
+                link: '/senior/ts/init'
+              },
+              {
+                text: '五.dva',
+                link: '/senior/ts/init'
+              },
             ]
           },
           {
