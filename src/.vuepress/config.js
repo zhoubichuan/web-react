@@ -61,7 +61,7 @@ module.exports = {
             text: '基础知识',
             items: [{
                 text: '一.React的工程化',
-                link: '/base/build/1.config'
+                link: '/base/react/1.create'
               },
               {
                 text: '二.企业管理系统',
@@ -123,21 +123,22 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/base/build/': [
-            '1.config',
+          '/base/react/': [
+            '1.create',
             '2.webpack',
-            '3.file',
-            '4.single',
-            '5.page',
+            '3.eslint',
+            '4.code',
+            '5.utils',
             '7.module',
-            '8.project',
-            '9.utils',
-            '10.ui',
-            '11.data',
-            '12.skill',
-            '13.com',
-            '14.data',
-            '15.api'
+            '8.life',
+            '9.message',
+            '10.skill',
+            '11.redux',
+            '12.umi',
+            '13.dva',
+            '14.saga',
+            '15.react-router',
+            '16.next'
           ],
           '/base/manager/': [
             '1.index',
