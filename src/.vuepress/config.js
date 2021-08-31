@@ -1,6 +1,6 @@
 module.exports = {
   // 基础配置
-  base: '/Web-React/', // 部署站点的基础路径
+  base: '/web-react/', // 部署站点的基础路径
   description: '以大多数人的努力程度之低，根本轮不到拼天赋',
   locales: {
     // 默认标题
@@ -129,6 +129,7 @@ module.exports = {
             '3.eslint',
             '4.code',
             '5.utils',
+            '6.project',
             '7.module',
             '8.life',
             '9.message',
