@@ -80,16 +80,16 @@ module.exports = {
                 link: '/senior/component/init'
               },
               {
-                text: '三.TypeScript',
-                link: '/senior/ts/init'
+                text: '三.React + TS',
+                link: '/senior/ts/1.index'
               },
               {
                 text: '四.umi',
-                link: '/senior/ts/init'
+                link: '/senior/umi/1.index'
               },
               {
                 text: '五.dva',
-                link: '/senior/ts/init'
+                link: '/senior/dva/1.index'
               },
             ]
           },
@@ -168,7 +168,19 @@ module.exports = {
             'init'
           ],
           '/senior/ts/': [
-            'init',
+            '1.index',
+            '1',
+            '2',
+            '3'
+          ],
+          '/senior/umi/': [
+            '1.index',
+            '1',
+            '2',
+            '3'
+          ],
+          '/senior/dva/': [
+            '1.index',
             '1',
             '2',
             '3'
