@@ -30,7 +30,7 @@ git init
 git checkout --orphan gh-pages
 git add .
 git commit -m 'gh-pages'
-git remote add origin https://github.com/zhoubichuan/Web-React.git
+git remote add origin https://github.com/zhoubichuan/web-react.git
 git push -f origin gh-pages
 
 # 5.返回初始目录
