@@ -43,6 +43,31 @@ module.exports = {
       }
     ]
   ],
+  plugins: {
+    '@vuepress/pwa': {
+      serviceWorker: true,
+      updatePopup: true
+    },
+    '@vuepress/back-to-top': true,
+    '@vuepress/medium-zoom': true,
+    '@vuepress/nprogress': true,
+    // 名称：@vuepress/plugin-active-header-links 效果：页面滚动时自动激活侧边栏链接的插件，效果就是右边内容滚动的时候，看到哪里了，左侧菜单会自动高亮显示当前看的目录。
+    '@vuepress/active-header-links': {
+      sidebarLinkSelector: '.sidebar-link',
+      headerAnchorSelector: '.header-anchor'
+    },
+    "@vssue/vuepress-plugin-vssue": {
+      platform: 'github', //v3的platform是github，v4的是github-v4
+      locale: 'zh', //语言
+      // 其他的 Vssue 配置
+      owner: 'zhoubichuan', //github账户名
+      repo: 'web-vue', //github一个项目的名称
+      clientId: 'Iv1.2923ba5d4de48a3c', //注册的Client ID
+      clientSecret: '110210', //注册的Client Secret
+      autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
+    },
+    "vuepress-plugin-boxx": ["vuepress-plugin-boxx"]
+  },
   port: 3009,
   dest: 'dist', // 指定 vuepress build 的输出目录
   serviceWorker: false, // pwa
@@ -105,11 +130,11 @@ module.exports = {
               },
               {
                 text: '三.react-router',
-                link: '/source/react-router/1'
+                link: '/source/react-router/1.index'
               },
               {
                 text: '四.redux',
-                link: '/source/react-router/1'
+                link: '/source/redux/1.index'
               }
             ]
           },
@@ -117,7 +142,7 @@ module.exports = {
             text: '书籍阅读',
             items: [{
                 text: '1.React 前端技术与工程实践',
-                link: '/read/1/inde'
+                link: '/read/1/1.index'
               }
             ]
           }
@@ -204,7 +229,16 @@ module.exports = {
             '5.2commitAllHostEffects',
             '5.3lcommitAllLifeCycles',
             // '7.reactReconciler'
-          ]
+          ],
+          '/source/react-router/': [
+            '1.index'
+          ],
+          '/source/redux/': [
+            '1.index'
+          ],
+          '/read/1/': [
+            '1.index'
+          ],
         }
       }
     }
