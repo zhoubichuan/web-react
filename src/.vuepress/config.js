@@ -80,21 +80,23 @@ module.exports = {
         editLinks: true, // 启用编辑
         editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
-        nav: [{
+        nav: [
+          {
             text: '基础知识',
             items: [{
-                text: '一.React的工程化',
-                link: '/base/react/1.create'
-              },
-              {
-                text: '二.企业管理系统',
-                link: '/base/manager/1.index',
-              }
+              text: '一.React的工程化',
+              link: '/base/react/1.index'
+            },
+            {
+              text: '二.企业管理系统',
+              link: '/base/manager/1.index',
+            }
             ]
           },
           {
             text: '高级知识',
-            items: [{
+            items: [
+              {
                 text: '一.专项知识',
                 link: '/senior/use/1.recursionAndDynamics'
               },
@@ -118,7 +120,8 @@ module.exports = {
           },
           {
             text: '源码知识',
-            items: [{
+            items: [
+              {
                 text: '一.react',
                 link: '/source/react/1.preparation'
               },
@@ -138,7 +141,8 @@ module.exports = {
           },
           {
             text: '书籍阅读',
-            items: [{
+            items: [
+              {
                 text: '1.React 前端技术与工程实践',
                 link: '/read/1/1.index'
               }
@@ -147,11 +151,12 @@ module.exports = {
         ],
         sidebar: {
           '/base/react/': [
-            '1.create',
-            '2.webpack',
-            '3.eslint',
-            '4.code',
-            '5.utils',
+            '1.index',
+            '1.utils',
+            '2.create',
+            '3.webpack',
+            '4.env',
+            '5.ui',
             '6.project',
             '7.module',
             '8.life',
