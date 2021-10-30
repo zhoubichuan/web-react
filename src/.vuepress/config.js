@@ -1,7 +1,7 @@
 module.exports = {
   // 基础配置
   base: '/web-react/', // 部署站点的基础路径
-  description: '以大多数人的努力程度之低，根本轮不到拼天赋',
+  description: '',
   locales: {
     // 默认标题
     '/': {
@@ -85,7 +85,7 @@ module.exports = {
             text: '基础知识',
             items: [{
               text: '一.React的工程化',
-              link: '/base/react/1.index'
+              link: '/base/engine/1.index'
             },
             {
               text: '二.企业管理系统',
@@ -150,7 +150,7 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/base/react/': [
+          '/base/engine/': [
             '1.index',
             '1.utils',
             '2.create',
