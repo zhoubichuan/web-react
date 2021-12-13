@@ -72,11 +72,11 @@ module.exports = {
             items: [
               {
                 text: '一.专项知识',
-                link: '/senior/use/1.recursionAndDynamics'
+                link: '/senior/use/1.index'
               },
               {
                 text: '二.组件开发',
-                link: '/senior/component/init'
+                link: '/senior/component/1.index'
               },
               {
                 text: '三.React + TS',
@@ -164,7 +164,7 @@ module.exports = {
             '7.language'
           ],
           '/senior/use/': [
-            '1.recursionAndDynamics',
+            '1.index',
             '2.extend',
             '3.componentCommunication',
             '4.render',
@@ -177,7 +177,19 @@ module.exports = {
             '11.tree'
           ],
           '/senior/component/': [
-            'init'
+            '1.index',
+            '1.recursion',
+            '2.dynamics',
+            '3.extend',
+            '4.render',
+            '5.api',
+            '6.form',
+            '7.checkBox',
+            '8.dispaly',
+            '9.alert',
+            '10.renderTable',
+            '11.slotScopeTable',
+            '12.tree'
           ],
           '/senior/ts/': [
             '1.index',

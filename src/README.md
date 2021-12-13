@@ -16,15 +16,15 @@ meta:
         <div id="large-header" class="large-header"></div>
         <div class="features">
             <div class="feature">
-                <h2><a href="/web-vue/base/engine/1.index.html">React 基础知识</a></h2>
+                <h2><a href="/web-vue/base/engine/1.index.html">React 的工程化</a></h2>
                 <p>掌握React组件间的多种通信方式及数据同步 渲染函数及jsx高阶应用 Redux、React-router进阶之JWT认证</p>
             </div>
             <div class="feature">
-                <h2><a href="/web-vue/base/engine/1.index.html">React 前端工程化</a></h2>
+                <h2><a href="/web-vue/base/engine/1.index.html">React 功能模块</a></h2>
                 <p>掌握React组件间的多种通信方式及数据同步 渲染函数及jsx高阶应用 Redux、React-router进阶之JWT认证</p>
             </div>
             <div class="feature">
-                <h2><a href="/web-vue/base/engine/1.index.html">React组件化开发</a></h2>
+                <h2><a href="/web-vue/base/engine/1.index.html">React 开发基础</a></h2>
                 <p>组件设计思路，组件编写工作流搭建 从0编写复杂组件之异步级联组件 单元测试编写及组件的发布</p>
             </div>
             <div class="feature">
