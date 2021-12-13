@@ -5,44 +5,13 @@ module.exports = {
   locales: {
     // 默认标题
     '/': {
-      title: 'React笔记',
+      title: 'React学习笔记',
       description: ''
     }
   },
   markdown: {
     lineNumbers: true // 代码块显示行号
   },
-  head: [
-    // 添加链接 pwa 的 manifest 如果需要
-    [
-      'link',
-      {
-        rel: 'icon',
-        href: ''
-      }
-    ],
-    [
-      'meta',
-      {
-        name: 'apple-mobile-web-app-capable',
-        content: 'yes'
-      }
-    ],
-    [
-      'meta',
-      {
-        name: 'apple-mobile-web-app-status-bar-style',
-        content: 'black'
-      }
-    ],
-    [
-      'meta',
-      {
-        name: 'msapplication-TileColor',
-        content: '#000000'
-      }
-    ]
-  ],
   plugins: {
     '@vuepress/pwa': {
       serviceWorker: true,
@@ -83,14 +52,19 @@ module.exports = {
         nav: [
           {
             text: '基础知识',
-            items: [{
-              text: '一.React的工程化',
-              link: '/base/engine/1.index'
-            },
-            {
-              text: '二.企业管理系统',
-              link: '/base/manager/1.index',
-            }
+            items: [
+              {
+                text: '一.React的工程化',
+                link: '/base/engine/1.index'
+              },
+              {
+                text: '二.React 功能模块',
+                link: '/base/manager/1.index',
+              },
+              {
+                text: '三.React 开发基础',
+                link: '/base/react/1.index',
+              }
             ]
           },
           {
@@ -170,6 +144,16 @@ module.exports = {
             '16.next'
           ],
           '/base/manager/': [
+            '1.index',
+            '1.init',
+            '2.cli',
+            '3.layout',
+            '4.perm',
+            '5.menu',
+            '6.message',
+            '7.language'
+          ],
+          '/base/react/': [
             '1.index',
             '1.init',
             '2.cli',
