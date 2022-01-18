@@ -14,9 +14,6 @@ const sidebar = {
         '11.redux',
         '12.umi',
         '13.dva',
-        '14.saga',
-        '15.react-router',
-        '16.next'
     ],
     '/base/manager/': [
         '1.index',
@@ -26,7 +23,10 @@ const sidebar = {
         '4.perm',
         '5.menu',
         '6.message',
-        '7.language'
+        '7.language',
+        '14.saga',
+        '15.react-router',
+        '16.next'
     ],
     '/base/react/': [
         '1.index',
