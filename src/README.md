@@ -17,7 +17,7 @@ meta:
         <div class="features">
             <div class="feature">
                 <h2><a href="/web-vue/base/engine/1.index.html">React 的工程化</a></h2>
-                <p>掌握React组件间的多种通信方式及数据同步 渲染函数及jsx高阶应用 Redux、React-router进阶之JWT认证</p>
+                <p>了解React项目开发的基本流程，掌握对开发工具、相关配置</p>
             </div>
             <div class="feature">
                 <h2><a href="/web-vue/base/engine/1.index.html">React 功能模块</a></h2>

@@ -11,7 +11,7 @@ const nav = [
                 link: '/base/manager/1.index',
             },
             {
-                text: '三.React 开发基础',
+                text: '三.React 17.x 基础',
                 link: '/base/react/1.index',
             }
         ]
