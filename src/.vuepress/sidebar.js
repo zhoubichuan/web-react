@@ -32,8 +32,10 @@ const sidebar = {
         '1.index',
         '1.init',
         '2.cli',
-        '3.layout',
-        '4.perm',
+        '3.message',
+        '4.class',
+        '4.function',
+        '4.hooks',
         '5.menu',
         '6.message',
         '7.language'
