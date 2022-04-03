@@ -1,0 +1,627 @@
+{
+  "menus": {
+    "en-US": {
+      "*": [
+        {
+          "path": "/",
+          "title": "web-react - 📚 react 知识图谱：react、redux、react-router、umi、dva",
+          "meta": {
+            "order": 10
+          }
+        }
+      ],
+      "/1.base": [
+        {
+          "title": "React 的工程化流程",
+          "meta": {
+            "order": 2,
+            "__fallback": true
+          },
+          "children": [
+            {
+              "path": "/1.base/1.engine",
+              "title": "大纲",
+              "meta": {
+                "order": 1
+              }
+            },
+            {
+              "path": "/1.base/1.engine/utils",
+              "title": "开发工具",
+              "meta": {
+                "order": 2
+              }
+            },
+            {
+              "path": "/1.base/1.engine/create",
+              "title": "创建项目",
+              "meta": {
+                "order": 3
+              }
+            },
+            {
+              "path": "/1.base/1.engine/webpack",
+              "title": "webpack 配置",
+              "meta": {
+                "order": 4
+              }
+            },
+            {
+              "path": "/1.base/1.engine/env",
+              "title": "环境配置",
+              "meta": {
+                "order": 5
+              }
+            },
+            {
+              "path": "/1.base/1.engine/ui",
+              "title": "UI框架",
+              "meta": {
+                "order": 6
+              }
+            },
+            {
+              "path": "/1.base/1.engine/project",
+              "title": "页面布局",
+              "meta": {
+                "order": 7
+              }
+            },
+            {
+              "path": "/1.base/1.engine/module",
+              "title": "单页应用",
+              "meta": {
+                "order": 8
+              }
+            },
+            {
+              "path": "/1.base/1.engine/life",
+              "title": "多页应用",
+              "meta": {
+                "order": 9
+              }
+            },
+            {
+              "path": "/1.base/1.engine/message",
+              "title": "配置模板",
+              "meta": {
+                "order": 20
+              }
+            },
+            {
+              "path": "/1.base/1.engine/skill",
+              "title": "编码技巧",
+              "meta": {
+                "order": 21
+              }
+            },
+            {
+              "path": "/1.base/1.engine/redux",
+              "title": "接口联调",
+              "meta": {
+                "order": 22
+              }
+            },
+            {
+              "path": "/1.base/1.engine/umi",
+              "title": "项目优化",
+              "meta": {
+                "order": 23
+              }
+            },
+            {
+              "path": "/1.base/1.engine/dva",
+              "title": "构建部署",
+              "meta": {
+                "order": 24
+              }
+            }
+          ]
+        },
+        {
+          "title": "React 功能模块",
+          "meta": {
+            "order": 3,
+            "__fallback": true
+          },
+          "children": [
+            {
+              "path": "/1.base/2.manager",
+              "title": "大纲",
+              "meta": {
+                "order": 1
+              }
+            },
+            {
+              "path": "/1.base/2.manager/init",
+              "title": "项目配置",
+              "meta": {
+                "order": 2
+              }
+            },
+            {
+              "path": "/1.base/2.manager/cli",
+              "title": "项目脚手架",
+              "meta": {
+                "order": 3
+              }
+            },
+            {
+              "path": "/1.base/2.manager/layout",
+              "title": "页面布局",
+              "meta": {
+                "order": 4
+              }
+            },
+            {
+              "path": "/1.base/2.manager/perm",
+              "title": "权限管理",
+              "meta": {
+                "order": 5
+              }
+            },
+            {
+              "path": "/1.base/2.manager/menu",
+              "title": "菜单匹配",
+              "meta": {
+                "order": 6
+              }
+            },
+            {
+              "path": "/1.base/2.manager/message",
+              "title": "消息通知",
+              "meta": {
+                "order": 7
+              }
+            },
+            {
+              "path": "/1.base/2.manager/language",
+              "title": "多语言支持",
+              "meta": {
+                "order": 8
+              }
+            },
+            {
+              "path": "/1.base/2.manager/saga",
+              "title": "项目优化",
+              "meta": {
+                "order": 9
+              }
+            },
+            {
+              "path": "/1.base/2.manager/react-router",
+              "title": "服务端渲染",
+              "meta": {
+                "order": 10
+              }
+            },
+            {
+              "path": "/1.base/2.manager/next",
+              "title": "上传下载",
+              "meta": {
+                "order": 11
+              }
+            }
+          ]
+        },
+        {
+          "title": "React 17.x 全家桶",
+          "meta": {
+            "order": 4,
+            "__fallback": true
+          },
+          "children": [
+            {
+              "path": "/1.base/3.react",
+              "title": "大纲",
+              "meta": {
+                "order": 1
+              }
+            },
+            {
+              "path": "/1.base/3.react/init",
+              "title": "create-react-app",
+              "meta": {
+                "order": 2
+              }
+            },
+            {
+              "path": "/1.base/3.react/cli",
+              "title": "React(生命周期)",
+              "meta": {
+                "order": 3
+              }
+            },
+            {
+              "path": "/1.base/3.react/message",
+              "title": "React(组件间通信)",
+              "meta": {
+                "order": 4
+              }
+            },
+            {
+              "path": "/1.base/3.react/class",
+              "title": "React(类组件)",
+              "meta": {
+                "order": 5
+              }
+            },
+            {
+              "path": "/1.base/3.react/function",
+              "title": "React(函数组件)",
+              "meta": {
+                "order": 6
+              }
+            },
+            {
+              "path": "/1.base/3.react/hooks",
+              "title": "React(hooks)",
+              "meta": {
+                "order": 7
+              }
+            },
+            {
+              "path": "/1.base/3.react/menu",
+              "title": "React-router",
+              "meta": {
+                "order": 8
+              }
+            },
+            {
+              "path": "/1.base/3.react/6",
+              "title": "React-redux",
+              "meta": {
+                "order": 9
+              }
+            },
+            {
+              "path": "/1.base/3.react/language",
+              "title": "Ant-design",
+              "meta": {
+                "order": 10
+              }
+            }
+          ]
+        }
+      ],
+      "/2.senior": [
+        {
+          "title": "TypeScript",
+          "meta": {
+            "order": 1,
+            "__fallback": true
+          },
+          "children": [],
+          "path": "/2.senior/2.typescript/1"
+        },
+        {
+          "title": "dva",
+          "meta": {
+            "order": 1,
+            "__fallback": true
+          },
+          "children": [],
+          "path": "/2.senior/3.dva/1"
+        },
+        {
+          "title": "umi",
+          "meta": {
+            "order": 1,
+            "__fallback": true
+          },
+          "children": [],
+          "path": "/2.senior/4.umi/1"
+        },
+        {
+          "title": "项目优化",
+          "meta": {
+            "order": 1,
+            "__fallback": true
+          },
+          "children": [],
+          "path": "/2.senior/5.use/1"
+        },
+        {
+          "title": "测试方式",
+          "meta": {
+            "order": 1,
+            "__fallback": true
+          },
+          "children": [],
+          "path": "/2.senior/5.use/2"
+        },
+        {
+          "title": "组件开发",
+          "meta": {
+            "order": 1,
+            "__fallback": true
+          },
+          "children": [
+            {
+              "path": "/2.senior/1.component",
+              "title": "大纲",
+              "meta": {
+                "order": 1
+              }
+            },
+            {
+              "path": "/2.senior/1.component/1",
+              "title": "递归组件",
+              "meta": {
+                "order": 2
+              }
+            },
+            {
+              "path": "/2.senior/1.component/2",
+              "title": "dynamics",
+              "meta": {
+                "order": 3
+              }
+            },
+            {
+              "path": "/2.senior/1.component/3",
+              "title": "extend",
+              "meta": {
+                "order": 4
+              }
+            },
+            {
+              "path": "/2.senior/1.component/4",
+              "title": "render",
+              "meta": {
+                "order": 5
+              }
+            },
+            {
+              "path": "/2.senior/1.component/5",
+              "title": "大纲1",
+              "meta": {
+                "order": 6
+              }
+            },
+            {
+              "path": "/2.senior/1.component/6",
+              "title": "form",
+              "meta": {
+                "order": 7
+              }
+            },
+            {
+              "path": "/2.senior/1.component/7",
+              "title": "checkbox",
+              "meta": {
+                "order": 8
+              }
+            },
+            {
+              "path": "/2.senior/1.component/8",
+              "title": "display",
+              "meta": {
+                "order": 9
+              }
+            },
+            {
+              "path": "/2.senior/1.component/9",
+              "title": "alert",
+              "meta": {
+                "order": 10
+              }
+            },
+            {
+              "path": "/2.senior/1.component/10",
+              "title": "表格组件",
+              "meta": {
+                "order": 11
+              }
+            },
+            {
+              "path": "/2.senior/1.component/11",
+              "title": "表格组件2",
+              "meta": {
+                "order": 12
+              }
+            },
+            {
+              "path": "/2.senior/1.component/12",
+              "title": "tree",
+              "meta": {
+                "order": 13
+              }
+            }
+          ]
+        }
+      ],
+      "/3.source": [
+        {
+          "title": "react",
+          "meta": {
+            "order": 1,
+            "__fallback": true
+          },
+          "children": [],
+          "path": "/3.source/1.react/preparation"
+        },
+        {
+          "title": "react-dom",
+          "meta": {
+            "order": 2,
+            "__fallback": true
+          },
+          "children": [
+            {
+              "path": "/3.source/2.react-dom/preparation",
+              "title": "源码概览",
+              "meta": {
+                "order": 1
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/react-root",
+              "title": "创建root",
+              "meta": {
+                "order": 2
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/root",
+              "title": "创建root（fiber节点）",
+              "meta": {
+                "order": 3
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/expiration-time",
+              "title": "创建root（优先级）",
+              "meta": {
+                "order": 4
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/update-queue",
+              "title": "创建 root（更新队列）",
+              "meta": {
+                "order": 5
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/render-root",
+              "title": "渲染 root",
+              "meta": {
+                "order": 6
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/create-work-in-progress",
+              "title": "创建root",
+              "meta": {
+                "order": 7
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/work-loop",
+              "title": "渲染 root（workLoop）",
+              "meta": {
+                "order": 8
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/on-complete",
+              "title": "渲染 root（onComplete）",
+              "meta": {
+                "order": 9
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/commit-root",
+              "title": "提交 root",
+              "meta": {
+                "order": 10
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/lcommit-before-mutation-lifecycles",
+              "title": "提交 root（dom 更新前）",
+              "meta": {
+                "order": 11
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/commit-all-host-effects",
+              "title": "提交 root（dom 更新中）",
+              "meta": {
+                "order": 12
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/lcommit-all-life-cycles",
+              "title": "提交 root（dom 更新后）",
+              "meta": {
+                "order": 13
+              }
+            },
+            {
+              "path": "/3.source/2.react-dom/react-reconciler",
+              "title": "react-reconciler",
+              "meta": {
+                "order": 14
+              }
+            }
+          ]
+        },
+        {
+          "title": "react-router",
+          "meta": {
+            "order": 3,
+            "__fallback": true
+          },
+          "children": [],
+          "path": "/3.source/3.react-router/1"
+        },
+        {
+          "title": "redux",
+          "meta": {
+            "order": 4,
+            "__fallback": true
+          },
+          "children": [],
+          "path": "/3.source/4.redux/1"
+        }
+      ],
+      "/4.read": [
+        {
+          "title": "React相关资料",
+          "meta": {
+            "order": 1,
+            "__fallback": true
+          },
+          "children": [],
+          "path": "/4.read/1/1"
+        }
+      ]
+    }
+  },
+  "locales": [
+    {
+      "name": "en-US",
+      "label": "English"
+    }
+  ],
+  "navs": {
+    "en-US": [
+      {
+        "title": "基本语法",
+        "order": 1,
+        "path": "/1.base"
+      },
+      {
+        "title": "高级知识",
+        "order": 2,
+        "path": "/2.senior"
+      },
+      {
+        "title": "源码知识",
+        "order": 3,
+        "path": "/3.source"
+      },
+      {
+        "title": "阅读资料",
+        "order": 4,
+        "path": "/4.read"
+      },
+      {
+        "title": "Github",
+        "path": "https://github.com/zhoubichuan/web-react"
+      }
+    ]
+  },
+  "title": "web-react",
+  "logo": "http://img.mrsingsing.com/javascript-guidebook-favicon.png",
+  "description": "react 完全知识体系",
+  "mode": "site",
+  "repository": {
+    "url": "https://github.com/zhoubichuan/web-react",
+    "branch": "master"
+  },
+  "theme": {},
+  "exportStatic": {}
+}
