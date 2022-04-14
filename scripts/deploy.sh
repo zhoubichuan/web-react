@@ -1,7 +1,6 @@
 # 1.发布到master分支
 git add -A
 git commit -m 'master'
-git remote add gitee https://gitee.com/zhoubichuan/web-react.git
 git pull gitee master
 git push gitee master
 # 2.打包

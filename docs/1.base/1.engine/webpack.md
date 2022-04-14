@@ -20,9 +20,9 @@ order: 4
 npm install react-app-rewired customize-cra --save-dev
 ```
 
-::: tip
+<Alert type="info">
 react-app-rewired 的作用就是在不 eject 的情况下,覆盖 create-react-app 的配置
-:::
+</Alert>
 修改 package.json 中启动的配置
 
 ```js

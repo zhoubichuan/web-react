@@ -13,72 +13,72 @@ order: 1
 
 ## 1.项目配置
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 2.包管理工具
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 3.登陆认证
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 4.前端监控
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 5.前端测试
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 6.前端权限
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 7.多语言配置
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 8.常见问题
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 9.项目优化
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 10.服务端渲染
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 11.PWA
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
 
 ## 12.上传下载
 
-::: tip 前言
+<Alert type="info"> 前言
 NPM 最初是 Node 的包管理工具，后来我们利用构建工具使得在前端也能使用
-:::
+</Alert>
