@@ -4,7 +4,7 @@ git commit -m 'master'
 git pull gitee master
 git push gitee master
 # 2.打包
-npm run src:build
+npm run build
 
 # 3.进入打包目录
 cd dist
@@ -26,7 +26,7 @@ git remote add github https://github.com/zhoubichuan/web-react.git
 git pull github master
 git push github master
 # 2.打包
-npm run src:build
+npm run build
 
 # 3.进入打包目录
 cd dist
