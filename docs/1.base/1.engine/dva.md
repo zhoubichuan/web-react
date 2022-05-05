@@ -1,6 +1,6 @@
 ---
 nav:
-  title: 基本语法
+  title: 基础知识
   order: 2
 group:
   title: React 的工程化流程

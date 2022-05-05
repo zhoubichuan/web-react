@@ -20,5 +20,3 @@
   <p>在 <a href="https://zhoubichuan.github.io/web-react/">这里</a> 阅读体验更佳</p>
   <p>整理自各大技术社区和权威书籍的前端技术图谱</p>
 </div>
-
-

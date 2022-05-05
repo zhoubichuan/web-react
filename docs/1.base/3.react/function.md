@@ -1,6 +1,6 @@
 ---
 nav:
-  title: 基本语法
+  title: 基础知识
   order: 1
 group:
   title: React 17.x 全家桶
@@ -17,9 +17,10 @@ order: 6
 
 ## 2.组件化的概念
 
-### 我们可以很直观的将一个复杂的页面分割成若干个独立的组件，每个组件包含自己的逻辑和样式，在将这些独立的组件完成一个复杂的页面，这样既减少了逻辑复杂度，又实现了代码的重用
+我们可以很直观的将一个复杂的页面分割成若干个独立的组件，每个组件包含自己的逻辑和样式，在将这些独立的组件完成一个复杂的页面，这样既减少了逻辑复杂度，又实现了代码的重用
 
 - 可组合：一个组件可以和其他组件一起使用或者可以直接嵌套在另一个组件内部
+
 * 可重用：每个组件都是具有独立功能的，他可以被使用在多个场景中
 * 可维护：每个小的组件仅仅包含自身的逻辑，更容易被理解和维护
 
@@ -46,13 +47,24 @@ cd my-project && npm start
 - jax 其实只是一种语法糖，最终会通过 babel 转译成 creactElement 语法
 
 ```js
-ReactDOM.render(<div>上,<span>下</span></div>)
+ReactDOM.render(
+  <div>
+    上,<span>下</span>
+  </div>
+)
 ```
 
 等同
 
 ```js
-ReactDOM.render(React.createElement("div",null,"上",React.createElement("span",null,"下")))
+ReactDOM.render(
+  React.createElement(
+    "div",
+    null,
+    "上",
+    React.createElement("span", null, "下")
+  )
+)
 ```
 
 - 一般使用 React.createElement 来创建一个虚拟 dom 元素
@@ -60,15 +72,15 @@ ReactDOM.render(React.createElement("div",null,"上",React.createElement("span",
 ## 6.react 元素/jsx 元素
 
 ```js
-function ReactElement(type,props){
-    this.type=type
-    this.props=props
+function ReactElement(type, props) {
+  this.type = type
+  this.props = props
 }
-let React={
-    createElement(type,props={},...childrens){
-        childrens.length===1?childrens=childrens[0]:void 0
-        return new ReactElement(type,{...props,children:childrens})
-    }
+let React = {
+  createElement(type, props = {}, ...childrens) {
+    childrens.length === 1 ? (childrens = childrens[0]) : void 0
+    return new ReactElement(type, { ...props, children: childrens })
+  },
 }
 ```
 

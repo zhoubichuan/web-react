@@ -1,6 +1,6 @@
 ---
 nav:
-  title: 基本语法
+  title: 基础知识
   order: 2
 group:
   title: React 的工程化流程
@@ -11,7 +11,8 @@ order: 2
 
 # 一.开发工具
 
-**了解前端项目中需要配置的相关环境和工具，显著提高工作效率**
+> **了解前端项目中需要配置的相关环境和工具，显著提高工作效率**
+
 ## 1.Node.js
 
 - 1.[官网下载 Node.js](http://nodejs.cn)（以 windows 系统 64 位为例）
@@ -30,7 +31,7 @@ order: 2
 ## 2.版本控制
 
 <Alert type="info">
-推荐使用`Git`及相关插件，不推荐 `SVN` 管理代码，但是推荐管理相关技术文档资料
+推荐使用`Git`及相关插件，不推荐 SVN 管理代码，但是推荐管理相关技术文档资料
 </Alert>
 
 ### 2.1 安装 Git
@@ -55,7 +56,7 @@ order: 2
 ## 3.编辑器
 
 <Alert type="info">
-推荐使用`Visual Studio Code`，不推荐 hbuilder、sublime text、WebStorm、Atom
+推荐使用Visual Studio Code，不推荐 hbuilder、sublime text、WebStorm、Atom
 </Alert>
 
 - [安装 Visual Studio Code](https://code.visualstudio.com)

@@ -1,6 +1,6 @@
 ---
 nav:
-  title: 基本语法
+  title: 基础知识
   order: 1
 group:
   title: React 17.x 全家桶
@@ -18,10 +18,9 @@ order: 7
 
 ### 1.1 使用
 
-```js
+```jsx
 import React from "react"
-import ReactDom from "react-dom"
-function Counter() {
+export default function Counter() {
   const [number, setNumber] = React.useState(0)
   return (
     <>
@@ -30,12 +29,6 @@ function Counter() {
     </>
   )
 }
-function render(){
-  ReactDOM.render(){
-    <Counter/>,document.getElementById('root')
-  }
-}
-render()
 ```
 
 ### 1.2 实现
@@ -103,29 +96,26 @@ function useState(initialState) {
 
 ### 3.1 使用
 
-```js
+```jsx
 import React from "react"
-import ReactDOM from "react-dom"
 
-function Counter() {
+export default function Counter() {
   const [name, setName] = React.useState("小明")
-  const [number, setNumber] = React.userState(0)
+  const [number, setNumber] = React.useState(0)
   React.useEffect(() => {
     console.log(number)
   }, number)
   return (
     <>
       <p>
-        <button onClick={() => setName("小红")}>修改名称</button>
-        <button onClick={() => setName(number + 1)}>+</button>
+        <button onClick={() => setName("小红")}>修改名称</button>:{name}
+      </p>
+      <p>
+        <button onClick={() => setNumber(number + 1)}>+</button>:{number}
       </p>
     </>
   )
 }
-function render() {
-  ReactDOM.render(<Counter />, document.getElementById("root"))
-}
-render()
 ```
 
 ### 3.2 实现
@@ -257,11 +247,13 @@ render()
 ```
 
 ### 5.2 实现
+
 ```js
-function useContext(context){
-  return context._currentValue;
+function useContext(context) {
+  return context._currentValue
 }
 ```
+
 ## 6.useReducer
 
 - 它接收一个形如（state,action）=> newState 的 renducer,并返回当前的 state 以及与其配套的 dispatch 方法

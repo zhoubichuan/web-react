@@ -1,6 +1,6 @@
 ---
 nav:
-  title: 基本语法
+  title: 基础知识
   order: 1
 group:
   title: React 17.x 全家桶
@@ -9,7 +9,7 @@ title: React(生命周期)
 order: 3
 ---
 
-# 二.React(生命周期)
+# React(生命周期)
 
 React 生命周期主要包含三个阶段：初始化阶段、运行中阶段和销毁阶段，在 React 不同的生命周期中，会依次触发不同的钩子函数
 
@@ -26,6 +26,11 @@ static defautlProps={
 }
 ```
 
+```jsx
+import React from "react"
+
+export default () => <h1>Hello dumi!</h1>
+```
 ### 1.2 设置组件的初始化状态
 
 ```js

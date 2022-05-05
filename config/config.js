@@ -1,7 +1,7 @@
 const config = {
   mode: 'site',
   title: 'web-react',
-  description: 'react 完全知识体系',
+  description: 'react 学习笔记',
   base: '/web-react/',
   publicPath: '/web-react/',
   favicon: './favicon.ico',
