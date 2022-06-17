@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "description": "A guidebook for the convenience of the front-end developers",
   "scripts": {
-    "dev": "yarn run dumi dev --port=8010",
-    "start": "yarn run dev",
+    "dev": "npm run dumi dev --port=8010",
+    "start": "npm run dev",
     "lint:md": "lint-md *.md",
     "lint:fix": "lint-md *.md --fix",
-    "build": "yarn run dumi build",
+    "build": "npm run dumi build",
     "deploy": "bash ./scripts/deploy.sh"
   },
   "devDependencies": {
