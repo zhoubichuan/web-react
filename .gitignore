@@ -7,4 +7,4 @@ yarn.lock
 .umi/*
 .temp/*
 todo/
-dist/
+web-react/

@@ -9,7 +9,7 @@ git push gitee master
 npm run build
 
 # 3.进入打包目录
-cd dist
+cd web-react
 
 # 4.发布到gh-pages分支
 git init
@@ -32,7 +32,7 @@ git push github master
 npm run build
 
 # 3.进入打包目录
-cd dist
+cd web-react
 
 # 4.发布到gh-pages分支
 git init
