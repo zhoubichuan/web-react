@@ -5,6 +5,8 @@ Icon
 node_modules/
 yarn.lock
 .umi/*
+.umi-production
 .temp/*
 todo/
 web-react/
+dist
