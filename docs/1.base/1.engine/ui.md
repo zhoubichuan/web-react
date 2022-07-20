@@ -84,3 +84,54 @@ order: 6
 - 通过资产市场和场景市场着力解决 70%的开发者问题
 - 通过对垂直场景采取强约束的方式，进一步提升研发效率
 - 不给选择、配置化、约定化
+
+## 2.修改 antdesign 默认样式的方式
+
+### 2.1 style 覆盖
+
+### 2.2 全局修改
+
+- `#root`方法
+  src/global.less
+
+```less
+.ant-select-selection {
+font-size: 16px
+```
+
+- `global`方法
+
+```less
+:global .ant-select-selection {
+  font-size: 16px;
+}
+```
+
+如果权重不够可以加上!important
+
+### 2.3 局部修改某一组件样式
+
+- `className={styles.selection}`
+
+```css
+.selection {
+  :global {
+    .ant-select-selection {
+      background-color: red !important; //设置颜色
+    }
+  }
+}
+```
+
+- ` className="select_test"`
+
+```css
+:global {
+  .select_test {
+    //给该select框加的className
+    .ant-select-selection {
+      background-color: red;
+    }
+  }
+}
+```
