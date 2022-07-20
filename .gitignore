@@ -4,7 +4,7 @@
 Icon
 node_modules/
 yarn.lock
-.umi/*
+.umi
 .umi-production
 .temp/*
 todo/
