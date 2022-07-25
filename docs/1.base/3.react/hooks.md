@@ -94,7 +94,51 @@ function useState(initialState) {
 - useEffect 就是一个`Effect Hook`，给函数组件增加了操作副作用的能力
 - 它跟 class 组件中的`componentDidMount`、`componentDidUpdate`和`componentWillUnmount`具有相同的用途，只不过被合并成了一个 API
 
-### 3.1 使用
+### 3.1 componentDidMount 场景
+
+```jsx
+import React from "react"
+
+export default function Counter() {
+  const [name, setName] = React.useState("接口数据请求中...")
+  React.useEffect(() => {
+    setTimeout(()=> {
+      setName('数据请求成功')
+    },5000)
+  }, [])
+  return (
+    <>
+      <p>进入页面等待5秒：{name}</p>
+    </>
+  )
+}
+```
+
+### 3.2 componentDidUpdate 场景
+
+```jsx
+import React from "react"
+
+export default function Counter() {
+  const [name, setName] = React.useState("小明")
+  const [number, setNumber] = React.useState(0)
+  React.useEffect(() => {
+    console.log(number)
+  }, number)
+  return (
+    <>
+      <p>
+        <button onClick={() => setName("小红")}>修改名称</button>:{name}
+      </p>
+      <p>
+        <button onClick={() => setNumber(number + 1)}>+</button>:{number}
+      </p>
+    </>
+  )
+}
+```
+
+### 3.3 componentWillUnmount 场景
 
 ```jsx
 import React from "react"
