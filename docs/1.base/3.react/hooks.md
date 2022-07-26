@@ -20,12 +20,13 @@ order: 7
 
 ```jsx
 import React from "react"
+import {Button} from "antd"
 export default function Counter() {
   const [number, setNumber] = React.useState(0)
   return (
     <>
       <p>{number}</p>
-      <button onClick={() => setNumber(number + 1)}>+</button>
+      <Button onClick={() => setNumber(number + 1)}>+</Button>
     </>
   )
 }
@@ -102,9 +103,9 @@ import React from "react"
 export default function Counter() {
   const [name, setName] = React.useState("接口数据请求中...")
   React.useEffect(() => {
-    setTimeout(()=> {
-      setName('数据请求成功')
-    },5000)
+    setTimeout(() => {
+      setName("数据请求成功")
+    }, 5000)
   }, [])
   return (
     <>
@@ -123,13 +124,11 @@ export default function Counter() {
   const [name, setName] = React.useState("小明")
   const [number, setNumber] = React.useState(0)
   React.useEffect(() => {
-    console.log(number)
-  }, number)
+    setName(name === "小红" ? "小明" : "小红")
+  }, [number])
   return (
     <>
-      <p>
-        <button onClick={() => setName("小红")}>修改名称</button>:{name}
-      </p>
+      <p>{name}</p>
       <p>
         <button onClick={() => setNumber(number + 1)}>+</button>:{number}
       </p>
