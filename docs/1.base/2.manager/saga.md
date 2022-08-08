@@ -5,7 +5,7 @@ nav:
 group:
   title: React 功能模块
   order: 3
-title: 项目优化
+title: 八.图表
 order: 9
 ---
 
