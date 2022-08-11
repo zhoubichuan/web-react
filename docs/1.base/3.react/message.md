@@ -16,11 +16,13 @@ order: 4
 </Alert>
 
 ## 1.父组件向子组件通信
-
+### 1.1 props
+### 1.2 实例方法
 - 父组件通过 props 向子组件传递数据
 
 ## 2.子组件向父组件通信
-
+### 2.1 回调函数
+### 2.2 事件冒泡
 ```jsx
 import React, { Component } from "react"
 class Child extends Component {
@@ -59,12 +61,14 @@ export default class Parent extends Component {
 
 - 父组件通过 props 向子组件传递函数，子组件通过函数传递数据给父组件，父组件通过函数回调拿到子组件数据
 
-## 3.跨级组件通信
-
+## 3.平级组件通信
+### 3.1 父组件
 - context
 - 层层传递 props
 
-## 4.非嵌套组件通信
-
+## 4.任意组件通信
+### 4.1 观察者模式
+### 4.2 全局变量
+### 4.3 Context
 - 通过共同父组件传递数据
 - 全局发布订阅模式
