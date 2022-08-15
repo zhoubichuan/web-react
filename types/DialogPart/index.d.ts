@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import 'antd/lib/modal/style';
 interface Props {
     showDialod: boolean;
     changeDialog: Function;

@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import 'antd/lib/table/style';
 interface tableProps {
     tableData: any;
     onChange: any;

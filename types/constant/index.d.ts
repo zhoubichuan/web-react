@@ -1,4 +1,4 @@
-export declare const PREFIX_CLS = "hdd";
+export declare const PREFIX_CLS = "webreactui";
 export declare const PREFIX_CLS_MODAL: string;
 export declare const PREFIX_CLS_INPUT: string;
 export declare const PREFIX_CLS_TEXTAREA: string;
