@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "compilerOptions": {
     "moduleResolution": "node",
@@ -20,3 +21,27 @@
   "include": ["./src/**/*"],
   "exclude": ["./src/**/*.test.tsx"]
 }
+=======
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./node_modules/@types"],
+    "lib": ["es2015", "dom"],
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/*"]
+    },
+    "skipLibCheck": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["./src/**/*.test.tsx"]
+}
+>>>>>>> 18484ad57336613bd0f695500934895e2dca2d4e
