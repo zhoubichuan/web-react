@@ -1,7 +1,7 @@
 import { Modal } from 'antd';
 import React, { useState, useEffect } from 'react';
 import styles from "./index.module.scss";
-import 'antd/lib/modal/style';
+import 'antd/lib/modal/style'
 interface Props {
     showDialod: boolean,
     changeDialog: Function,

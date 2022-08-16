@@ -1,7 +1,7 @@
 import { Table } from 'antd';
 import React from 'react';
 import styles from "./index.module.scss";
-import 'antd/lib/table/style'; 
+import 'antd/lib/table/style'
 
 interface tableProps {
   tableData: any,

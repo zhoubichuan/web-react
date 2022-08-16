@@ -3,8 +3,8 @@ import React from 'react';
 import Content1 from './Content'
 import Content2 from './Content'
 import styles from "./index.module.scss";
-import 'antd/lib/Card/style'; 
-import 'antd/lib/Tabs/style'; 
+import 'antd/lib/card/style'; 
+import 'antd/lib/tabs/style'; 
 const { TabPane } = Tabs;
 
 const handleOnChange = (key: string) => {

@@ -8,7 +8,7 @@ module.exports = ({ isAntPrefix = false } = {}) => {
     javascriptEnabled: true,
     paths: [resolve(__dirname, 'node_modules')],
     modifyVars: {
-      '@ant-prefix': isAntPrefix ? 'ant' : 'web-react'
+      '@ant-prefix': isAntPrefix ? 'ant' : 'webreactui'
     }
   }
 }

@@ -3,8 +3,8 @@ import type { ColumnsType, TableProps } from 'antd/es/table';
 import React, { createRef, useState } from 'react';
 import {TablePart,SearchPart,DialogPart} from 'webreactui';
 import styles from "./index.module.scss";
-import 'antd/lib/Button/style'; 
-import 'antd/lib/Space/style'; 
+import 'antd/lib/button/style'; 
+import 'antd/lib/space/style'; 
 interface DataType {
     key: React.Key;
     name: string;

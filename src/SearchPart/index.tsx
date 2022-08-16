@@ -1,11 +1,11 @@
 import { Button, Form, Input, Row, Col } from 'antd';
 import { useImperativeHandle, useEffect } from 'react';
 // import styles from "./index.module.scss";
-import 'antd/lib/button/style'; 
-import 'antd/lib/form/style'; 
-import 'antd/lib/input/style'; 
-import 'antd/lib/row/style'; 
-import 'antd/lib/col/style'; 
+import 'antd/lib/button/style'
+import 'antd/lib/form/style'
+import 'antd/lib/input/style'
+import 'antd/lib/row/style'
+import 'antd/lib/col/style'
 function urlJoinParams(url: String, obj: String) {
     let result = '';
     let item;

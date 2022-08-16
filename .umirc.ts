@@ -53,5 +53,5 @@ export default defineConfig({
     proxy: {
     }
   },
-  exportStatic: {},
+  // exportStatic: {},
 })
