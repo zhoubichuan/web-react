@@ -1,0 +1,8 @@
+src
+stories
+.dumi
+.vscode
+config
+mock
+dist
+coverage

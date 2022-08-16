@@ -5,15 +5,17 @@ const menuConfig = require('./config/menuConfig')
 const navConfig = require('./config/navConfig')
 
 export default defineConfig({
-  title: 'HDD Design',
-  favicon: '/xxx',
-  logo: '/xxx',
-  // base: '/dumi-template-antd/',
+  title: 'web-react',
+  description: 'react 学习笔记',
+  base: '/web-react/',
+  publicPath: '/web-react/',
+  // favicon: '/favicon.ico',
+  logo: 'http://img.mrsingsing.com/javascript-guidebook-favicon.png',
+  hash: true,
   lessLoader: lessConfig,
   mode: 'site',
   menus: menuConfig,
   navs: navConfig,
-  publicPath: '/dumi-template-antd/',
   // chainWebpack(memo, { env, webpack, createCSSRule }) {
   //   console.log(memo.output.publicPath)
   //   // memo.output.publicPath = ()
@@ -35,7 +37,13 @@ export default defineConfig({
     '@babel/plugin-transform-runtime',
     ['@babel/plugin-proposal-decorators', { legacy: true }],
     ['@babel/plugin-proposal-class-properties', { loose: true }],
-    '@babel/plugin-proposal-object-rest-spread'
+    '@babel/plugin-proposal-object-rest-spread',
+    // 'import',
+    // {
+    //   libraryName: 'antd',
+    //   libraryDirectory: 'es',
+    //   style: 'css',
+    // },
   ],
   devServer: {
     headers: {
@@ -44,6 +52,6 @@ export default defineConfig({
     historyApiFallback: true,
     proxy: {
     }
-  }
-  // more config: https://d.umijs.org/config
+  },
+  exportStatic: {},
 })
