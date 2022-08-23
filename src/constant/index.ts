@@ -1,4 +1,4 @@
-export const PREFIX_CLS = 'webreactui'
+export const PREFIX_CLS = 'myantd'
 export const PREFIX_CLS_MODAL = `${PREFIX_CLS}-modal`
 export const PREFIX_CLS_INPUT = `${PREFIX_CLS}-input`
 export const PREFIX_CLS_TEXTAREA = `${PREFIX_CLS}-textarea`

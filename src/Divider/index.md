@@ -7,7 +7,7 @@ nav:
 # Divider
 
 ```tsx
-import { Divider } from 'webreactui'
+import { Divider } from 'myantd'
 import React from 'react'
 const App: React.FC = () => {
   return (

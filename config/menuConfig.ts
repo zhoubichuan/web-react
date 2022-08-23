@@ -1,28 +1,55 @@
-const antdPath = [
-  'Button/index.md',
-  'Card/index.md',
-  'Divider/index.md',
-  'Dropdown/index.md',
-  'Form/index.md',
-  'Grid/index.md',
-  'Layout/index.md',
-  'List/index.md',
-  'Radio/index.md',
-  'Select/index.md',
-  'Space/index.md',
-  'Switch/index.md',
-  'Upload/index.md',
-  'DialogPart/index.md',
-  'SearchPart/index.md',
-  'TablePart/index.md',
-]
-
 module.exports = {
   // 需要自定义侧边菜单的路径，没有配置的路径还是会使用自动生成的配置
   '/components': [
     {
       title: ' 基础组件',
-      children: antdPath
+      children: [
+        'Button/index.md',
+
+        'Divider/index.md',
+        'Card/index.md',
+        'Layout/index.md',
+        'Space/index.md',
+
+        'Affix/index.md',
+        'Breadcrumb/index.md',
+        'Dropdown/index.md',
+        'Menu/index.md',
+        'PageHeader/index.md',
+        'Pagination/index.md',
+        'Steps/index.md',
+
+        'AutoComplete/index.md',
+        'Cascader/index.md',
+        'Checkbox/index.md',
+        'DatePicker/index.md',
+        'Form/index.md',
+        'Input/index.md',
+        'InputNumber/index.md',
+        'Mentions/index.md',
+        'Radio/index.md',
+        'Rate/index.md',
+        'Select/index.md',
+        'Slider/index.md',
+        'Switch/index.md',
+        'TimePicker/index.md',
+        'Transfer/index.md',
+        'TreeSelect/index.md',
+        'Upload/index.md',
+
+        'Avatar/index.md',
+
+        'Grid/index.md',
+        'List/index.md',
+      ]
+    },
+    {
+      title: ' 综合组件',
+      children: [
+        'DialogPart/index.md',
+        'SearchPart/index.md',
+        'TablePart/index.md',
+      ]
     }
   ],
   '/': [

@@ -13,7 +13,7 @@ nav:
 import { Button, Space } from 'antd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import React, { createRef, useState } from 'react';
-import { DialogPart } from 'webreactui';
+import { DialogPart } from 'myantd';
 
 const App: React.FC = () => {
   let searchRef = createRef<any>()

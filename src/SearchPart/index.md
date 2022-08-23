@@ -12,7 +12,7 @@ nav:
 import { Button, Space } from 'antd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import React, { createRef, useState } from 'react';
-import {TablePart,SearchPart,DialogPart} from 'webreactui';
+import {TablePart,SearchPart,DialogPart} from 'myantd';
 const App: React.FC = () => {
     let searchRef = createRef<any>()
     const [showDialod, setVisible] = useState(false);

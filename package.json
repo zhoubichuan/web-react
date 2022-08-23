@@ -1,8 +1,8 @@
 {
-  "name": "webreactui",
+  "name": "myantd",
   "author": "zhoubichuan",
   "version": "1.0.0",
-  "description": "A guidebook for the convenience of the front-end developers",
+  "description": "antd二次封装，适应不同的风格",
   "main": "lib/index.js",
   "module": "esm/index.d.ts",
   "types": "lib/index.d.ts",

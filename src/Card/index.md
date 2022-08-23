@@ -7,7 +7,7 @@ nav:
 # Card
 
 ```tsx
-import { Card } from 'webreactui'
+import { Card } from 'myantd'
 import React from 'react'
 const App: React.FC = () => {
   return (

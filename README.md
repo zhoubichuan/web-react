@@ -30,7 +30,7 @@ index.js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { ConfigProvider } from 'webreactui'
+import { ConfigProvider } from 'myantd'
 
 ReactDOM.render(
   <ConfigProvider>
@@ -44,7 +44,7 @@ ReactDOM.render(
 
 ```js
 import React from 'react'
-import { Button } from 'webreactui'
+import { Button } from 'myantd'
 
 export default () => {
   return <Button type="primary">点我</Button>
@@ -66,7 +66,7 @@ import 'hdd/esm/styles/styleWithoutGlobal.css'
 譬如在umi项目中使用，定位global入口
 ```js
 import React from 'react'
-import { Button,ConfigProvider } from 'webreactui';
+import { Button,ConfigProvider } from 'myantd';
 // + import 'hdd/esm/styles/index.css'
 
 export default function IndexPage() {

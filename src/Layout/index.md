@@ -7,7 +7,7 @@ nav:
 # Layout
 
 ```tsx
-import { Button } from 'webreactui'
+import { Button } from 'myantd'
 import React from 'react'
 const App: React.FC = () => {
   return <Button type="primary">aaaa</Button>

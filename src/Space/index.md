@@ -7,7 +7,7 @@ nav:
 # Space
 
 ```tsx
-import { Card, Space } from 'webreactui';
+import { Card, Space } from 'myantd';
 import React from 'react';
 
 const App: React.FC = () => (

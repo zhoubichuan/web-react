@@ -1,7 +1,7 @@
 import { Button, Space } from 'antd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import React, { createRef, useState } from 'react';
-import {TablePart,SearchPart,DialogPart} from 'webreactui';
+import {TablePart,SearchPart,DialogPart} from 'myantd';
 import styles from "./index.module.scss";
 import 'antd/lib/button/style'; 
 import 'antd/lib/space/style'; 
