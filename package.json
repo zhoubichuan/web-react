@@ -45,7 +45,8 @@
     "@amap/amap-jsapi-loader": "0.0.7",
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.17.2",
-    "echarts": "^5.3.3"
+    "echarts": "^5.3.3",
+    "ol": "^7.0.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

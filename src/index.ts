@@ -56,3 +56,6 @@ export { default as Drawer} from './Drawer';
 export { default as Message} from './Message';
 export { default as Modal} from './Modal';
 export { default as Progress} from './Progress';
+
+export { default as Openlayers} from './Openlayers';
+export { default as Echarts} from './Echarts';

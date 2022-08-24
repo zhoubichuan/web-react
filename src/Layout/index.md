@@ -7,12 +7,25 @@ nav:
 # Layout
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return <Button type="primary">aaaa</Button>
-}
-export default App
+import { Layout } from 'myantd';
+import React from 'react';
+
+const { Header, Footer, Sider, Content } = Layout;
+
+const App: React.FC = () => (
+  <>
+    <Layout>
+      <Header>Header</Header>
+      <Layout>
+        <Sider>Sider</Sider>
+        <Content>Content</Content>
+      </Layout>
+      <Footer>Footer</Footer>
+    </Layout>
+  </>
+);
+
+export default App;
 ```
 
 ### API

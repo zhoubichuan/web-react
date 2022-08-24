@@ -2,7 +2,7 @@ module.exports = {
   // 需要自定义侧边菜单的路径，没有配置的路径还是会使用自动生成的配置
   '/components': [
     {
-      title: ' 基础组件',
+      title: 'Antd二次封装',
       children: [
         'Button/index.md',
 
@@ -72,6 +72,18 @@ module.exports = {
         // 'Anchor/index.md',
         // 'BackTop/index.md',
         // 'ConfigProvider/index.md',
+      ]
+    },
+    {
+      title: ' Echarts',
+      children: [
+        'Echarts/index.md',
+      ]
+    },
+    {
+      title: ' Openlayers',
+      children: [
+        'Openlayers/index.md',
       ]
     },
     {
