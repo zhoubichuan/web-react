@@ -7,7 +7,7 @@ module.exports = {
         'Button/index.md',
 
         'Divider/index.md',
-        'Card/index.md',
+        'Grid/index.md',
         'Layout/index.md',
         'Space/index.md',
 
@@ -38,9 +38,42 @@ module.exports = {
         'Upload/index.md',
 
         'Avatar/index.md',
-
-        'Grid/index.md',
+        'Badge/index.md',
+        'Calendar/index.md',
+        'Badge/index.md',
+        'Calendar/index.md',
+        'Card/index.md',
+        'Carousel/index.md',
+        'Collapse/index.md',
+        'Comment/index.md',
+        'Descriptions/index.md',
+        'Empty/index.md',
+        'Image/index.md',
         'List/index.md',
+        'Popover/index.md',
+        'Segmented/index.md',
+        'Statistic/index.md',
+        'Table/index.md',
+        'Tabs/index.md',
+        'Tag/index.md',
+        'Timeline/index.md',
+        'Tooltip/index.md',
+        'Tree/index.md',
+
+        'Alert/index.md',
+        'Drawer/index.md',
+        'Message/index.md',
+        'Modal/index.md',
+        // 'Notification/index.md',
+        // 'Popconfirm/index.md',
+        'Progress/index.md',
+        // 'Result/index.md',
+        // 'Skeleton/index.md',
+        // 'Spin/index.md',
+
+        // 'Anchor/index.md',
+        // 'BackTop/index.md',
+        // 'ConfigProvider/index.md',
       ]
     },
     {

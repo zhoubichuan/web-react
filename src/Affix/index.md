@@ -1,5 +1,5 @@
 ---
-title: Button
+title: Affix
 nav:
   path: /components
 ---
@@ -7,14 +7,7 @@ nav:
 # Button
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return (
-   <Button type="primary">aaaa</Button>
-  )
-}
-export default App
+
 ```
 
 ### API

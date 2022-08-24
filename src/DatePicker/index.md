@@ -1,10 +1,10 @@
 ---
-title: Button
+title: DatePicker
 nav:
   path: /components
 ---
 
-# Button
+# DatePicker
 
 ```tsx
 import { Button } from 'myantd'

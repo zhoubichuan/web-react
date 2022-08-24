@@ -1,9 +1,9 @@
-import { Button } from 'antd'
-import type { ButtonProps } from 'antd'
+import { Affix } from 'antd'
+import type { AffixProps } from 'antd'
 import React from 'react'
 // import {styles} from './index.module.scss'
-const App = (props: ButtonProps) => {
-  return <Button {...props}>{props.children}</Button>
+const App = (props: AffixProps) => {
+  return <Affix {...props}>{props.children}</Affix>
 }
 
 export default App

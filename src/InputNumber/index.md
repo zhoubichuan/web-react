@@ -1,20 +1,22 @@
 ---
-title: Button
+title: InputNumber
 nav:
   path: /components
 ---
 
-# Button
+# InputNumber
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return (
-   <Button type="primary">aaaa</Button>
-  )
-}
-export default App
+import { InputNumber } from 'antd';
+import React from 'react';
+
+const onChange = (value: number) => {
+  console.log('changed', value);
+};
+
+const App: React.FC = () => <InputNumber min={1} max={10} defaultValue={3} onChange={onChange} />;
+
+export default App;
 ```
 
 ### API

@@ -1,20 +1,25 @@
 ---
-title: Button
+title: Slider
 nav:
   path: /components
 ---
 
-# Button
+# Slider
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return (
-   <Button type="primary">aaaa</Button>
-  )
-}
-export default App
+import { Slider } from 'myantd';
+import React from 'react';
+
+const formatter = (value: number) => `${value}%`;
+
+const App: React.FC = () => (
+  <>
+    <Slider tipFormatter={formatter} />
+    <Slider tipFormatter={null} />
+  </>
+);
+
+export default App;
 ```
 
 ### API

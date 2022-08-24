@@ -1,20 +1,26 @@
 ---
-title: Button
+title: Steps
 nav:
   path: /components
 ---
 
-# Button
+# Steps
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return (
-   <Button type="primary">aaaa</Button>
-  )
-}
-export default App
+import { Steps } from 'myantd';
+import React from 'react';
+
+const { Step } = Steps;
+
+const App: React.FC = () => (
+  <Steps size="small" current={1}>
+    <Step title="Finished" />
+    <Step title="In Progress" />
+    <Step title="Waiting" />
+  </Steps>
+);
+
+export default App;
 ```
 
 ### API

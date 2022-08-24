@@ -1,20 +1,22 @@
 ---
-title: Button
+title: Tooltip
 nav:
   path: /components
 ---
 
-# Button
+# Tooltip
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return (
-   <Button type="primary">aaaa</Button>
-  )
-}
-export default App
+import { Tooltip } from 'myantd';
+import React from 'react';
+
+const App: React.FC = () => (
+  <Tooltip title="prompt text">
+    <span>Tooltip will show on mouse enter.</span>
+  </Tooltip>
+);
+
+export default App;
 ```
 
 ### API

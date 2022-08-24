@@ -1,20 +1,18 @@
 ---
-title: Button
+title: Input
 nav:
   path: /components
 ---
 
-# Button
+# Input
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return (
-   <Button type="primary">aaaa</Button>
-  )
-}
-export default App
+import { Input } from 'myantd';
+import React from 'react';
+
+const App: React.FC = () => <Input placeholder="Basic usage" />;
+
+export default App;
 ```
 
 ### API

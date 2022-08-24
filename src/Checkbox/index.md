@@ -1,10 +1,10 @@
 ---
-title: Button
+title: Checkbox
 nav:
   path: /components
 ---
 
-# Button
+# Checkbox
 
 ```tsx
 import { Button } from 'myantd'

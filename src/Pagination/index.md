@@ -1,20 +1,18 @@
 ---
-title: Button
+title: Pagination
 nav:
   path: /components
 ---
 
-# Button
+# Pagination
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return (
-   <Button type="primary">aaaa</Button>
-  )
-}
-export default App
+import { Pagination } from 'myantd';
+import React from 'react';
+
+const App: React.FC = () => <Pagination defaultCurrent={6} total={500} />;
+
+export default App;
 ```
 
 ### API

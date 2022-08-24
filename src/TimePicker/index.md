@@ -1,20 +1,26 @@
 ---
-title: Button
+title: TimePicker
 nav:
   path: /components
 ---
 
-# Button
+# TimePicker
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return (
-   <Button type="primary">aaaa</Button>
-  )
-}
-export default App
+import { TimePicker } from 'myantd';
+import type { Moment } from 'moment';
+import moment from 'moment';
+import React from 'react';
+
+const onChange = (time: Moment, timeString: string) => {
+  console.log(time, timeString);
+};
+
+const App: React.FC = () => (
+  <TimePicker onChange={onChange} defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
+);
+
+export default App;
 ```
 
 ### API
