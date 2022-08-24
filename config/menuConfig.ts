@@ -40,8 +40,6 @@ module.exports = {
         'Avatar/index.md',
         'Badge/index.md',
         'Calendar/index.md',
-        'Badge/index.md',
-        'Calendar/index.md',
         'Card/index.md',
         'Carousel/index.md',
         'Collapse/index.md',

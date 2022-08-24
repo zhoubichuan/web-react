@@ -1,7 +1,7 @@
 import { Button } from 'antd'
 import type { ButtonProps } from 'antd'
 import React from 'react'
-// import {styles} from './index.module.scss'
+import './index.module.scss'
 const App = (props: ButtonProps) => {
   return <Button {...props}>{props.children}</Button>
 }
