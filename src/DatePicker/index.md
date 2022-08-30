@@ -7,14 +7,25 @@ nav:
 # DatePicker
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return (
-   <Button type="primary">aaaa</Button>
-  )
-}
-export default App
+import type { DatePickerProps } from 'myantd';
+import { DatePicker, Space } from 'myantd';
+import React from 'react';
+
+const onChange: DatePickerProps['onChange'] = (date, dateString) => {
+  console.log(date, dateString);
+};
+
+const App: React.FC = () => (
+  <Space direction="vertical">
+    <DatePicker onChange={onChange} />
+    <DatePicker onChange={onChange} picker="week" />
+    <DatePicker onChange={onChange} picker="month" />
+    <DatePicker onChange={onChange} picker="quarter" />
+    <DatePicker onChange={onChange} picker="year" />
+  </Space>
+);
+
+export default App;
 ```
 
 ### API

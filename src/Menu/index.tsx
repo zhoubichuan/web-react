@@ -1,9 +1,9 @@
-import { Button } from 'antd'
-import type { ButtonProps } from 'antd'
+import { Menu } from 'antd'
+import type { MenuProps } from 'antd'
 import React from 'react'
 import './index.module.scss'
-const App = (props: ButtonProps) => {
-  return <Button {...props}>{props.children}</Button>
+const App = (props: MenuProps) => {
+  return <Menu {...props}>{props.children}</Menu>
 }
 
 export default App

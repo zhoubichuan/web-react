@@ -9,7 +9,7 @@ nav:
 ```tsx
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'myantd';
-import { Menu } from 'antd';
+import { Menu } from 'myantd';
 import React, { useState } from 'react';
 
 type MenuItem = Required<MenuProps>['items'][number];

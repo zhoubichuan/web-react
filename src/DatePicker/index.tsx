@@ -1,9 +1,9 @@
-import { Button } from 'antd'
-import type { ButtonProps } from 'antd'
+import { DatePicker } from 'antd'
+import type { DatePickerProps } from 'antd'
 import React from 'react'
 import './index.module.scss'
-const App = (props: ButtonProps) => {
-  return <Button {...props}>{props.children}</Button>
+const App = (props: DatePickerProps) => {
+  return <DatePicker {...props}></DatePicker>
 }
 
 export default App

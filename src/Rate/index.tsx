@@ -1,9 +1,9 @@
-import { Button } from 'antd'
-import type { ButtonProps } from 'antd'
+import { Rate } from 'antd'
+import type { RateProps } from 'antd'
 import React from 'react'
 import './index.module.scss'
-const App = (props: ButtonProps) => {
-  return <Button {...props}>{props.children}</Button>
+const App = (props: RateProps) => {
+  return <Rate {...props}></Rate>
 }
 
 export default App

@@ -1,9 +1,9 @@
-import { Button } from 'antd'
-import type { ButtonProps } from 'antd'
+import { TreeSelect } from 'antd'
+import type { TreeSelectProps } from 'antd'
 import React from 'react'
 import './index.module.scss'
-const App = (props: ButtonProps) => {
-  return <Button {...props}>{props.children}</Button>
+const App = (props: TreeSelectProps) => {
+  return <TreeSelect {...props}></TreeSelect>
 }
 
 export default App
