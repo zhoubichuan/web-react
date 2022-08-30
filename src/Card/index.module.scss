@@ -1,1 +1,30 @@
-@import 'antd/lib/card/style'
+.secard {
+    margin: 0 0 20px;
+    border-radius: 16px;
+
+    :global(.ant-card-body) {
+        padding: 15px 24px 8px 24px;
+        height: calc(100vh - 14px);
+    }
+
+    :global(.ant-tabs-nav) {
+        margin: 0;
+        &:before {
+            border: none;
+        }
+
+    &:before {
+      border: none;
+    }
+  }
+
+  :global(.ant-tabs-tab-btn) {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1d1d1f !important;
+  }
+
+  :global(.ant-tabs-ink-bar) {
+    visibility: hidden;
+  }
+}

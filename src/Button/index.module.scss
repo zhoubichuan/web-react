@@ -1,1 +1,50 @@
-@import 'antd/lib/button/style'
+.ratebtn {
+    position: relative;
+    height: auto;
+    padding: 0;
+    height: 42px;
+    cursor: pointer;
+    width: 98px;
+    border: none;
+    border-radius: 20px;
+  
+    :global {
+      img {
+        position: absolute;
+        top: 0;
+      }
+  
+      span {
+        margin-left: 44px;
+        padding-right: 10px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+  
+    }
+  
+    &:after {
+      content: '';
+      display: none !important;
+    }
+  }
+  
+  .mybtn {
+    border-radius: 4px;
+    height: 40px;
+    padding: 6.4px 15px;
+    font-size: 16px;
+  }
+  
+  :global {
+    .ant-btn-primary {
+      background: #52CCA3;
+      border-color: #52CCA3;
+  
+      &:hover,
+      &:focus {
+        background: #52CCA3;
+        border-color: #52CCA3;
+      }
+    }
+  }

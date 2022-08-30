@@ -7,14 +7,17 @@ nav:
 # Checkbox
 
 ```tsx
-import { Button } from 'myantd'
-import React from 'react'
-const App: React.FC = () => {
-  return (
-   <Button type="primary">aaaa</Button>
-  )
-}
-export default App
+import { Checkbox } from 'myantd';
+import type { CheckboxChangeEvent } from 'antd/es/checkbox';
+import React from 'react';
+
+const onChange = (e: CheckboxChangeEvent) => {
+  console.log(`checked = ${e.target.checked}`);
+};
+
+const App: React.FC = () => <Checkbox onChange={onChange}>Checkbox</Checkbox>;
+
+export default App;
 ```
 
 ### API

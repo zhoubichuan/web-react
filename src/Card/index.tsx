@@ -1,8 +1,10 @@
-import { Card } from 'antd'
-import type { CardProps } from 'antd'
-import React from 'react'
-import './index.module.scss'
-const App = (props: CardProps) => {
-  return <Card {...props}>{props.children}</Card>
-}
-export default App
+import { Card } from 'antd';
+import type { CardProps } from 'antd';
+import Meta from './Meta'
+const App = (props: CardProps) => (
+  <Card  {...props}>
+    {props.children}
+  </Card>
+)
+App.Meta = Meta
+export default App;
