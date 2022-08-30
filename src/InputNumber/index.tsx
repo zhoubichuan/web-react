@@ -1,9 +1,9 @@
-import { Button } from 'antd'
-import type { ButtonProps } from 'antd'
-import React from 'react'
-import './index.module.scss'
-const App = (props: ButtonProps) => {
-  return <Button {...props}>{props.children}</Button>
-}
+import { InputNumber } from 'antd';
+import type { InputNumberProps } from 'antd';
 
-export default App
+const App = (props: InputNumberProps) => (
+  <InputNumber   {...props}>
+    {props.children}
+  </InputNumber>
+)
+export default App;

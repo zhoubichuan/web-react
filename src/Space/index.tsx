@@ -1,9 +1,9 @@
-import { Space } from 'antd'
-import type { SpaceProps } from 'antd'
-import React from 'react'
-import './index.module.scss'
-const App = (props: SpaceProps) => {
-  return <Space {...props}>{props.children}</Space>
-}
-
-export default App
+import { Space  } from 'antd';
+import type { SpaceProps } from 'antd';
+  
+const App= (props:SpaceProps) => (
+  <Space  {...props}>
+    {props.children}
+  </Space>
+)
+export default App;

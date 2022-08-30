@@ -1,9 +1,23 @@
-import { Button } from 'antd'
-import type { ButtonProps } from 'antd'
-import React from 'react'
-import './index.module.scss'
-const App = (props: ButtonProps) => {
-  return <Button {...props}>{props.children}</Button>
-}
+import { Input } from 'antd';
+import type { InputProps } from 'antd';
+import styles from './index.module.scss'
 
-export default App
+interface newInputProps extends InputProps {
+  circle?: boolean
+}
+const App = ({ circle, ...props }: newInputProps) => {
+  if (circle) {
+    return (
+      <Input className={styles.circlebtn}  {...props}>
+        {props.children}
+      </Input>
+    )
+  } else {
+    return (
+      <Input   {...props}>
+        {props.children}
+      </Input>
+    )
+  }
+}
+export default App;

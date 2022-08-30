@@ -1,9 +1,10 @@
-import { Button } from 'antd'
-import type { ButtonProps } from 'antd'
-import React from 'react'
-import './index.module.scss'
-const App = (props: ButtonProps) => {
-  return <Button {...props}>{props.children}</Button>
-}
+import { PageHeader } from 'antd';
+import type { PageHeaderProps } from 'antd';
 
-export default App
+const App = (props:PageHeaderProps)  => (
+  <PageHeader {...props}>
+    {props.children}
+  </PageHeader>
+);
+
+export default App;

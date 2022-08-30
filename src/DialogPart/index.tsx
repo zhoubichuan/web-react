@@ -1,17 +1,24 @@
 import { Modal } from 'antd';
 import React, { useState, useEffect } from 'react';
 import styles from "./index.module.scss";
-import 'antd/lib/modal/style'
-interface Props {
-    showDialod: boolean,
-    changeDialog: Function,
-    children: any
+enum sizeEnum {
+    big = 1500,
+    middle = 1000,
+    small = 800
 }
-const App = ({ showDialod, changeDialog, children }: Props) => {
+type sizeTYPES = keyof typeof sizeEnum
+interface Props {
+    showDialog: boolean,
+    changeDialog: Function,
+    children: any,
+    size?: sizeTYPES
+}
+const App = ({ showDialog, changeDialog, children, size = 'middle' }: Props) => {
+
     const [visible, setVisible] = useState(false);
     useEffect(() => {
-        setVisible(showDialod)
-    }, [showDialod])
+        setVisible(showDialog)
+    }, [showDialog])
     return (
         <>
             <Modal
@@ -20,7 +27,7 @@ const App = ({ showDialod, changeDialog, children }: Props) => {
                 visible={visible}
                 onOk={() => changeDialog(false)}
                 onCancel={() => changeDialog(false)}
-                width={1000}
+                width={sizeEnum[size]}
                 destroyOnClose={true}
                 footer={null}
             >

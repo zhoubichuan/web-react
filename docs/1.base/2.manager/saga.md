@@ -13,7 +13,7 @@ order: 9
 
 - echarts 模板
 
-```js
+```ts
 import * as echarts from 'echarts';
 import { useEffect, useRef } from 'react';
 import _ from 'lodash';
@@ -53,13 +53,64 @@ export default (props: ChartsProps) => {
 
 - 使用模板
 
-```js
-export default () => {
-  const chartRef = useRef < ECharts > null
-  const [chartOption, setChartOption] = useState < any > null
-  useEffect(() => {
-    setChartOption({})
-  }, [])
-  return <Charts option={chartOption} actionRef={chartRef} />
+```tsx
+import * as echarts from 'echarts';
+import { useEffect, useRef, useState } from 'react';
+import _ from 'lodash';
+interface ChartsProps {
+  option: any;
+  actionRef?: any;
+  style?:any
 }
+
+const Charts = (props: ChartsProps) => {
+  const { option, actionRef: propsActionRef } = props;
+  const chartRef = useRef<any>(null);
+
+  useEffect(() => {
+    let chart: echarts.ECharts;
+    if (chartRef.current && option) {
+      chart = echarts.init(chartRef.current);
+      chart.setOption(option);
+      if (propsActionRef) {
+        propsActionRef.current = chart;
+      }
+    }
+    const resizeObserver = new ResizeObserver(
+      _.debounce(() => {
+        chart && chart.resize();
+      }, 150),
+    );
+    resizeObserver.observe(chartRef.current as Element);
+    return () => {
+      return resizeObserver.disconnect();
+    };
+  }, [option]);
+
+  return <div style={{ height: '100%', width: '100%' }} ref={chartRef} />;
+};
+const App = () => {
+  const chartRef = useRef(null)
+  const [chartOption, setChartOption] = useState({})
+  useEffect(() => {
+    let options = {
+      xAxis: {
+        type: "category",
+        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      },
+      yAxis: {},
+      series: [{
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: "line"
+      }]
+    }
+    setChartOption(options)
+  }, [])
+  return (
+    <div style={{height: '300px'}}>
+      <Charts option={chartOption} actionRef={chartRef}/>
+    </div>
+  )
+}
+export default App
 ```

@@ -1,9 +1,11 @@
-import { Descriptions } from 'antd'
-import type { DescriptionsProps } from 'antd'
-import React from 'react'
-import './index.module.scss'
-const App = (props: DescriptionsProps) => {
-  return <Descriptions {...props}>{props.children}</Descriptions>
-}
+import { Descriptions } from 'antd';
+import type { DescriptionsProps } from 'antd';
+import Item from './Item';
 
-export default App
+const App = (props: DescriptionsProps) => (
+  <Descriptions  {...props}>
+    {props.children}
+  </Descriptions>
+)
+App.Item = Item
+export default App;
