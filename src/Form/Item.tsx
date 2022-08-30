@@ -1,15 +1,10 @@
 import { Form } from 'antd';
-import Item from './Item'
-import './index.module.scss'
-
-const App = (props: any) => {
+import type { FormItemProps } from 'antd';
+const App = (props: FormItemProps) => {
   return (
-    <Form  {...props}>
+    <Form.Item  {...props}>
       {props.children}
-    </Form>
+    </Form.Item>
   )
 }
-App.Item = Item
-App.useForm = Form.useForm
-App.Provider = Form.Provider;
 export default App;

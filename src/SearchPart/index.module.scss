@@ -1,22 +1,31 @@
 .form {
-    :global(.ant-btn) {
-        border-radius: 4px;
-    }
+    margin-top: 14px;
 
-    :global(.ant-input) {
-        border-radius: 6px;
-    }
+    :global {
+        .ant-form-item {
+            .ant-input {
+                border-radius: 6px;
+            }
 
-    :global(.ant-btn-primary) {
-        background: #52CCA3;
-        border-color: #52CCA3
-    }
+            .ant-select-selector {
+                border-radius: 4px;
+            }
 
-    :global(.ant-btn-default) {
-        background: #F5F5F5;
-        border-color: #F5F5F5;
-        font-weight: 400;
-        color: #646464;
+            .ant-btn {
+                border-radius: 4px;
+            }
+
+            .ant-btn-primary {
+                background: #52CCA3;
+                border-color: #52CCA3
+            }
+
+            .ant-btn-default {
+                background: #F5F5F5;
+                border-color: #F5F5F5;
+                font-weight: 400;
+                color: #646464;
+            }
+        }
     }
 }
-

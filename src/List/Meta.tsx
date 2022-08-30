@@ -1,9 +1,8 @@
 import { List } from 'antd';
-import Item from './Item'
+
 const App = (props: any) => (
-  <List  {...props}>
+  <List.Item.Meta  {...props}>
     {props.children}
-  </List>
+  </List.Item.Meta>
 )
-App.Item = Item
 export default App;

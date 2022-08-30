@@ -1,20 +1,20 @@
 import { Table } from 'antd';
 import React from 'react';
 import styles from "./index.module.scss";
-import 'antd/lib/table/style'
 
 interface tableProps {
   tableData: any,
   onChange: any
   columns: any,
-  className?: any
+  className?: any,
+  y?:number
 }
 
-const App = ({ columns, onChange, tableData: { data, page } }: tableProps) => {
+const App = ({ y, columns, onChange, tableData: { data, page } }: tableProps) => {
   return (
     <Table
       className={styles.table}
-      scroll={{ scrollToFirstRowOnChange: true, y: 564 }}
+      scroll={{ scrollToFirstRowOnChange: true, y: y ||564 }}
       columns={columns}
       dataSource={data}
       onChange={onChange}
