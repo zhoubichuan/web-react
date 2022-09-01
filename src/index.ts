@@ -163,9 +163,6 @@ export { default as Switch } from './Switch';
 //   ColumnsType as TableColumnsType,
 // } from './table';
 export { default as Table } from './Table';
-export { default as TablePart } from './TablePart';
-export { default as DialogPart } from './DialogPart';
-export { default as SearchPart } from './SearchPart';
 
 // export type { TransferProps } from './transfer';
 // export { default as Transfer } from './transfer';
@@ -181,7 +178,7 @@ export { default as SearchPart } from './SearchPart';
 // export { default as TreeSelect } from './tree-select';
 
 // export type { TabsProps, TabPaneProps } from './tabs';
-// export { default as Tabs } from './tabs';
+export { default as Tabs } from './Tabs';
 
 // export type { TagProps, TagType } from './tag';
 // export { default as Tag } from './tag';
@@ -204,3 +201,9 @@ export { default as Typography } from './Typography';
 
 // export { default as version } from './version';
 // export * as Openlayers from './Openlayers';
+export * as Echarts from './Echarts';
+export { default as DialogPart } from './DialogPart';
+export { default as SearchPart } from './SearchPart';
+export { default as TableAddPart } from './TableAddPart';
+export { default as TableEditPart } from './TableEditPart';
+export { default as TablePart } from './TablePart';

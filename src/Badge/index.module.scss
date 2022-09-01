@@ -1,1 +1,10 @@
-@import 'antd/lib/button/style'
+@import 'antd/lib/badge/style';
+
+:global {
+    .ant-badge-status-dot {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.mybadge {}

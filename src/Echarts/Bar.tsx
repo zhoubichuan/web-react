@@ -1,6 +1,5 @@
 import * as echarts from 'echarts'
 import { useEffect, useRef } from 'react'
-import _ from 'lodash'
 interface ChartsProps {
   id: any
   option: any
@@ -8,7 +7,7 @@ interface ChartsProps {
 }
 
 const App = (props: ChartsProps) => {
-  const { option, actionRef: propsActionRef, id } = props
+  const { option, actionRef: propsActionRef } = props
   const chartRef = useRef<any>(null)
 
   useEffect(() => {

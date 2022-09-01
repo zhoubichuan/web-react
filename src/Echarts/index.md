@@ -32,7 +32,7 @@ const App: React.FC = () => {
     setChartOption(option)
   }, [])
   return (
-    <Echarts
+    <Echarts.Pie
       option={chartOption}
       actionRef={chartRef}
       style={{ height: '800px' }}

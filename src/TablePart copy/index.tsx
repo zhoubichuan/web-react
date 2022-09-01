@@ -1,5 +1,4 @@
 import { Table } from 'antd';
-import type { TableProps } from 'antd'; //eslint-disable-line
 import React from 'react';
 import styles from "./index.module.scss";
 
@@ -8,16 +7,14 @@ interface tableProps {
   onChange: any
   columns: any,
   className?: any,
-  y?: number,
-  components?:any
+  y?:number
 }
 
-const App = (props: tableProps) => {
-  let { y, columns, onChange, tableData: { data, page }, ...rest } = props
+const App = ({ y, columns, onChange, tableData: { data, page } }: tableProps) => {
   return (
     <Table
       className={styles.table}
-      scroll={{ scrollToFirstRowOnChange: true, y: y || 564 }}
+      scroll={{ scrollToFirstRowOnChange: true, y: y ||564 }}
       columns={columns}
       dataSource={data}
       onChange={onChange}
@@ -35,9 +32,7 @@ const App = (props: tableProps) => {
         showQuickJumper: true,
         pageSizeOptions: ['10', '50', '100', '200'],
         showTotal: total => `共 ${total} 条数据`,
-      }}
-      {...rest}
-    />
+      }} />
   )
 };
 
