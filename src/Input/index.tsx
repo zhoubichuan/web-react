@@ -20,4 +20,5 @@ const App = ({ circle, ...props }: newInputProps) => {
     )
   }
 }
+App.TextArea = Input.TextArea
 export default App;

@@ -7,7 +7,6 @@ module.exports = {
         'Button/index.md',
 
         'Divider/index.md',
-        'Grid/index.md',
         'Layout/index.md',
         'Space/index.md',
 

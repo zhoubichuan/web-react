@@ -3,19 +3,20 @@ import * as echarts from 'echarts';
 import styles from './index.module.scss';
 
 interface Props {
-  op: any;
-  style?: any
+  option: any;
+  height?: string;
+  width?: string
 }
-const App = ({ op }: Props) => {
+const App = ({ option, ...style }: Props) => {
   var myChart;
   const chartRef = useRef<any>(null);
   useEffect(() => {
     mapOption();
-  }, [op]);
+  }, [option]);
   const mapOption = () => {
     myChart = echarts.init(chartRef.current);
-    myChart.setOption(op);
+    myChart.setOption(option);
   };
-  return <div className={styles.pieChart} ref={chartRef}></div>;
+  return <div className={styles.line} ref={chartRef} style={style}></div>;
 };
 export default App
