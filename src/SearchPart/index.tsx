@@ -35,7 +35,7 @@ const App = (props: SearchProps) => {
 
   const handleSearch = (params: any) => {
     if (props.requestFn) {
-      props.requestFn((data: any) => {
+      props.requestFn(params, (data: any) => {
         props.searchData(data);
       })
     } else {
@@ -48,17 +48,19 @@ const App = (props: SearchProps) => {
 
   };
   useEffect(() => {
-    handleSearch({ current: 1, pageSize: 20 });
+    handleSearch({});
   }, []);
   const onFinish = (values: any) => {
     let targetField: any = {};
     props.columns.forEach((item) => {
       targetField[item.name] = values[item.name] || '';
     });
-    handleSearch({ ...targetField, current: 1, pageSize: 20 });
+    console.log(targetField, 'targetField')
+    handleSearch({ ...targetField });
   };
   const onReset = () => {
     form.resetFields();
+    handleSearch({});
   };
   useImperativeHandle(props.onRef, () => {
     return {

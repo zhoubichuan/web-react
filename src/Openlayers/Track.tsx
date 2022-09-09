@@ -5,13 +5,12 @@ import { transform } from "ol/proj";
 interface HeadProps {
   ref?: any,
   point: any,
-  children?: any
+  children?: any,
+  index: number
 }
 let map: any = null;
-let line: any = []
-const App = ({ point = [], children }: HeadProps) => {
-  point = transform(point, "EPSG:4326", "EPSG:3857");
-  point.length && line.push(point)
+const App = ({ point = [], index = 0, children }: HeadProps) => {
+  point = point.length ? point.map((i: any) => transform(i, "EPSG:4326", "EPSG:3857")) : []
   const mapRef = useRef<any>(null)
   const newMap = (point = []) => {
     map = new IAMap({
@@ -30,19 +29,18 @@ const App = ({ point = [], children }: HeadProps) => {
     } else {
       map.clear("pointLayer");
       map.insertIcon("pointLayer", {
-        point,
+        point: point[index] || [],
         icon: 'tractor.svg',
         anchor: [0.48, 0.95]
       });
-      console.log(line, 'line')
       map.clear("trackLayer");
       map.insertLine('trackLayer', {
         color: '#FF7A46',
         width: 5,
-        point: line,
+        point: point.slice(0, index + 1),
       })
     }
-  }, [point])
+  }, [index])
 
   return (
     <div ref={mapRef} style={{ width: '100%', height: '100%' }}>
