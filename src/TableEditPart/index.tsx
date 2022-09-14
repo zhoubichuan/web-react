@@ -1,4 +1,4 @@
-import { Form, Input, InputNumber, Table, Typography, Button } from '@/antd';
+import { Form, Input, InputNumber, Table, Typography, Button } from 'antd';
 import React, { useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 interface Item {

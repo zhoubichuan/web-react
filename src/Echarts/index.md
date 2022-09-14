@@ -6,7 +6,13 @@ nav:
 
 # Echarts
 
+- Pie
+
 ```tsx
+/**
+ * Echarts.Pie: 折线图
+ * option: 相关参数
+ */
 import React, { useRef, useState, useEffect } from 'react'
 import { Echarts } from 'myantd'
 const App: React.FC = () => {
@@ -35,7 +41,68 @@ const App: React.FC = () => {
     <Echarts.Pie
       option={chartOption}
       actionRef={chartRef}
-      style={{ height: '800px' }}
+      style={{ height: '300px' }}
+    />
+  )
+}
+export default App
+```
+
+- Bar
+
+```tsx
+/**
+ * Echarts.Bar: 折线图
+ * option: 相关参数
+ */
+import React, { useRef, useState, useEffect } from 'react'
+import { Echarts } from 'myantd'
+const App: React.FC = () => {
+  const chartRef = useRef<ECharts>(null)
+  const [chartOption, setChartOption] = useState<any>(null)
+  useEffect(() => {
+    let option = {
+      title: {
+        text: 'Referer of a Website',
+        subtext: 'Fake Data',
+        left: 'center'
+      },
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'left'
+      },
+      series: [
+        {
+          name: 'Access From',
+          type: 'pie',
+          radius: '50%',
+          data: [
+            { value: 1048, name: 'Search Engine' },
+            { value: 735, name: 'Direct' },
+            { value: 580, name: 'Email' },
+            { value: 484, name: 'Union Ads' },
+            { value: 300, name: 'Video Ads' }
+          ],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+        }
+      ]
+    }
+    setChartOption(option)
+  }, [])
+  return (
+    <Echarts.Bar
+      option={chartOption}
+      actionRef={chartRef}
+      style={{ height: '300px' }}
     />
   )
 }
@@ -47,5 +114,3 @@ export default App
 | Name                  | Description            | Type    | Default |
 | --------------------- | ---------------------- | ------- | ------- |
 | asyncClickAutoLoading | 异步的方法自动 loading | boolean | false   |
-
-其他 API 见`antd`文档：https://ant.design/components/button-cn/

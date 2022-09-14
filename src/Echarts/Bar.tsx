@@ -3,7 +3,8 @@ import { useEffect, useRef } from 'react'
 interface ChartsProps {
   id: any
   option: any
-  actionRef?: any
+  actionRef?: any,
+  style?:any
 }
 
 const App = (props: ChartsProps) => {
@@ -30,7 +31,7 @@ const App = (props: ChartsProps) => {
     // }
   }, [option])
 
-  return <div style={{ height: '100%', width: '100%' }} ref={chartRef}></div>
+  return <div style={{ height: props.style.height || '100%', width: '100%' }} ref={chartRef}></div>
 }
 
 export default App
