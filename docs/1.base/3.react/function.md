@@ -9,7 +9,7 @@ title: React(函数组件)
 order: 6
 ---
 
-# 二.React(函数组件)
+# 二.React(基础)
 
 ## 1.什么是 React
 
