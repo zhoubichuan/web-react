@@ -1,6 +1,8 @@
-import { Button, Form, Row, Input, Col, Select } from 'antd';
-import { useImperativeHandle, useEffect } from 'react';
+import { Button, Form, Row, Input, Col, Select, Cascader,Image } from 'antd';
+import { useImperativeHandle, useEffect, useState } from 'react';
 import styles from './index.module.scss';
+import Search from "@/antd/icon/search.svg";
+import Refresh from "@/antd/icon/refresh.svg";
 const Option = Select.Option;
 function urlJoinParams(url: any, obj: any) {
   let result = '';
@@ -22,40 +24,91 @@ function urlJoinParams(url: any, obj: any) {
   return url + result;
 }
 interface SearchProps {
+  type?: any,
   onRef: any;
   searchData: Function;
   requestUrl?: String;
   children?: any;
   className?: any;
   columns: any[];
-  requestFn?: Function
+  requestFn?: Function,
+  btnHide?: Boolean,
+  onChange?: Function,
+}
+const SelectComponent = (item: any) => {
+  if (!item.fieldNames) {
+    item.fieldNames = { label: 'label', value: 'value' }
+  }
+  console.log(item, 'ddddddd')
+  return (
+    <Form.Item name={item.name} key={item.name}>
+      <Select
+        allowClear
+        placeholder={item.placeholder}
+        style={{ width: '100%' }}>
+        {item.options.map((option: any) => (
+          <Option value={option.code} key={option.name}>
+            {option.name}
+          </Option>
+        ))}
+      </Select>
+    </Form.Item>
+  )
+}
+const InputComponent = (item: any) => {
+  return (
+    <Form.Item name={item.name} key={item.name}>
+      <Input allowClear placeholder={item.placeholder} disabled={item.disabled} defaultValue={item.defaultValue} />
+    </Form.Item>
+  )
+}
+const TextAreaComponent = (item: any) => {
+  return (
+    <Form.Item name={item.name} key={item.name}>
+      <Input allowClear placeholder={item.placeholder} />
+    </Form.Item>
+  )
+}
+const CascaderComponent = (item: any) => {
+  return (
+    <Form.Item name={item.name} key={item.name}>
+      <Cascader
+        allowClear
+        options={item.options}
+        placeholder={item.placeholder}
+        fieldNames={{ label: 'name', value: 'id' }} />
+    </Form.Item>
+  )
 }
 const App = (props: SearchProps) => {
   const [form] = Form.useForm();
-
+  const [formItemData, setFormItemData] = useState([] as any)
+  useEffect(() => {
+    setFormItemData(props.columns)
+  }, [props.columns])
   const handleSearch = (params: any) => {
     if (props.requestFn) {
       props.requestFn(params, (data: any) => {
         props.searchData(data);
       })
-    } else {
-      fetch(urlJoinParams(props.requestUrl, params))
-        .then((response) => response.json())
-        .then((data) => {
-          props.searchData(data);
-        });
     }
-
   };
   useEffect(() => {
-    handleSearch({});
+    if (props.type !== 'select') {
+      handleSearch({});
+    }
   }, []);
   const onFinish = (values: any) => {
     let targetField: any = {};
     props.columns.forEach((item) => {
-      targetField[item.name] = values[item.name] || '';
+      if (values[item.name] !== undefined || '') {
+        if (item.type === 'cascader') {
+          targetField[item.name] = values[item.name][values[item.name].length - 1]
+        } else {
+          targetField[item.name] = values[item.name]
+        }
+      }
     });
-    console.log(targetField, 'targetField')
     handleSearch({ ...targetField });
   };
   const onReset = () => {
@@ -67,6 +120,11 @@ const App = (props: SearchProps) => {
       handleSearch: handleSearch
     };
   });
+  const handleFieldChange = (changedValues: any, allValues: any) => {
+    if (props.onChange) {
+      props.onChange(allValues)
+    }
+  }
   return (
     <Form
       className={styles.form}
@@ -75,47 +133,36 @@ const App = (props: SearchProps) => {
       size="large"
       layout={'inline'}
       form={form}
-      initialValues={{ layout: 'inline' }}>
+      initialValues={{ layout: 'inline' }}
+      onValuesChange={handleFieldChange}>
       <Row gutter={24} style={{ width: '100%' }}>
-        {props.columns.map((item, i) => (
-          <Col span={4} key={item.name}>
-            {item.type === undefined && (
-              <Form.Item name={item.name}>
-                <Input placeholder={item.placeholder} />
-              </Form.Item>
-            )}
-            {item.type === 'select' && (
-              <Form.Item name={item.name}>
-                <Select placeholder={item.placeholder} style={{ width: '100%' }}>
-                  {item.options.map((option: any) => (
-                    <Option value={option.value} key={option.name}>
-                      {option.name}
-                    </Option>
-                  ))}
-                </Select>
-              </Form.Item>
-            )}
-            {item.type === 'textarea' && (
-              <Form.Item name={item.name}>
-                <Input placeholder={item.placeholder} />
-              </Form.Item>
-            )}
+        {formItemData.map((item: any) => (
+          <Col span={6} key={item.name}>
+            {item.type === undefined && InputComponent(item)}
+            {item.type === 'select' && SelectComponent(item)}
+            {item.type === 'textarea' && TextAreaComponent(item)}
+            {item.type === 'cascader' && CascaderComponent(item)}
           </Col>
         ))}
-        <Col span={2}>
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              查询
-            </Button>
-          </Form.Item>
-        </Col>
-        <Col span={2}>
-          <Form.Item>
-            <Button type="default" onClick={onReset}>
-              重置
-            </Button>
-          </Form.Item>
-        </Col>
+        {
+          (!props.type) &&
+          <>
+            <Col span={2}>
+              <Form.Item>
+                <Button type="primary" htmlType="submit" icon={<Image preview={false} src={Search} width={18} height={18} />}>
+                  查询
+                </Button>
+              </Form.Item>
+            </Col>
+            <Col span={2}>
+              <Form.Item>
+                <Button type="default" onClick={onReset} icon={<Image preview={false} src={Refresh} width={18} height={18}/>}>
+                  重置
+                </Button>
+              </Form.Item>
+            </Col>
+          </>
+        }
         {props.children}
       </Row>
     </Form>

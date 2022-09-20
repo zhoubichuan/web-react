@@ -21,4 +21,5 @@ const App = ({ circle, ...props }: newInputProps) => {
   }
 }
 App.TextArea = Input.TextArea
+App.Password = Input.Password
 export default App;

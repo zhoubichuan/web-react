@@ -1,1 +1,30 @@
-@import 'antd/lib/button/style'
+@import 'antd/lib/tabs/style';
+
+:global {
+    .myantd {
+        .ant-tabs-nav {
+            margin: 0;
+
+            &:before {
+                border: none;
+            }
+        }
+
+        .ant-tabs-tab-btn {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .ant-tabs-tab:hover {
+            color: #52cca3;
+        }
+
+        .ant-tabs-tab-active .ant-tabs-tab-btn {
+            color: #52cca3;
+        }
+
+        .ant-tabs-ink-bar {
+            background: #52cca3;
+        }
+    }
+}

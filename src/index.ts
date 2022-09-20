@@ -200,10 +200,9 @@ export { default as Typography } from './Typography';
 // export { default as Upload } from './upload';
 
 // export { default as version } from './version';
-// export * as Openlayers from './Openlayers';
+export * as Openlayers from './Openlayers';
 export * as Echarts from './Echarts';
 export { default as DialogPart } from './DialogPart';
 export { default as SearchPart } from './SearchPart';
 export { default as TableAddPart } from './TableAddPart';
-export { default as TableEditPart } from './TableEditPart';
 export { default as TablePart } from './TablePart';
