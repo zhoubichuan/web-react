@@ -4,6 +4,7 @@ import type { FormInstance } from 'antd/es/form';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import './index.module.scss'
+import _ from 'lodash';
 
 const EditableContext = React.createContext<FormInstance<any> | null>(null);
 
@@ -36,7 +37,7 @@ interface EditableCellProps {
     children: React.ReactNode;
     dataIndex: keyof Item;
     record: Item;
-    handleSave: (record: Item) => void;
+    handleSave: (record: Item,dataIndex:string) => void;
     columnsField: Array<any>
 }
 
@@ -59,7 +60,6 @@ const EditableCell: React.FC<EditableCellProps> = ({
         //     inputRef.current!.focus();
         // }
     }, [editing]);
-
     const toggleEdit = () => {
         setEditing(!editing);
         form.setFieldsValue({ [dataIndex]: record[dataIndex] });
@@ -69,7 +69,8 @@ const EditableCell: React.FC<EditableCellProps> = ({
         try {
             const values = await form.validateFields();
             toggleEdit();
-            handleSave({ ...record, ...values });
+            console.log({ ...record, ...values },'row-----')
+            handleSave({ ...record, ...values },dataIndex);
         } catch (errInfo) {
             console.log('Save failed:', errInfo);
         }
@@ -116,7 +117,7 @@ const EditableCell: React.FC<EditableCellProps> = ({
             )
         } else {
             if (rowItem.type === "select") {
-                children= rowItem.options.find((item:any) => [...childNode][1]===item.value)?.name
+                children = rowItem.options.find((item: any) => [...childNode][1] === item.value)?.name
             }
             childNode = (
                 <div className="editable-cell-value-wrap" style={{ paddingRight: 24 }} onClick={toggleEdit}>
@@ -132,8 +133,10 @@ type EditableTableProps = Parameters<typeof Table>[0];
 
 interface DataType {
     key?: any,
+    sortkey: any,
     code?: number;
     name: string;
+    unit: string,
     type: string;
     value: number;
     duration: string;
@@ -151,15 +154,21 @@ interface tableProps {
     columnsField?: Array<any>
 }
 const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) => {
+    let targetCode = columnsField?.find((item: any) => item.name === 'code')
     const [dataSource, setDataSource] = useState<DataType[]>([]);
     useEffect(() => {
-        setDataSource([...dataSource, ...data])
-        console.log(dataSource, 'dataSource', data)
+        setDataSource([...dataSource, ...data].map((i: any, index: any) => ({ key: index + 1, sortkey: index + 1, ...i })))
+        setCount(data.length+1)
+        onChange(data)
     }, [data])
     const [count, setCount] = useState(1);
     const handleDelete = (key: React.Key) => {
         const newData = dataSource.filter(item => item.key !== key);
         setDataSource(newData);
+        onChange(newData.map(i => {
+            let { key, sortkey, ...rest } = i
+            return rest
+        }))
     };
     const defaultColumns: (ColumnTypes[number] & { editable?: boolean; dataIndex: string })[] = [
         ...columns,
@@ -176,23 +185,22 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
     ];
 
     const handleAdd = (val: any) => {
+        let target = targetCode.options[0]
         const newData: Array<DataType> = [...dataSource, {
             key: count,
-            code: count,
-            name: columnsField?.find((item: any) => item.name === 'name').options[0].value,
+            sortkey: count,
+            code: target.value,
+            name: target.name,
+            unit: target.unit,
             type: columnsField?.find((item: any) => item.name === 'type').options[0].value,
             value: 1,
             duration: '1',
         }];
-
         setDataSource(newData);
         setCount(count + 1);
         onChange(newData.map(i => {
-            let targetVal: any = i
-            Reflect.deleteProperty(targetVal, 'key')
-            let options = columnsField?.find((item: any) => item.name === 'name').options
-            targetVal.unit = options.find((val: any) => i.name === val.value).name.split(' ')[1]
-            return targetVal
+            let { key, sortkey, ...rest } = i
+            return rest
         }))
     };
 
@@ -208,22 +216,23 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
                     editable: col.editable,
                     dataIndex: col.dataIndex,
                     title: col.title,
-                    handleSave: (row: DataType) => {
+                    handleSave: (row: DataType,dataIndex:string) => {
                         const newData = [...dataSource];
                         const index = newData.findIndex(item => row.key === item.key);
                         const item = newData[index];
+                        if (dataIndex.includes('code')) {
+                            row.name = targetCode.options.find((item:any) => item.value === row.code)?.name
+                            row.unit = targetCode.options.find((item:any) => item.value === row.code)?.unit
+                        }
+                        console.log(targetCode,row,'row-----')
                         newData.splice(index, 1, {
                             ...item,
                             ...row,
                         });
                         setDataSource(newData);
-                        console.log(newData, 'newData')
                         onChange(newData.map(i => {
-                            let targetVal: any = i
-                            Reflect.deleteProperty(targetVal, 'key')
-                            let options = columnsField?.find((item: any) => item.name === 'name').options
-                            targetVal.unit = options.find((val: any) => i.name === val.value).name.split(' ')[1]
-                            return targetVal
+                            let { key, sortkey, ...rest } = i
+                            return rest
                         }))
                     },
                     columnsField

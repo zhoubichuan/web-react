@@ -79,12 +79,12 @@ module.exports = {
         'Echarts/index.md',
       ]
     },
-    {
-      title: ' Openlayers',
-      children: [
-        'Openlayers/index.md',
-      ]
-    },
+    // {
+    //   title: ' Openlayers',
+    //   children: [
+    //     'Openlayers/index.md',
+    //   ]
+    // },
     {
       title: ' 综合组件',
       children: [

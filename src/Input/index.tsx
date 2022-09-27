@@ -8,7 +8,7 @@ interface newInputProps extends InputProps {
 const App = ({ circle, ...props }: newInputProps) => {
   if (circle) {
     return (
-      <Input className={styles.circlebtn}  {...props}>
+      <Input className={styles.circle}  {...props}>
         {props.children}
       </Input>
     )

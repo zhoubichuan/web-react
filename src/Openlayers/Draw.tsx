@@ -1,5 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';//eslint-disable-line
-// import styles from "./index.module.scss";
+import React, { useRef, useEffect, useState } from 'react';
 import { IAMap } from "./IAMap/index";
 interface HeadProps {
   ref?: any,
@@ -14,8 +13,6 @@ interface HeadProps {
   modifyend?: Function,
   remove?: Function,
 }
-let map: any = null;
-let layer: any = null
 const App = ({ ref, point = [], type = "coordinate", ...rest }: HeadProps) => {
   const drawstart = (val: any) => {
     if (rest.drawstart) {
@@ -43,26 +40,30 @@ const App = ({ ref, point = [], type = "coordinate", ...rest }: HeadProps) => {
     }
   }
   const mapRef = useRef<any>(null)
-  const newMap = () => {
-    map = new IAMap({
+  const drawMap = useRef<any>(null)
+  const drawLayer = useRef<any>(null)
+  useEffect(() => {
+    let { ffarmRespVO: { code } } = JSON.parse(localStorage.getItem('userInfo') || '{}')
+    let config: any = {
       target: mapRef.current,
-      token: "018e93e7-de0f-4de2-b9e3-48535c1eb56b",
-      plugins: ["satellite"],
-      farmId: "1539126838737072130",
-      code: '1'
-    });
-    layer = map.insertLayer("line"); // 实时路径图层
-  };
+      interaction: true,
+      token: JSON.parse(localStorage.getItem('auth') || '')?.access_token,
+      code,
+      controls: false,
+      hideCenterCircle: true,
+      worker: true
+    }
+    if (window.location.host.includes('localhost')) {
+      config.url = 'https://smart-sit.farmbgy.com'
+    }
+    drawMap.current = new IAMap(config);
+    drawLayer.current = drawMap.current.insertLayer("line"); 
+  }, [])
 
   useEffect(() => {
-    if (!map) {
-      newMap()
-    }
-    map.clear("line");
-    map.insertDraw("line", {
+    drawMap.current.clear("line");
+    drawMap.current.insertDraw("line", {
       point: point,
-      icon: 'wurenji.png',
-      anchor: [0.48, 0.95],
       drawstart,
       drawend,
       change,
@@ -70,9 +71,6 @@ const App = ({ ref, point = [], type = "coordinate", ...rest }: HeadProps) => {
       remove,
       type
     });
-    return () => {
-      map = null
-    }
   }, [point])
   const handleRemove = (map: any) => {
 

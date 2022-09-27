@@ -31,13 +31,7 @@
     :global(.ant-pagination-item:hover) {
         border-color: #52CCA3;
     }
-
-    :global(.ant-btn-link) {
-        color: #52CCA3;
+    :global(.ant-descriptions-item){
+        padding-bottom:0
     }
 }
-.editable-row:hover .editable-cell-value-wrap {
-    padding: 4px 11px;
-    border: 1px solid #d9d9d9;
-    border-radius: 2px;
-  }

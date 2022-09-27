@@ -12,13 +12,19 @@ const App = ({ point = [], children }: HeadProps) => {
   point = transform(point, "EPSG:4326", "EPSG:3857");
   const mapRef = useRef<any>(null)
   const newMap = (point = []) => {
-    map = new IAMap({
+    let config: any = {
       target: mapRef.current,
-      token: "018e93e7-de0f-4de2-b9e3-48535c1eb56b",
-      plugins: ["satellite"],
-      farmId: "1539126838737072130",
-      code: '1',
-    });
+      interaction: true,
+      token: JSON.parse(localStorage.getItem('auth') || '')?.access_token,
+      code: 'sanshui',
+      controls: false,
+      hideCenterCircle: true,
+      worker: true
+    }
+    if (window.location.host.includes('localhost')) {
+      config.url = 'https://smart-sit.farmbgy.com'
+    }
+    map = new IAMap(config);
     map.insertLayer("pointLayer");
   };
   useEffect(() => {

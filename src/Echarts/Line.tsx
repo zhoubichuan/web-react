@@ -11,12 +11,9 @@ const App = ({ option, ...style }: Props) => {
   var myChart;
   const chartRef = useRef<any>(null);
   useEffect(() => {
-    mapOption();
-  }, [option]);
-  const mapOption = () => {
     myChart = echarts.init(chartRef.current);
     myChart.setOption(option);
-  };
+  }, [option]);
   return <div className={styles.line} ref={chartRef} style={style}></div>;
 };
 export default App

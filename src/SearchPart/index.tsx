@@ -1,8 +1,7 @@
-import { Button, Form, Row, Input, Col, Select, Cascader,Image } from 'antd';
+import { Form, Row, Input, Col, Select, Cascader, Image } from 'antd';
+import { Button } from 'myantd';
 import { useImperativeHandle, useEffect, useState } from 'react';
 import styles from './index.module.scss';
-import Search from "@/antd/icon/search.svg";
-import Refresh from "@/antd/icon/refresh.svg";
 const Option = Select.Option;
 function urlJoinParams(url: any, obj: any) {
   let result = '';
@@ -26,7 +25,7 @@ function urlJoinParams(url: any, obj: any) {
 interface SearchProps {
   type?: any,
   onRef: any;
-  searchData: Function;
+  searchData?: Function;
   requestUrl?: String;
   children?: any;
   className?: any;
@@ -39,15 +38,14 @@ const SelectComponent = (item: any) => {
   if (!item.fieldNames) {
     item.fieldNames = { label: 'label', value: 'value' }
   }
-  console.log(item, 'ddddddd')
   return (
     <Form.Item name={item.name} key={item.name}>
       <Select
         allowClear
         placeholder={item.placeholder}
         style={{ width: '100%' }}>
-        {item.options.map((option: any) => (
-          <Option value={option.code} key={option.name}>
+        {item.options.map((option: any, index: number) => (
+          <Option value={option.code} key={index}>
             {option.name}
           </Option>
         ))}
@@ -89,7 +87,9 @@ const App = (props: SearchProps) => {
   const handleSearch = (params: any) => {
     if (props.requestFn) {
       props.requestFn(params, (data: any) => {
-        props.searchData(data);
+        if (props.searchData) {
+          props.searchData(data);
+        }
       })
     }
   };
@@ -136,8 +136,8 @@ const App = (props: SearchProps) => {
       initialValues={{ layout: 'inline' }}
       onValuesChange={handleFieldChange}>
       <Row gutter={24} style={{ width: '100%' }}>
-        {formItemData.map((item: any) => (
-          <Col span={6} key={item.name}>
+        {formItemData.map((item: any, index: number) => (
+          <Col span={6} key={index}>
             {item.type === undefined && InputComponent(item)}
             {item.type === 'select' && SelectComponent(item)}
             {item.type === 'textarea' && TextAreaComponent(item)}
@@ -147,20 +147,16 @@ const App = (props: SearchProps) => {
         {
           (!props.type) &&
           <>
-            <Col span={2}>
-              <Form.Item>
-                <Button type="primary" htmlType="submit" icon={<Image preview={false} src={Search} width={18} height={18} />}>
-                  查询
-                </Button>
-              </Form.Item>
-            </Col>
-            <Col span={2}>
-              <Form.Item>
-                <Button type="default" onClick={onReset} icon={<Image preview={false} src={Refresh} width={18} height={18}/>}>
-                  重置
-                </Button>
-              </Form.Item>
-            </Col>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" imagebtn={'search'}>
+                查询
+              </Button>
+            </Form.Item>
+            <Form.Item>
+              <Button type="default" onClick={onReset} imagebtn={'refresh'}>
+                重置
+              </Button>
+            </Form.Item>
           </>
         }
         {props.children}
