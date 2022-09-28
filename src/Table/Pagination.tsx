@@ -1,22 +1,28 @@
 import { Table } from 'antd';
 import type { TableProps } from 'antd'; //eslint-disable-line
 import React from 'react';
-import styles from "./index.module.scss";
+import styles from './index.module.scss';
 
 interface tableProps {
-  tableData: any,
-  onChange: any
-  columns: any,
-  className?: any,
-  y?: number,
-  components?:any
+  tableData: any;
+  onChange: any;
+  columns: any;
+  className?: any;
+  y?: number;
+  components?: any;
 }
 
 const App = (props: tableProps) => {
-  let { y, columns, onChange, tableData: { data, page }, ...rest } = props
+  let {
+    y,
+    columns,
+    onChange,
+    tableData: { data, page },
+    ...rest
+  } = props;
   return (
     <Table
-      className={styles.table}
+      className={styles.pagination}
       scroll={{ scrollToFirstRowOnChange: true, y: y || 564 }}
       columns={columns}
       dataSource={data}
@@ -34,11 +40,11 @@ const App = (props: tableProps) => {
         current: page.current,
         showQuickJumper: true,
         pageSizeOptions: ['10', '50', '100', '200'],
-        showTotal: total => `共 ${total} 条数据`,
+        showTotal: (total) => `共 ${total} 条数据`
       }}
       {...rest}
     />
-  )
+  );
 };
 
 export default App;

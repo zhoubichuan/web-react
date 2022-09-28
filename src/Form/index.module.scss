@@ -1,13 +1,14 @@
+@import '../index.scss';
 .secard {
     margin: 0 0 20px;
     border-radius: 16px;
 
-    :global(.ant-card-body) {
+    :global(.#{$ant-prefix}-card-body) {
         padding: 15px 24px 8px 24px;
         height: calc(100vh - 14px);
     }
 
-    :global(.ant-tabs-nav) {
+    :global(.#{$ant-prefix}-tabs-nav) {
         margin: 0;
         &:before {
             border: none;
@@ -18,13 +19,36 @@
     }
   }
 
-  :global(.ant-tabs-tab-btn) {
+  :global(.#{$ant-prefix}-tabs-tab-btn) {
     font-size: 20px;
     font-weight: bold;
     color: #1d1d1f !important;
   }
 
-  :global(.ant-tabs-ink-bar) {
+  :global(.#{$ant-prefix}-tabs-ink-bar) {
     visibility: hidden;
+  }
+}
+
+.form {
+  margin-top: 14px;
+
+  :global {
+      .ant-form-item {
+          .ant-input {
+              border-radius: 6px;
+          }
+
+          .ant-select-selector {
+              border-radius: 4px;
+          }
+
+          .ant-btn-default {
+              background: #F5F5F5;
+              border-color: #F5F5F5;
+              font-weight: 400;
+              color: #646464;
+          }
+      }
   }
 }

@@ -1,23 +1,22 @@
-import * as echarts from 'echarts'
-import { useEffect, useRef } from 'react'
+import * as echarts from 'echarts';
+import { useEffect, useRef } from 'react';
 interface ChartsProps {
-  id: any
-  option: any
-  actionRef?: any,
-  style?:any
+  id: any;
+  option: any;
+  actionRef?: any;
 }
 
 const App = (props: ChartsProps) => {
-  const { option, actionRef: propsActionRef } = props
-  const chartRef = useRef<any>(null)
+  const { option, actionRef: propsActionRef } = props;
+  const chartRef = useRef<any>(null);
 
   useEffect(() => {
-    let chart: echarts.ECharts
+    let chart: echarts.ECharts;
     if (chartRef.current && option) {
-      chart = echarts.init(chartRef.current)
-      chart.setOption(option)
+      chart = echarts.init(chartRef.current);
+      chart.setOption(option);
       if (propsActionRef) {
-        propsActionRef.current = chart
+        propsActionRef.current = chart;
       }
     }
     // const resizeObserver = new ResizeObserver(
@@ -29,9 +28,9 @@ const App = (props: ChartsProps) => {
     // return () => {
     //   return resizeObserver.disconnect()
     // }
-  }, [option])
+  }, [option]);
 
-  return <div style={{ height: props.style.height || '100%', width: '100%' }} ref={chartRef}></div>
-}
+  return <div style={{ height: '100%', width: '100%' }} ref={chartRef}></div>;
+};
 
-export default App
+export default App;

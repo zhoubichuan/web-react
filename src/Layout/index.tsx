@@ -1,12 +1,19 @@
-import { Layout } from 'antd'
-import type { LayoutProps } from 'antd'
-import './index.module.scss'
-const { Header, Footer, Content, Sider } = Layout
+import { Layout } from 'antd';
+import type { LayoutProps } from 'antd';
+import './index.module.scss';
+import styles from './index.module.scss';
+// import Page from './Page'
+const { Header, Footer, Content, Sider } = Layout;
 const App = (props: LayoutProps) => {
-  return <Layout {...props}>{props.children}</Layout>
-}
+  return (
+    <Layout className={styles.mylayout} {...props}>
+      {props.children}
+    </Layout>
+  );
+};
 App.Header = Header;
 App.Footer = Footer;
 App.Content = Content;
 App.Sider = Sider;
-export default App
+// App.Page = Page;
+export default App;

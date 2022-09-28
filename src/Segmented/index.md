@@ -1,15 +1,22 @@
 ---
-title: Segmented
+title: Radio
 nav:
   path: /components
 ---
 
-# Segmented
+# Radio
 
 ```tsx
-import { Segmented } from 'myantd';
+/**
+ * title: 按钮类型
+ * desc: 按钮有五种类型：主按钮、次按钮、虚线按钮(实际用不到)、文本按钮和链接按钮。主按钮在同一个操作区域最多出现一次。
+ */
+import { Radio } from 'myantd';
+import React from 'react';
 
-export default () => <Segmented options={['Daily', 'Weekly', 'Monthly', 'Quarterly', 'Yearly']} />;
+const App: React.FC = () => <Radio>Radio</Radio>;
+
+export default App;
 ```
 
 ### API

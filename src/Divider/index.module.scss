@@ -1,4 +1,7 @@
 @import 'antd/lib/divider/style';
-.divider{
+@import '../index.scss';
+:global {
+    .myantd {
 
+    }
 }

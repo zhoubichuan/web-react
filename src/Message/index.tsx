@@ -1,2 +1,2 @@
-import { message  } from 'antd'
-export default message
+import { message } from 'antd';
+export default message;

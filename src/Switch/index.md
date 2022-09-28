@@ -3,7 +3,9 @@ title: Switch
 nav:
   path: /components
 ---
-#  Switch
+
+# Switch
+
 ```tsx
 /**
  * title: 按钮类型

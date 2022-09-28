@@ -1,38 +1,43 @@
-import React, { useRef, useEffect, useState } from 'react';//eslint-disable-line
+import React, { useRef, useEffect, useState } from 'react'; //eslint-disable-line
 // import styles from "./index.module.scss";
-import { IAMap } from "./IAMap/index";
+import { IAMap } from './IAMap/index';
 interface HeadProps {
-  ref?: any,
-  line?: any
+  ref?: any;
+  line?: any;
 }
 let map: any = null;
 const App = ({ line = [] }: HeadProps) => {
-
-  const mapRef = useRef<any>(null)
+  const mapRef = useRef<any>(null);
   const newMap = (point = []) => {
-    map = new IAMap({
+    let config: any = {
       target: mapRef.current,
-      token: "018e93e7-de0f-4de2-b9e3-48535c1eb56b",
-      plugins: ["satellite"],
-      farmId: "1539126838737072130",
-      code: '1',
-    });
-    map.insertLayer("line"); // 实时路径图层
+      interaction: true,
+      token: JSON.parse(localStorage.getItem('auth') || '')?.access_token,
+      code: 'sanshui',
+      controls: false,
+      hideCenterCircle: true,
+      worker: true
+    };
+    if (window.location.host.includes('localhost')) {
+      config.url = 'https://smart-sit.farmbgy.com';
+    }
+    map = new IAMap(config);
+    map.insertLayer('line'); // 实时路径图层
   };
   useEffect(() => {
     if (!map) {
-      newMap(line)
+      newMap(line);
     } else {
-      map.clear("line");
-      map.insertIcon("line", {
+      map.clear('line');
+      map.insertIcon('line', {
         point: line,
         icon: 'wurenji.png',
         anchor: [0.48, 0.95]
       });
     }
-  }, [line])
+  }, [line]);
 
-  return <div ref={mapRef} style={{ width: '100%', height: '100%' }}></div>
+  return <div ref={mapRef} style={{ width: '100%', height: '100%' }}></div>;
 };
 
 export default App;

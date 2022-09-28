@@ -1,1 +1,6 @@
-@import 'antd/lib/button/style'
+@import 'antd/lib/image/style';
+@import '../index.scss';
+
+:global {
+    .myantd {}
+}

@@ -20,7 +20,7 @@ const props: UploadProps = {
   name: 'file',
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
   headers: {
-    authorization: 'authorization-text',
+    authorization: 'authorization-text'
   },
   onChange(info) {
     if (info.file.status !== 'uploading') {
@@ -31,7 +31,7 @@ const props: UploadProps = {
     } else if (info.file.status === 'error') {
       message.error(`${info.file.name} file upload failed.`);
     }
-  },
+  }
 };
 
 const App: React.FC = () => (

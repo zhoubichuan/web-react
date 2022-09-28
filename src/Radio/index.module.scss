@@ -1,22 +1,20 @@
-.form {
-    :global(.ant-btn) {
-        border-radius: 4px;
-    }
-
-    :global(.ant-input) {
-        border-radius: 6px;
-    }
-
-    :global(.ant-btn-primary) {
-        background: #52CCA3;
-        border-color: #52CCA3
-    }
-
-    :global(.ant-btn-default) {
-        background: #F5F5F5;
-        border-color: #F5F5F5;
-        font-weight: 400;
-        color: #646464;
+@import '../index.scss';
+:global{
+    .myantd {
+        .#{$ant-prefix}-radio-checked{
+            &::after{
+                border: 1px solid #52CCA3
+            }
+        }
+        .#{$ant-prefix}-radio-checked {
+            .#{$ant-prefix}-radio-inner{
+                border-color: #52CCA3;
+            }
+        }
+        .#{$ant-prefix}-radio-inner{
+            &::after{
+                background-color: #52CCA3;
+            }
+        }
     }
 }
-

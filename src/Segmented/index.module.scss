@@ -1,1 +1,29 @@
-@import 'antd/lib/button/style'
+@import '../index.scss';
+:global {
+    .myantd {
+        .#{$ant-prefix}-segmented-group {
+            flex-direction: column;
+        }
+    }
+}
+.title {
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+
+    li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 96px;
+        height: 96px;
+        padding: 17px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}

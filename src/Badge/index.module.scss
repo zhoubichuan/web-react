@@ -1,10 +1,19 @@
 @import 'antd/lib/badge/style';
+@import '../index.scss';
 
 :global {
-    .ant-badge-status-dot {
-        width: 12px;
-        height: 12px;
+    .myantd {
+        .#{$ant-prefix}-badge-status-dot {
+            width: 12px;
+            height: 12px;
+        }
+
+        .#{$ant-prefix}-badge-status-default {
+            background: #CCCCCC;
+        }
+
+        .#{$ant-prefix}-badge-status-success {
+            background: #52CCA3;
+        }
     }
 }
-
-.mybadge {}

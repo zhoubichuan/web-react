@@ -25,6 +25,75 @@ const App: React.FC = () => (
 export default App;
 ```
 
+<<<<<<< HEAD
+
+# Descriptions.TableInput
+
+=======
+
+## Descriptions.TableInput
+
+> > > > > > > 553de895e5d1575636aba6d68c3ea475f55de9f5
+
+```tsx
+import { Descriptions, Button } from 'myantd';
+import React from 'react';
+
+const App: React.FC = () => (
+  <div className="myantd" style={{ width: '450px' }}>
+    <Descriptions.Row
+      title="请对此次作业进行评估"
+      content={[
+        <Button key={1} ratebtn={'qualified'}>
+          <span>合格</span>
+        </Button>,
+        <Button key={2} ratebtn={'good'}>
+          <span>良好</span>
+        </Button>,
+        <Button key={3} ratebtn={'unqualified'}>
+          <span>不合格</span>
+        </Button>
+      ]}
+    />
+  </div>
+);
+
+export default App;
+```
+
+## Descriptions.TableInput
+
+```tsx
+import { Descriptions, Input } from 'myantd';
+import React from 'react';
+
+const App: React.FC = () => (
+  <div className="myantd" style={{ width: '450px' }}>
+    <Descriptions.TableInput
+      table={[
+        '头部一',
+        '头部二',
+        '头部三',
+        '字段1666666666',
+        `${11} xx`,
+        <Input key={1} circle={true} />,
+        '字段2',
+        `${'1666661'} xx`,
+        <Input key={2} circle={true} />,
+        '字段3',
+        `${'12'} xx`,
+        <Input key={3} circle={true} />,
+        '字段4',
+        `${'14'} xx`,
+        <Input key={4} circle={true} />
+      ]}
+    />
+  </div>
+);
+
+export default App;
+```
+
 ### API
 
 | Name                  | Description            | Type    | Default |

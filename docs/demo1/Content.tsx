@@ -1,7 +1,7 @@
 import { Button, Space } from 'antd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import React, { createRef, useState } from 'react';
-import {TablePart,SearchPart,DialogPart} from 'myantd';
+import { Table, Form, Modal } from 'myantd';
 import styles from "./index.module.scss";
 import 'antd/lib/button/style'; 
 import 'antd/lib/space/style'; 
@@ -120,9 +120,9 @@ const App: React.FC = () => {
 
     return (
         <>
-            <SearchPart onRef={searchRef} searchData={getSearchData} requestUrl="http://zhoubichuan.com/antdpro-express/api/rule" />
-            <TablePart tableData={tableData} columns={columns} onChange={onChange} />
-            <DialogPart showDialod={showDialod} changeDialog={changeDialog}>
+            <Form.Search onRef={searchRef} searchData={getSearchData} requestUrl="http://zhoubichuan.com/antdpro-express/api/rule" />
+            <Table.Pagination tableData={tableData} columns={columns} onChange={onChange} />
+            <Modal.Dialog showDialod={showDialod} changeDialog={changeDialog}>
                 <div 
                 className={styles.detail}
                 >
@@ -136,7 +136,7 @@ const App: React.FC = () => {
                         </ul>
                     </div>
                 </div>
-            </DialogPart>
+            </Modal.Dialog>
         </>
     )
 };

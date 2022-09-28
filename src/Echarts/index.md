@@ -6,18 +6,12 @@ nav:
 
 # Echarts
 
-- Pie
-
 ```tsx
-/**
- * Echarts.Pie: 折线图
- * option: 相关参数
- */
-import React, { useRef, useState, useEffect } from 'react'
-import { Echarts } from 'myantd'
+import React, { useRef, useState, useEffect } from 'react';
+import { Echarts } from 'myantd';
 const App: React.FC = () => {
-  const chartRef = useRef<ECharts>(null)
-  const [chartOption, setChartOption] = useState<any>(null)
+  const chartRef = useRef<ECharts>(null);
+  const [chartOption, setChartOption] = useState<any>(null);
   useEffect(() => {
     let option = {
       xAxis: {
@@ -34,79 +28,117 @@ const App: React.FC = () => {
           smooth: true
         }
       ]
-    }
-    setChartOption(option)
-  }, [])
-  return (
-    <Echarts.Pie
-      option={chartOption}
-      actionRef={chartRef}
-      style={{ height: '300px' }}
-    />
-  )
-}
-export default App
+    };
+    setChartOption(option);
+  }, []);
+  return <Echarts.Pie option={chartOption} actionRef={chartRef} style={{ height: '800px' }} />;
+};
+export default App;
 ```
 
-- Bar
-
 ```tsx
-/**
- * Echarts.Bar: 折线图
- * option: 相关参数
- */
-import React, { useRef, useState, useEffect } from 'react'
-import { Echarts } from 'myantd'
-const App: React.FC = () => {
-  const chartRef = useRef<ECharts>(null)
-  const [chartOption, setChartOption] = useState<any>(null)
-  useEffect(() => {
-    let option = {
-      title: {
-        text: 'Referer of a Website',
-        subtext: 'Fake Data',
-        left: 'center'
+import { Echarts } from 'myantd';
+import { useState, useEffect } from 'react';
+
+const App = () => {
+  let [getOptions, setPieChartOptions1] = useState({});
+  function randomData() {
+    now = new Date(+now + oneDay);
+    value = value + Math.random() * 21 - 10;
+    return {
+      name: now.toString(),
+      value: [[now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'), Math.round(value)]
+    };
+  }
+  let data: any = [];
+  let now = new Date(1997, 9, 3);
+  let oneDay = 24 * 3600 * 1000;
+  let value = Math.random() * 1000;
+  for (var i = 0; i < 1000; i++) {
+    data.push(randomData());
+  }
+  let option: any = {
+    title: {
+      text: 'XXX要素报警详情'
+    },
+    tooltip: {
+      trigger: 'axis',
+      formatter: function (params: any) {
+        params = params[0];
+        var date = new Date(params.name);
+        return (
+          date.getDate() +
+          '/' +
+          (date.getMonth() + 1) +
+          '/' +
+          date.getFullYear() +
+          ' : ' +
+          params.value[1]
+        );
       },
-      tooltip: {
-        trigger: 'item'
-      },
-      legend: {
-        orient: 'vertical',
-        left: 'left'
-      },
-      series: [
-        {
-          name: 'Access From',
-          type: 'pie',
-          radius: '50%',
+      axisPointer: {
+        animation: false
+      }
+    },
+    xAxis: {
+      type: 'time',
+      splitLine: {
+        show: false
+      }
+    },
+    yAxis: {
+      type: 'value',
+      name: '(cm)',
+      min: 10,
+      // min 是最小的值
+      max: 1800
+    },
+    series: [
+      {
+        name: 'Fake Data',
+        type: 'line',
+        showSymbol: false,
+        data: data,
+        markLine: {
+          //添加警戒线
+          symbol: 'none', //去掉警戒线最后面的箭头
+          name: '警戒线',
+          silent: true,
+          label: {
+            position: 'end', //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            formatter: '警戒线(' + 900 + ')',
+            color: 'red',
+            fontSize: 14
+          },
           data: [
-            { value: 1048, name: 'Search Engine' },
-            { value: 735, name: 'Direct' },
-            { value: 580, name: 'Email' },
-            { value: 484, name: 'Union Ads' },
-            { value: 300, name: 'Video Ads' }
-          ],
-          emphasis: {
-            itemStyle: {
-              shadowBlur: 10,
-              shadowOffsetX: 0,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            {
+              silent: true, //鼠标悬停事件  true没有，false有
+              lineStyle: {
+                //警戒线的样式  ，虚实  颜色
+                type: 'solid',
+                color: 'red'
+              },
+              name: '警戒线',
+              yAxis: 900
             }
-          }
+          ]
         }
-      ]
-    }
-    setChartOption(option)
-  }, [])
-  return (
-    <Echarts.Bar
-      option={chartOption}
-      actionRef={chartRef}
-      style={{ height: '300px' }}
-    />
-  )
-}
-export default App
+      }
+    ]
+  };
+  useEffect(() => {
+    const timer = setInterval(function () {
+      for (var i = 0; i < 5; i++) {
+        data.shift();
+        data.push(randomData());
+      }
+      setPieChartOptions1(option);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [getOptions]);
+  return <Echarts.Line option={getOptions} />;
+};
+export default App;
 ```
 
 ### API
@@ -114,3 +146,5 @@ export default App
 | Name                  | Description            | Type    | Default |
 | --------------------- | ---------------------- | ------- | ------- |
 | asyncClickAutoLoading | 异步的方法自动 loading | boolean | false   |
+
+其他 API 见`antd`文档：https://ant.design/components/button-cn/
