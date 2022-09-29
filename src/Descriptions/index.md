@@ -24,16 +24,7 @@ const App: React.FC = () => (
 
 export default App;
 ```
-
-<<<<<<< HEAD
-
-# Descriptions.TableInput
-
-=======
-
 ## Descriptions.TableInput
-
-> > > > > > > 553de895e5d1575636aba6d68c3ea475f55de9f5
 
 ```tsx
 import { Descriptions, Button } from 'myantd';
@@ -93,7 +84,6 @@ const App: React.FC = () => (
 
 export default App;
 ```
-
 ### API
 
 | Name                  | Description            | Type    | Default |

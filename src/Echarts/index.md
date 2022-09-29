@@ -140,7 +140,6 @@ const App = () => {
 };
 export default App;
 ```
-
 ### API
 
 | Name                  | Description            | Type    | Default |

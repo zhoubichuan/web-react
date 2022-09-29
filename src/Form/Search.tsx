@@ -1,5 +1,5 @@
-import { Form, Row, Input, Col, Select, Cascader, Image } from 'antd';
-import { Button, } from '../';
+import { Form, Row, Col, Select, Cascader } from 'antd';
+import { Button, Input } from '../.';
 import { useImperativeHandle, useEffect, useState } from 'react';
 import styles from './index.module.scss';
 const Option = Select.Option;
@@ -137,8 +137,7 @@ const App = (props: SearchProps) => {
       layout={'inline'}
       form={form}
       initialValues={{ layout: 'inline' }}
-      onValuesChange={handleFieldChange}
-    >
+      onValuesChange={handleFieldChange}>
       <Row gutter={24} style={{ width: '100%' }}>
         {formItemData.map((item: any, index: number) => (
           <Col span={6} key={index}>

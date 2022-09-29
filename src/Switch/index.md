@@ -18,7 +18,11 @@ const onChange = (checked: boolean) => {
   console.log(`switch to ${checked}`);
 };
 
-const App: React.FC = () => <Switch defaultChecked onChange={onChange} />;
+const App: React.FC = () => (
+  <div className="myantd">
+    <Switch defaultChecked onChange={onChange} />
+  </div>
+);
 
 export default App;
 ```

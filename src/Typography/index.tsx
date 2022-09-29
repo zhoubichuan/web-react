@@ -1,12 +1,10 @@
-// import { Typography } from 'antd';
-// import type { TypographyProps } from 'antd';
+import { Typography } from 'antd';
+import type { TypographyProps } from 'antd';
 
-// const App = (props: TypographyProps) => <Typography {...props}></Typography>;
-// const { Text, Link, Title, Paragraph } = Typography;
-// App.Text = Text;
-// App.Link = Link;
-// App.Title = Title;
-// App.Paragraph = Paragraph;
-// export default App;
-
-export default '123';
+const App = (props: any) => <Typography {...props}></Typography>;
+const { Text, Link, Title, Paragraph } = Typography;
+App.Text = Text;
+App.Link = Link;
+App.Title = Title;
+App.Paragraph = Paragraph;
+export default App;

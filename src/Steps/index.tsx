@@ -5,5 +5,5 @@ import './index.module.scss';
 const App = (props: StepsProps) => {
   return <Steps {...props}>{props.children}</Steps>;
 };
-
+App.Step=Steps.Step
 export default App;

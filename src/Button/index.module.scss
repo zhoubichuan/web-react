@@ -50,7 +50,18 @@
         border-color: #52CCA3;
       }
     }
+    .#{$ant-prefix}-btn-default {
+      background: #F5F5F5;
+      border-color: #F5F5F5;
+      font-weight: 400;
+      color: #646464;
 
+      &:hover,
+      &:focus {
+        background: #F5F5F5;
+        border-color: #F5F5F5;
+      }
+    }
     .#{$ant-prefix}-btn-link {
       color: #52CCA3
     }
