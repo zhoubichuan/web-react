@@ -41,25 +41,25 @@
 :global {
   .myantd {
     .#{$ant-prefix}-btn-primary {
-      background: #52CCA3;
-      border-color: #52CCA3;
+      background: $primary-color;
+      border-color: $primary-color;
 
       &:hover,
       &:focus {
-        background: #52CCA3;
-        border-color: #52CCA3;
+        background: $primary-color;
+        border-color: $primary-color;
       }
     }
     .#{$ant-prefix}-btn-default {
-      background: #F5F5F5;
-      border-color: #F5F5F5;
+      background: $default-color;
+      border-color: $default-color;
       font-weight: 400;
       color: #646464;
 
       &:hover,
       &:focus {
-        background: #F5F5F5;
-        border-color: #F5F5F5;
+        background: $default-color;
+        border-color: $default-color;
       }
     }
     .#{$ant-prefix}-btn-link {
