@@ -2,7 +2,7 @@ import { Button, Image } from 'antd';
 import type { ButtonProps } from 'antd';
 import './index.module.scss';
 import styles from './index.module.scss';
-
+import Default from './Default'
 interface newButtonProps extends ButtonProps {
   ratebtn?: string;
   playbtn?: string;
@@ -59,4 +59,5 @@ const App = ({ ratebtn, playbtn, imagebtn, imagestyle = [16, 16], ...props }: ne
     );
   }
 };
+App.Default=Default
 export default App;

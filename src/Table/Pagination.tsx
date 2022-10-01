@@ -20,6 +20,9 @@ const App = (props: tableProps) => {
     tableData: { data, page },
     ...rest
   } = props;
+  if(localStorage.debugger){
+    console.log({ data, page },'{ data, page }')
+  }
   return (
     <Table
       className={styles.pagination}
@@ -37,7 +40,7 @@ const App = (props: tableProps) => {
         total: page.total,
         pageSize: page.pageSize,
         showSizeChanger: true,
-        current: page.current,
+        current: +page.current,
         showQuickJumper: true,
         pageSizeOptions: ['10', '50', '100', '200'],
         showTotal: (total) => `共 ${total} 条数据`

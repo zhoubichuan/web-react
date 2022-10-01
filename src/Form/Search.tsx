@@ -155,9 +155,9 @@ const App = (props: SearchProps) => {
               </Button>
             </Form.Item>
             <Form.Item>
-              <Button type="default" onClick={onReset} imagebtn={'refresh'}>
+              <Button.Default type="default" onClick={onReset} imagebtn={'refresh'}>
                 重置
-              </Button>
+              </Button.Default>
             </Form.Item>
           </>
         )}

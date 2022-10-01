@@ -44,7 +44,7 @@ const App = ({ point = [], index = 0, children, track }: HeadProps) => {
   useEffect(() => {
     trackMap.current.clear('icon');
     trackMap.current.insertIcon('icon', {
-      point: point[index] || [],
+      point: point[index-1] || [],
       icon: 'tractor.svg',
       anchor: [0.48, 0.95]
     });

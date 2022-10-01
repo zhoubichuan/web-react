@@ -19,6 +19,8 @@ const App: React.FC = () => {
   return (
     <div className="myantd">
       <Button type="primary">保存</Button>
+      <Button type="default">保存</Button>
+      <Button.Default>重置</Button.Default>
     </div>
   );
 };

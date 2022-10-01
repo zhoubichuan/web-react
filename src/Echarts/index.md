@@ -36,7 +36,7 @@ const App: React.FC = () => {
 export default App;
 ```
 
-```tsx
+<!-- ```tsx
 import { Echarts } from 'myantd';
 import { useState, useEffect } from 'react';
 
@@ -139,7 +139,7 @@ const App = () => {
   return <Echarts.Line option={getOptions} />;
 };
 export default App;
-```
+``` -->
 ### API
 
 | Name                  | Description            | Type    | Default |

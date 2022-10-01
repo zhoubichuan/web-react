@@ -50,18 +50,18 @@
         border-color: $primary-color;
       }
     }
-    .#{$ant-prefix}-btn-default {
-      background: $default-color;
-      border-color: $default-color;
-      font-weight: 400;
-      color: #646464;
+    // .#{$ant-prefix}-btn-default {
+    //   background: $default-color;
+    //   border-color: $default-color;
+    //   font-weight: 400;
+    //   color: #646464;
 
-      &:hover,
-      &:focus {
-        background: $default-color;
-        border-color: $default-color;
-      }
-    }
+    //   &:hover,
+    //   &:focus {
+    //     background: $default-color;
+    //     border-color: $default-color;
+    //   }
+    // }
     .#{$ant-prefix}-btn-link {
       color: #52CCA3
     }
@@ -96,5 +96,18 @@
     .#{$ant-prefix}-btn-lg {
       font-size: 16px;
     }
+  }
+}
+
+.defaultBtn {
+  background: $default-color;
+  border-color: $default-color;
+  font-weight: 400;
+  color: #646464;
+
+  &:hover,
+  &:focus {
+    background: $default-color;
+    border-color: $default-color;
   }
 }
