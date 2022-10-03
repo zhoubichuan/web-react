@@ -1,6 +1,6 @@
 # 综合案例
 
-## hdd
+## myantd
 
 基本 antd 4.0 二次封装的业务组件库。
 
@@ -13,7 +13,7 @@
 以 yarn 为例
 
 ```sh
-yarn add hdd
+yarn add myantd
 ```
 
 ### 配置
@@ -22,7 +22,7 @@ yarn add hdd
 
 ### 使用
 
-1、 使用包内的 `ConfigProvider` 组件对应用根节点组件进行包裹，修改全局组件命名空间为 `hdd`
+1、 使用包内的 `ConfigProvider` 组件对应用根节点组件进行包裹，修改全局组件命名空间为 `myantd`
 
 index.js
 
@@ -51,23 +51,23 @@ export default () => {
 }
 ```
 
-3、此外 `hdd` 必须全量引入定制过的 `antd` 样式。
+3、此外 `myantd` 必须全量引入定制过的 `antd` 样式。
 
 ```js
-import 'hdd/esm/styles/index.css'
+import 'myantd/esm/styles/index.css'
 ```
 
-PS：如果项目中已经有 antd 3.x 版本，请引入 hdd 所有组件样式。
+PS：如果项目中已经有 antd 3.x 版本，请引入 myantd 所有组件样式。
 
 ```js
-import 'hdd/esm/styles/styleWithoutGlobal.css'
+import 'myantd/esm/styles/styleWithoutGlobal.css'
 ```
 
 譬如在umi项目中使用，定位global入口
 ```js
 import React from 'react'
 import { Button,ConfigProvider } from 'myantd';
-// + import 'hdd/esm/styles/index.css'
+// + import 'myantd/esm/styles/index.css'
 
 export default function IndexPage() {
   return (
@@ -79,7 +79,7 @@ export default function IndexPage() {
 }
 ```
 
-## 如何开发 hdd
+## 如何开发 myantd
 
 ```sh
 yarn
