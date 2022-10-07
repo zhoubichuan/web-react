@@ -5,7 +5,6 @@ const menuConfig = require('./config/menuConfig')
 const navConfig = require('./config/navConfig')
 
 export default defineConfig({
-  'sass':{},
   title: 'web-react',
   description: 'react 学习笔记',
   base: '/web-react/',
@@ -14,12 +13,10 @@ export default defineConfig({
   logo: 'http://img.mrsingsing.com/javascript-guidebook-favicon.png',
   hash: true,
   lessLoader: lessConfig,
+  sass: {},
   mode: 'site',
   menus: menuConfig,
   navs: navConfig,
-  // cssLoaderOptions:{
-  //   localIdentName:'[local]'
-  // },
   // chainWebpack(memo, { env, webpack, createCSSRule }) {
   //   console.log(memo.output.publicPath)
   //   // memo.output.publicPath = ()
@@ -42,12 +39,13 @@ export default defineConfig({
     ['@babel/plugin-proposal-decorators', { legacy: true }],
     ['@babel/plugin-proposal-class-properties', { loose: true }],
     '@babel/plugin-proposal-object-rest-spread',
-    // 'import',
-    // {
-    //   libraryName: 'antd',
-    //   libraryDirectory: 'es',
-    //   style: 'css',
-    // },
+    ['import',
+      {
+        libraryName: 'antd',
+        libraryDirectory: 'es',
+        style: 'css',
+      }
+    ]
   ],
   devServer: {
     headers: {
