@@ -1,5 +1,6 @@
 @import '../index.scss';
-.ratebtn {
+// 评分按钮
+.rate {
   position: relative;
   height: auto;
   padding: 0;
@@ -96,5 +97,23 @@
   &:focus {
     background: $default-color;
     border-color: $default-color;
+  }
+}
+
+  // 图标按钮
+.image {
+  :global{
+    .#{$ant-prefix}-btn-default {
+      background: $default-color;
+      border-color: $default-color;
+      font-weight: 400;
+      color: #646464;
+    
+      &:hover,
+      &:focus {
+        background: $default-color;
+        border-color: $default-color;
+      }
+    }
   }
 }

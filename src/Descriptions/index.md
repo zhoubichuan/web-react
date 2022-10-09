@@ -24,6 +24,7 @@ const App: React.FC = () => (
 
 export default App;
 ```
+
 ## Descriptions.TableInput
 
 ```tsx
@@ -35,15 +36,15 @@ const App: React.FC = () => (
     <Descriptions.Row
       title="请对此次作业进行评估"
       content={[
-        <Button key={1} ratebtn={'qualified'}>
+        <Button.Rate key={1} icon={'qualified'}>
           <span>合格</span>
-        </Button>,
-        <Button key={2} ratebtn={'good'}>
+        </Button.Rate>,
+        <Button.Rate key={2} icon={'good'}>
           <span>良好</span>
-        </Button>,
-        <Button key={3} ratebtn={'unqualified'}>
+        </Button.Rate>,
+        <Button.Rate key={3} icon={'unqualified'}>
           <span>不合格</span>
-        </Button>
+        </Button.Rate>
       ]}
     />
   </div>
@@ -67,16 +68,16 @@ const App: React.FC = () => (
         '头部三',
         '字段1666666666',
         `${11} xx`,
-        <Input key={1} circle={true} />,
+        <Input.Circle key={1} />,
         '字段2',
         `${'1666661'} xx`,
-        <Input key={2} circle={true} />,
+        <Input.Circle key={2} />,
         '字段3',
         `${'12'} xx`,
-        <Input key={3} circle={true} />,
+        <Input.Circle key={3} />,
         '字段4',
         `${'14'} xx`,
-        <Input key={4} circle={true} />
+        <Input.Circle key={4} />
       ]}
     />
   </div>
@@ -84,6 +85,7 @@ const App: React.FC = () => (
 
 export default App;
 ```
+
 ### API
 
 | Name                  | Description            | Type    | Default |

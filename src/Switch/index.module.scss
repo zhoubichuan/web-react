@@ -2,7 +2,29 @@
 :global {
     .myantd {
         .#{$ant-prefix}-switch-checked {
-            background: #52CCA3
+            background: #52CCA3;
+            .#{$ant-prefix}-switch-handle{
+                &::before{
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        .#{$ant-prefix}-switch{
+            width: 72px;
+            height: 40px;
+            .#{$ant-prefix}-switch-handle{
+                &::before{
+                    width: 32px;
+                    height: 32px;
+                    background: #FFFFFF;
+                    box-shadow: 0px 3px 3px 0px rgba(56,69,94,0.4);
+                    border: 1px solid #E5E5E5;
+                    border-radius:50%;
+                    top: 2px;
+                    bottom: 2px;
+                    left: 1px;
+                }
+            }
         }
     }
 }

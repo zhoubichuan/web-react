@@ -13,7 +13,10 @@
         }
 
         .#{$ant-prefix}-badge-status-success {
-            background: #52CCA3;
+            background: $success-color;
+        }
+        .#{$ant-prefix}-badge-status-error {
+            background: $error-color;
         }
     }
 }

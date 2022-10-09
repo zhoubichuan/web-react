@@ -49,7 +49,7 @@ export { default as Col } from './Col';
 // export type { CommentProps } from './comment';
 export { default as Comment } from './Comment';
 
-// export { default as ConfigProvider } from './config-provider';
+export { default as ConfigProvider } from './ConfigProvider';
 
 // export type { DatePickerProps } from './date-picker';
 export { default as DatePicker } from './DatePicker';

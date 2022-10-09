@@ -1,8 +1,7 @@
-import { Form, Row, Col, Select, Cascader } from 'antd';
-import { Button, Input } from '../.';
+import { Form } from 'antd';
+import { Button, Input, Cascader, Row, Col, Select } from '../.';
 import { useImperativeHandle, useEffect, useState } from 'react';
 import styles from './index.module.scss';
-const Option = Select.Option;
 function urlJoinParams(url: any, obj: any) {
   let result = '';
   let item;
@@ -42,9 +41,9 @@ const SelectComponent = (item: any) => {
     <Form.Item name={item.name} key={item.name}>
       <Select allowClear placeholder={item.placeholder} style={{ width: '100%' }}>
         {item.options.map((option: any, index: number) => (
-          <Option value={option.code} key={index}>
+          <Select.Option value={option.code} key={index}>
             {option.name}
-          </Option>
+          </Select.Option>
         ))}
       </Select>
     </Form.Item>
@@ -130,7 +129,7 @@ const App = (props: SearchProps) => {
   };
   return (
     <Form
-      className={styles.form}
+      className={'myantd ' + styles.form}
       onFinish={onFinish}
       wrapperCol={{ span: 30, offset: 0 }}
       size="large"
@@ -150,14 +149,14 @@ const App = (props: SearchProps) => {
         {!props.type && (
           <>
             <Form.Item>
-              <Button type="primary" htmlType="submit" imagebtn={'search'}>
+              <Button.Image type="primary" htmlType="submit" icon={'search'}>
                 查询
-              </Button>
+              </Button.Image>
             </Form.Item>
             <Form.Item>
-              <Button.Default type="default" onClick={onReset} imagebtn={'refresh'}>
+              <Button.Image type="default" onClick={onReset} icon={'refresh'}>
                 重置
-              </Button.Default>
+              </Button.Image>
             </Form.Item>
           </>
         )}

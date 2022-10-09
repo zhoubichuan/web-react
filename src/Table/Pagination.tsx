@@ -10,6 +10,7 @@ interface tableProps {
   className?: any;
   y?: number;
   components?: any;
+  rowKey?: any;
 }
 
 const App = (props: tableProps) => {
@@ -20,11 +21,9 @@ const App = (props: tableProps) => {
     tableData: { data, page },
     ...rest
   } = props;
-  if(localStorage.debugger){
-    console.log({ data, page },'{ data, page }')
-  }
   return (
     <Table
+      key="pagination"
       className={styles.pagination}
       scroll={{ scrollToFirstRowOnChange: true, y: y || 564 }}
       columns={columns}

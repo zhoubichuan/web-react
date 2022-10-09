@@ -65,7 +65,7 @@ const App: React.FC = () => {
 export default App
 ```
 
-# Search 搜索
+## Form.Search
 
 ```tsx
 /**
@@ -75,6 +75,21 @@ export default App
 import {Form } from 'myantd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import React, { createRef, useState } from 'react';
+let initTemplate = [
+  {
+    name: 'taskId',
+    placeholder: '请输入'
+  },
+  {
+    name: 'typeName',
+    placeholder: '请选择',
+    type: 'select',
+    fieldNames: {
+      value: 'code'
+    },
+    options: [] as any,
+  }
+]
 const App: React.FC = () => {
   let searchRef = createRef<any>();
   const [showDialod, setVisible] = useState(false);
@@ -93,7 +108,7 @@ const App: React.FC = () => {
   return (
     <div className="myantd">
       <Form.Search
-        columns={[]}
+        columns={initTemplate}
         onRef={searchRef}
         searchData={getSearchData}
         requestFn={() => {}}

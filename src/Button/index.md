@@ -6,82 +6,97 @@ nav:
 
 # Button
 
-- 默认按钮
+## 1.默认按钮
 
 ```tsx
 /**
  * title: 按钮类型
  * desc: 按钮有五种类型：主按钮、次按钮、虚线按钮(实际用不到)、文本按钮和链接按钮。主按钮在同一个操作区域最多出现一次。
  */
-import { Button } from 'myantd';
-import React from 'react';
+import { Button, ConfigProvider } from 'myantd'
+import React from 'react'
 const App: React.FC = () => {
   return (
-    <div className="myantd">
-      <Button type="primary">保存</Button>
-      <Button type="default">保存</Button>
-      <Button.Default>重置</Button.Default>
-    </div>
-  );
-};
-export default App;
+    <ConfigProvider>
+      <div className="myantd">
+        <Button type="primary" size="large">
+          保 存
+        </Button>
+        <Button type="default" size="large">
+          取 消
+        </Button>
+        <Button type="link">编辑</Button>
+        <Button type="link">查看</Button>
+      </div>
+    </ConfigProvider>
+  )
+}
+export default App
 ```
 
-- 评分按钮
+## 2.评分按钮
 
 ```tsx
 /**
- * title: 按钮类型
- * desc: 按钮有五种类型：主按钮、次按钮、虚线按钮(实际用不到)、文本按钮和链接按钮。主按钮在同一个操作区域最多出现一次。
+ * title: 评分按钮
+ * desc: 按钮有三种类型：合格、良好、不合格。
  */
-import { Button } from 'myantd';
-import React from 'react';
+import { Button, ConfigProvider } from 'myantd'
+import React from 'react'
 const App: React.FC = () => {
   return (
-    <div className="myantd">
-      <Button ratebtn="qualified">
-        <span>合格</span>
-      </Button>
-      <Button ratebtn="good">
-        <span>良好</span>
-      </Button>
-      <Button ratebtn="unqualified">
-        <span>不合格</span>
-      </Button>
-    </div>
-  );
-};
-export default App;
+    <ConfigProvider>
+      <div className="myantd">
+        <Button.Rate icon="qualified">
+          <span>合格</span>
+        </Button.Rate>
+        <Button.Rate icon="good">
+          <span>良好</span>
+        </Button.Rate>
+        <Button.Rate icon="unqualified">
+          <span>不合格</span>
+        </Button.Rate>
+      </div>
+    </ConfigProvider>
+  )
+}
+export default App
 ```
 
-- 图片按钮
+## 3.图片按钮
 
 ```tsx
 /**
- * title: 按钮类型
- * desc: 按钮有五种类型：主按钮、次按钮、虚线按钮(实际用不到)、文本按钮和链接按钮。主按钮在同一个操作区域最多出现一次。
+ * title: 图片按钮
+ * desc: 按钮有六种类型：搜索、刷新、告警、添加、展开、收起、重置。
  */
-import { Button } from 'myantd';
-import React from 'react';
+import { Button } from 'myantd'
+import React from 'react'
 const App: React.FC = () => {
   return (
     <div className="myantd">
-      <Button type="primary" ratebtn="search">
+      <Button.Image type="primary" icon="search" size="large">
         搜索
-      </Button>
-      <Button ratebtn="refresh">刷新</Button>
-      <Button type="primary" ratebtn="alarm">
+      </Button.Image>
+      <Button.Image icon="refresh" size="large">
+        刷新
+      </Button.Image>
+      <Button.Image type="primary" icon="alarm" size="large">
         告警
-      </Button>
-      <Button type="primary" ratebtn="add">
+      </Button.Image>
+      <Button.Image type="primary" icon="add" size="large">
         添加
-      </Button>
-      <Button ratebtn="arrowleft">展开</Button>
-      <Button ratebtn="arrowright">收起</Button>
+      </Button.Image>
+      <Button.Image icon="arrowleft" size="large">
+        展开
+      </Button.Image>
+      <Button.Image icon="arrowright" size="large">
+        收起
+      </Button.Image>
     </div>
-  );
-};
-export default App;
+  )
+}
+export default App
 ```
 
 ### API

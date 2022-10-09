@@ -2,9 +2,11 @@ $ant-prefix: "myantd";
 $primary-color: #52CCA3;
 $default-color: #F5F5F5;
 $iconfont-css-prefix: 'anticon';
-$success-color: #16ba77;
-$error-color: #ff4b4b;
+
+$success-color: #52CCA3; // badge
+$error-color: #FF3B3B; //badge
 $warning-color: #ff9037;
+
 $border-radius-base: 4px;
 $processing-color: #448afc;
 $title-color: #000;

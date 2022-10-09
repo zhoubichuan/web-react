@@ -5,12 +5,10 @@ import styles from './index.module.scss';
 import React from 'react';
 
 interface newButtonProps extends ButtonProps {
-  ratebtn?: string;
   playbtn?: string;
-  imagebtn?: string;
   imagestyle?: Array<number>;
 }
-const App = ({ ratebtn, playbtn, imagebtn, imagestyle = [16, 16], ...props }: newButtonProps) => {
+const App = ({ playbtn, imagestyle = [16, 16], ...props }: newButtonProps) => {
   return (
     <Button type="default" className={styles.defaultBtn} {...props}>
       {props.children}
