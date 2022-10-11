@@ -1,3 +1,4 @@
+@import 'antd/lib/button/style';
 @import '../index.scss';
 // 评分按钮
 .rate {
@@ -11,21 +12,17 @@
   border-radius: 20px;
   background: none;
 
-  :global {
-    img {
-      position: absolute;
-      top: 0;
-    }
-
-    span {
-      margin-left: 44px;
-      padding-right: 10px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
+  img {
+    position: absolute;
+    top: 0;
   }
 
+  span {
+    margin-left: 44px;
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
   &:after {
     content: '';
     display: none !important;
@@ -36,54 +33,42 @@
   border-radius: 4px;
   height: 40px;
   padding: 6.4px 15px;
-}
+  &.#{$ant-prefix}-btn-primary {
+    background: $primary-color;
+    border-color: $primary-color;
 
-:global {
-  .myantd {
-    .#{$ant-prefix}-btn-primary {
+    &:hover,
+    &:focus {
       background: $primary-color;
       border-color: $primary-color;
-
-      &:hover,
-      &:focus {
-        background: $primary-color;
-        border-color: $primary-color;
-      }
     }
-    .#{$ant-prefix}-btn-link {
-      color: #52CCA3
-    }
+  }
+  &.#{$ant-prefix}-btn-link {
+    color: #52cca3;
+  }
 
-    .#{$ant-prefix}-btn-link[disabled] {
+  &.#{$ant-prefix}-btn-link[disabled] {
+    color: rgba(0, 0, 0, 0.25);
+
+    &:hover {
       color: rgba(0, 0, 0, 0.25);
-
-      &:hover {
-        color: rgba(0, 0, 0, 0.25);
-      }
-
-      &:focus {
-        color: rgba(0, 0, 0, 0.25);
-      }
-
-      &:active {
-        color: rgba(0, 0, 0, 0.25);
-      }
     }
 
-    .#{$ant-prefix}-btn {
-      .#{$ant-prefix}-image {
-        vertical-align: middle;
-        margin: 0 10px 2px 0;
-      }
+    &:focus {
+      color: rgba(0, 0, 0, 0.25);
     }
 
-    .#{$ant-prefix}-btn-sm {
-      font-size: 14px;
+    &:active {
+      color: rgba(0, 0, 0, 0.25);
     }
+  }
 
-    .#{$ant-prefix}-btn-lg {
-      font-size: 16px;
-    }
+  &.#{$ant-prefix}-btn-sm {
+    font-size: 14px;
+  }
+
+  &.#{$ant-prefix}-btn-lg {
+    font-size: 16px;
   }
 }
 
@@ -100,20 +85,24 @@
   }
 }
 
-  // 图标按钮
+// 图标按钮
 .image {
-  :global{
-    .#{$ant-prefix}-btn-default {
+  &.#{$ant-prefix}-btn-default {
+    background: $default-color;
+    border-color: $default-color;
+    font-weight: 400;
+    color: #646464;
+
+    &:hover,
+    &:focus {
       background: $default-color;
       border-color: $default-color;
-      font-weight: 400;
-      color: #646464;
-    
-      &:hover,
-      &:focus {
-        background: $default-color;
-        border-color: $default-color;
-      }
+    }
+  }
+  &.#{$ant-prefix}-btn {
+    .#{$ant-prefix}-image {
+      display: inline-block;
+      margin: 0 10px 2px 0;
     }
   }
 }

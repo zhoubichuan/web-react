@@ -15,20 +15,25 @@ nav:
  */
 import { Button, ConfigProvider } from 'myantd'
 import React from 'react'
+const margin = {
+  marginRight: 20
+}
 const App: React.FC = () => {
   return (
-    <ConfigProvider>
-      <div className="myantd">
-        <Button type="primary" size="large">
-          保 存
-        </Button>
-        <Button type="default" size="large">
-          取 消
-        </Button>
-        <Button type="link">编辑</Button>
-        <Button type="link">查看</Button>
-      </div>
-    </ConfigProvider>
+    <>
+      <Button type="primary" size="large" style={margin}>
+        保 存
+      </Button>
+      <Button type="default" size="large" style={margin}>
+        取 消
+      </Button>
+      <Button type="link" style={margin}>
+        编辑
+      </Button>
+      <Button type="link" style={margin}>
+        查看
+      </Button>
+    </>
   )
 }
 export default App
@@ -43,21 +48,22 @@ export default App
  */
 import { Button, ConfigProvider } from 'myantd'
 import React from 'react'
+const margin = {
+  marginRight: 20
+}
 const App: React.FC = () => {
   return (
-    <ConfigProvider>
-      <div className="myantd">
-        <Button.Rate icon="qualified">
-          <span>合格</span>
-        </Button.Rate>
-        <Button.Rate icon="good">
-          <span>良好</span>
-        </Button.Rate>
-        <Button.Rate icon="unqualified">
-          <span>不合格</span>
-        </Button.Rate>
-      </div>
-    </ConfigProvider>
+    <>
+      <Button.Rate icon="qualified" style={margin}>
+        <span>合格</span>
+      </Button.Rate>
+      <Button.Rate icon="good" style={margin}>
+        <span>良好</span>
+      </Button.Rate>
+      <Button.Rate icon="unqualified" style={margin}>
+        <span>不合格</span>
+      </Button.Rate>
+    </>
   )
 }
 export default App
@@ -72,28 +78,31 @@ export default App
  */
 import { Button } from 'myantd'
 import React from 'react'
+const margin = {
+  marginRight: 20
+}
 const App: React.FC = () => {
   return (
-    <div className="myantd">
-      <Button.Image type="primary" icon="search" size="large">
+    <>
+      <Button.Image type="primary" icon="search" size="large" style={margin}>
         搜索
       </Button.Image>
-      <Button.Image icon="refresh" size="large">
+      <Button.Image icon="refresh" size="large" style={margin}>
         刷新
       </Button.Image>
-      <Button.Image type="primary" icon="alarm" size="large">
+      <Button.Image type="primary" icon="alarm" size="large" style={margin}>
         告警
       </Button.Image>
-      <Button.Image type="primary" icon="add" size="large">
+      <Button.Image type="primary" icon="add" size="large" style={margin}>
         添加
       </Button.Image>
-      <Button.Image icon="arrowleft" size="large">
+      <Button.Image icon="arrowleft" size="large" style={margin}>
         展开
       </Button.Image>
-      <Button.Image icon="arrowright" size="large">
+      <Button.Image icon="arrowright" size="large" style={margin}>
         收起
       </Button.Image>
-    </div>
+    </>
   )
 }
 export default App
