@@ -1,7 +1,6 @@
-import { Button, Image } from 'antd';
+import { Button, Image } from '../.';
 import type { ButtonProps } from 'antd';
-// import './index.module.scss';
-// import styles from './index.module.scss';
+import styles from './index.module.scss';
 import React from 'react';
 
 enum TYPE {
@@ -18,15 +17,30 @@ interface newButtonProps extends ButtonProps {
   imagestyle?: Array<number>;
 }
 const App = ({ icon, imagestyle = [16, 16], ...props }: newButtonProps) => {
-  return (
-      <Button
-        className={'image mybtn'}
-        icon={
-          <Image src={TYPE[icon]} width={imagestyle[0]} height={imagestyle[1]} preview={false} />
-        }
-        {...props}>
-        {props.children}
-      </Button>
-  );
+  if (['arrowleft', 'arrowright'].includes(icon)) {
+    return (
+      <span className={styles.dark}>
+          <Button
+            icon={
+              <Image src={TYPE[icon]} width={imagestyle[0]} height={imagestyle[1]} preview={false} />
+            }
+            {...props}>
+            {props.children}
+          </Button>
+      </span>
+    );
+  } else {
+    return (
+      <span className={styles.image}>
+        <Button
+          icon={
+            <Image src={TYPE[icon]} width={imagestyle[0]} height={imagestyle[1]} preview={false} />
+          }
+          {...props}>
+          {props.children}
+        </Button>
+      </span>
+    );
+  }
 };
 export default App;

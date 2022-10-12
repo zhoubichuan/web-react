@@ -93,10 +93,8 @@ export default App;
  * title: 按钮类型
  * desc: 按钮有五种类型：主按钮、次按钮、虚线按钮(实际用不到)、文本按钮和链接按钮。主按钮在同一个操作区域最多出现一次。
  */
-import { Button, Space } from 'antd';
+import { Button, Space,Table, Form, Modal } from 'myantd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
-import React, { createRef, useState } from 'react';
-import { TablePart, SearchPart, DialogPart } from 'myantd';
 interface DataType {
   key: React.Key;
   name: string;
@@ -199,7 +197,7 @@ const App: React.FC = () => {
     }
   ];
   const [tableData, setTableData] = useState({
-    data: [{ name: 1 }],
+    data: [],
     page: { total: 0, pageSize: 20, current: 1 }
   });
 
@@ -209,8 +207,8 @@ const App: React.FC = () => {
 
   return (
     <>
-      <TablePart tableData={tableData} columns={columns} onChange={onChange} />
-      <DialogPart showDialod={showDialod} changeDialog={changeDialog}>
+      <Table.Pagination tableData={tableData} columns={columns} onChange={onChange} />
+      <Modal.Dialog showDialod={showDialod} changeDialog={changeDialog}>
         <div
         // className={styles.detail}
         >
@@ -224,7 +222,7 @@ const App: React.FC = () => {
             </ul>
           </div>
         </div>
-      </DialogPart>
+      </Modal.Dialog>
     </>
   );
 };

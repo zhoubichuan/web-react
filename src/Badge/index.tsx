@@ -4,9 +4,11 @@ import styles from './index.module.scss';
 import './index.module.scss';
 const App = (props: BadgeProps) => {
   return (
-    <Badge className={styles.mybadge} {...props}>
-      {props.children}
-    </Badge>
+    <span className={styles.badge}>
+      <Badge {...props}>
+        {props.children}
+      </Badge>
+    </span>
   );
 };
 

@@ -53,13 +53,18 @@ const App = ({ ref, point = [], type = 'coordinate', ...rest }: HeadProps) => {
       code,
       controls: false,
       hideCenterCircle: true,
-      worker: true
+      worker: true,
+      plugins: [
+        'tile', // 卫星地图
+        'tilePlugin', // 影像底图
+        'field' // 田块
+      ]
     };
     if (window.location.host.includes('localhost')) {
       config.url = 'https://smart-sit.farmbgy.com';
     }
     drawMap.current = new IAMap(config);
-    drawLayer.current = drawMap.current.insertLayer('line');
+    drawLayer.current = drawMap.current.insertLayer('line', { zIndex: 1006 });
   }, []);
 
   useEffect(() => {

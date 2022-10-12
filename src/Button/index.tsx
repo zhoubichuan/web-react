@@ -1,16 +1,18 @@
 import { Button } from 'antd';
 import type { ButtonProps } from 'antd';
-// import './index.module.scss';
-// import styles from './index.module.scss';
+import styles from './index.module.scss';
 import Default from './Default';
 import Image from './Image';
 import Rate from './Rate';
+import React from 'react';
 
 const App = (props: ButtonProps) => {
   return (
-    <Button className={'mybtn'} {...props}>
-      {props.children}
-    </Button>
+    <span className={styles.button}>
+      <Button {...props}>
+        {props.children}
+      </Button>
+    </span>
   );
 };
 App.Default = Default;

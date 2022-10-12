@@ -1,22 +1,20 @@
-@import 'antd/lib/badge/style';
 @import '../index.scss';
-
-:global {
-    .myantd {
-        .#{$ant-prefix}-badge-status-dot {
-            width: 12px;
-            height: 12px;
-        }
-
-        .#{$ant-prefix}-badge-status-default {
-            background: #CCCCCC;
-        }
-
-        .#{$ant-prefix}-badge-status-success {
-            background: $success-color;
-        }
-        .#{$ant-prefix}-badge-status-error {
-            background: $error-color;
-        }
+.badge {
+  :global {
+    .#{$ant-prefix}-badge-status-dot {
+      width: 12px;
+      height: 12px;
     }
+
+    .#{$ant-prefix}-badge-status-default {
+      background: #cccccc;
+    }
+
+    .#{$ant-prefix}-badge-status-success {
+      background: $success-color;
+    }
+    .#{$ant-prefix}-badge-status-error {
+      background: $error-color;
+    }
+  }
 }

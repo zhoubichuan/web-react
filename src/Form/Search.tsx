@@ -136,7 +136,8 @@ const App = (props: SearchProps) => {
       layout={'inline'}
       form={form}
       initialValues={{ layout: 'inline' }}
-      onValuesChange={handleFieldChange}>
+      onValuesChange={handleFieldChange}
+    >
       <Row gutter={24} style={{ width: '100%' }}>
         {formItemData.map((item: any, index: number) => (
           <Col span={6} key={index}>

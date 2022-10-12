@@ -7,9 +7,12 @@ import React from 'react';
 const { Header, Footer, Content, Sider } = Layout;
 const App = (props: LayoutProps) => {
   return (
-    <Layout className={styles.mylayout} {...props}>
-      {props.children}
-    </Layout>
+    <div className={styles.mylayout}>
+      <Layout {...props}>
+        {props.children}
+      </Layout>
+    </div>
+
   );
 };
 App.Header = Header;

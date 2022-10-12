@@ -7,17 +7,17 @@ nav:
 # Form
 
 ```tsx
-import { Button, Checkbox, Form, Input } from 'myantd'
-import React from 'react'
+import { Button, Checkbox, Form, Input } from 'myantd';
+import React from 'react';
 
 const App: React.FC = () => {
   const onFinish = (values: any) => {
-    console.log('Success:', values)
-  }
+    console.log('Success:', values);
+  };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo)
-  }
+    console.log('Failed:', errorInfo);
+  };
 
   return (
     <Form
@@ -45,11 +45,7 @@ const App: React.FC = () => {
         <Input.Password />
       </Form.Item>
 
-      <Form.Item
-        name="remember"
-        valuePropName="checked"
-        wrapperCol={{ offset: 8, span: 16 }}
-      >
+      <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
         <Checkbox>Remember me</Checkbox>
       </Form.Item>
 
@@ -59,37 +55,22 @@ const App: React.FC = () => {
         </Button>
       </Form.Item>
     </Form>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 ```
 
-## Form.Search
+# Search 搜索
 
 ```tsx
 /**
  * title: 按钮类型
  * desc: 按钮有五种类型：主按钮、次按钮、虚线按钮(实际用不到)、文本按钮和链接按钮。主按钮在同一个操作区域最多出现一次。
  */
-import {Form } from 'myantd';
+import { Form } from 'myantd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import React, { createRef, useState } from 'react';
-let initTemplate = [
-  {
-    name: 'taskId',
-    placeholder: '请输入'
-  },
-  {
-    name: 'typeName',
-    placeholder: '请选择',
-    type: 'select',
-    fieldNames: {
-      value: 'code'
-    },
-    options: [] as any,
-  }
-]
 const App: React.FC = () => {
   let searchRef = createRef<any>();
   const [showDialod, setVisible] = useState(false);
@@ -107,12 +88,7 @@ const App: React.FC = () => {
 
   return (
     <div className="myantd">
-      <Form.Search
-        columns={initTemplate}
-        onRef={searchRef}
-        searchData={getSearchData}
-        requestFn={() => {}}
-      />
+      <Form.Search columns={[]} onRef={searchRef} searchData={getSearchData} requestFn={() => {}} />
     </div>
   );
 };

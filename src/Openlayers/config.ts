@@ -1,2 +1,1 @@
-export enum url {
-};
+export enum url {}

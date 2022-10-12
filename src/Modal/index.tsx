@@ -7,4 +7,5 @@ const App = (props: ModalProps) => {
   return <Modal {...props}>{props.children}</Modal>;
 };
 App.Dialog = Dialog;
+App.confirm = Modal.confirm;
 export default App;

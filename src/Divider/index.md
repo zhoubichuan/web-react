@@ -12,25 +12,17 @@ import React from 'react';
 
 const App: React.FC = () => (
   <>
-    <p>
-      aaaaaaaaaaaa
-    </p>
+    <p>aaaaaaaaaaaa</p>
     <Divider plain>Text</Divider>
-    <p>
-      bbbbbbbbbbb
-    </p>
+    <p>bbbbbbbbbbb</p>
     <Divider orientation="left" plain>
       Left Text
     </Divider>
-    <p>
-      cccccccccc
-    </p>
+    <p>cccccccccc</p>
     <Divider orientation="right" plain>
       Right Text
     </Divider>
-    <p>
-     dddddddddd
-    </p>
+    <p>dddddddddd</p>
   </>
 );
 

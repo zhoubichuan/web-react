@@ -4,5 +4,5 @@ import './index.module.scss';
 const App = (props: any) => {
   return <Mentions {...props}>{props.children}</Mentions>;
 };
-App.Option=Mentions.Option
+App.Option = Mentions.Option;
 export default App;
