@@ -165,39 +165,39 @@ export { default as Switch } from './Switch';
 export { default as Table } from './Table';
 
 // export type { TransferProps } from './transfer';
-// export { default as Transfer } from './transfer';
+export { default as Transfer } from './Transfer';
 
 // export type {
 //   TreeProps,
 //   AntTreeNodeProps as TreeNodeProps,
 //   DataNode as TreeDataNode,
 // } from './tree';
-// export { default as Tree } from './tree';
+export { default as Tree } from './Tree';
 
 // export type { TreeSelectProps } from './tree-select';
-// export { default as TreeSelect } from './tree-select';
+export { default as TreeSelect } from './TreeSelect';
 
 // export type { TabsProps, TabPaneProps } from './tabs';
 export { default as Tabs } from './Tabs';
 
 // export type { TagProps, TagType } from './tag';
-// export { default as Tag } from './tag';
+export { default as Tag } from './Tag';
 
 // export type { TimePickerProps, TimeRangePickerProps } from './time-picker';
-// export { default as TimePicker } from './time-picker';
+export { default as TimePicker } from './TimePicker';
 
 // export type { TimelineProps, TimelineItemProps } from './timeline';
 // export { default as Timeline } from './timeline';
 
 // export type { TooltipProps } from './tooltip';
-// export { default as Tooltip } from './tooltip';
+export { default as Tooltip } from './Tooltip';
 
 // export type { TypographyProps } from './typography';
 export { default as Typography } from './Typography';
 
 // export type { UploadProps } from './upload';
 
-// export { default as Upload } from './upload';
+export { default as Upload } from './Upload';
 
 // export { default as version } from './version';
 // export * as Openlayers from './Openlayers';

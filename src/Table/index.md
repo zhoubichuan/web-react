@@ -225,17 +225,7 @@ const App: React.FC = () => {
     console.log('params', pagination, filters, sorter, extra);
   };
   const requestFn = async (params: getFailureInfoListParams, callback: Function) => {
-    let defaultParams: getFailureInfoListParams = {
-      // machineNameMt: '',
-      // typeCode: '',
-      pageSize: 20,
-      pageIndex: 1
-    };
-    params = { ...defaultParams, ...params };
-    params.machineNameMt === '' && (params.machineNameMt = undefined);
-    params.typeCode === '' && (params.typeCode = undefined);
-    let result = await getFailureInfoList(params);
-    callback && callback(result);
+
   };
   return (
     <>
@@ -247,9 +237,7 @@ const App: React.FC = () => {
       />
       <Table.Pagination tableData={tableData} columns={columns} onChange={onChange} />
       <Modal.Dialog showDialod={showDialod} changeDialog={changeDialog}>
-        <div
-        // className={styles.detail}
-        >
+        <div>
           <img src={''} alt="" />
           <div>
             <p>拖拉机001：编号</p>

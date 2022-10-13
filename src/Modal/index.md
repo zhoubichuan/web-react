@@ -48,10 +48,9 @@ export default App;
 /**
  * title: 弹框类型
  */
-import { Button, Space } from 'antd';
+import { Button, Space,Modal } from 'myantd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import React, { createRef, useState } from 'react';
-import { DialogPart } from 'myantd';
 
 const App: React.FC = () => {
   let searchRef = createRef<any>();
@@ -62,7 +61,7 @@ const App: React.FC = () => {
   return (
     <>
       <Button onClick={() => changeDialog(true)}>弹框</Button>
-      <DialogPart showDialod={showDialod} changeDialog={changeDialog}>
+      <Modal.Dialog showDialod={showDialod} changeDialog={changeDialog}>
         <div>
           <img src={''} alt="" />
           <div>
@@ -74,7 +73,7 @@ const App: React.FC = () => {
             </ul>
           </div>
         </div>
-      </DialogPart>
+      </Modal.Dialog>
     </>
   );
 };

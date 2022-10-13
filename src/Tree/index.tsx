@@ -5,5 +5,5 @@ import './index.module.scss';
 const App = (props: TreeProps) => {
   return <Tree {...props}>{props.children}</Tree>;
 };
-
+App.DirectoryTree = Tree.DirectoryTree
 export default App;
