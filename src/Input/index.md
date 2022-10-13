@@ -14,7 +14,16 @@ const App: React.FC = () => <Input placeholder="Basic usage" />;
 
 export default App;
 ```
+# Circle
 
+```tsx
+import { Input } from 'myantd';
+import React from 'react';
+
+const App: React.FC = () => <Input.Circle placeholder="Basic usage" />;
+
+export default App;
+```
 ### API
 
 | Name                  | Description            | Type    | Default |

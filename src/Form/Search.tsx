@@ -128,42 +128,42 @@ const App = (props: SearchProps) => {
     }
   };
   return (
-    <Form
-      className={'myantd ' + styles.form}
-      onFinish={onFinish}
-      wrapperCol={{ span: 30, offset: 0 }}
-      size="large"
-      layout={'inline'}
-      form={form}
-      initialValues={{ layout: 'inline' }}
-      onValuesChange={handleFieldChange}
-    >
-      <Row gutter={24} style={{ width: '100%' }}>
-        {formItemData.map((item: any, index: number) => (
-          <Col span={6} key={index}>
-            {item.type === undefined && InputComponent(item)}
-            {item.type === 'select' && SelectComponent(item)}
-            {item.type === 'textarea' && TextAreaComponent(item)}
-            {item.type === 'cascader' && CascaderComponent(item)}
-          </Col>
-        ))}
-        {!props.type && (
-          <>
-            <Form.Item>
-              <Button.Image type="primary" htmlType="submit" icon={'search'}>
-                查询
-              </Button.Image>
-            </Form.Item>
-            <Form.Item>
-              <Button.Image type="default" onClick={onReset} icon={'refresh'}>
-                重置
-              </Button.Image>
-            </Form.Item>
-          </>
-        )}
-        {props.children}
-      </Row>
-    </Form>
+    <div className={styles.search}>
+      <Form
+        onFinish={onFinish}
+        wrapperCol={{ span: 30, offset: 0 }}
+        size="large"
+        layout={'inline'}
+        form={form}
+        initialValues={{ layout: 'inline' }}
+        onValuesChange={handleFieldChange}>
+        <Row gutter={24} style={{ width: '100%' }}>
+          {formItemData.map((item: any, index: number) => (
+            <Col span={6} key={index}>
+              {item.type === undefined && InputComponent(item)}
+              {item.type === 'select' && SelectComponent(item)}
+              {item.type === 'textarea' && TextAreaComponent(item)}
+              {item.type === 'cascader' && CascaderComponent(item)}
+            </Col>
+          ))}
+          {!props.type && (
+            <>
+              <Form.Item>
+                <Button.Image type="primary" htmlType="submit" icon={'search'}>
+                  查询
+                </Button.Image>
+              </Form.Item>
+              <Form.Item>
+                <Button.Image type="default" onClick={onReset} icon={'refresh'}>
+                  重置
+                </Button.Image>
+              </Form.Item>
+            </>
+          )}
+          {props.children}
+        </Row>
+      </Form>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 @import '../index.scss';
 
-.myantd {
+.layout {
   :global {
     .ant-layout-header {
       background-color: transparent;
@@ -66,7 +66,7 @@
       .ant-layout-content {
         padding: 0 !important;
         margin: 0 !important;
-        height: auto !important;
+        // height: auto !important;
         position: relative;
       }
     }

@@ -7,11 +7,11 @@ import React from 'react';
 const { Header, Footer, Content, Sider } = Layout;
 const App = (props: LayoutProps) => {
   return (
-    <div className={styles.mylayout}>
+    <span className={styles.layout}>
       <Layout {...props}>
         {props.children}
       </Layout>
-    </div>
+    </span>
 
   );
 };

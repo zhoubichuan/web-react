@@ -1,13 +1,16 @@
-@import 'antd/lib/input/style';
 @import '../index.scss';
 // 圆形按钮
 .circle {
-    border-radius: 16px;
+  :global {
+    .ant-input {
+        border-radius: 16px;
+      }
+  }
 }
-:global{
-    .myantd{
-        .ant-input-affix-wrapper{
-            border-radius: 6px;
-        }
+.input {
+  :global {
+    .#{$ant-prefix}-input-affix-wrapper {
+      border-radius: 6px;
     }
+  }
 }

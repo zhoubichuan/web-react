@@ -7,18 +7,18 @@ nav:
 # Table
 
 ```tsx
-import { Space, Table, Tag } from 'antd';
-import React from 'react';
+import { Space, Table, Tag } from 'antd'
+import React from 'react'
 
-const { Column, ColumnGroup } = Table;
+const { Column, ColumnGroup } = Table
 
 interface DataType {
-  key: React.Key;
-  firstName: string;
-  lastName: string;
-  age: number;
-  address: string;
-  tags: string[];
+  key: React.Key
+  firstName: string
+  lastName: string
+  age: number
+  address: string
+  tags: string[]
 }
 
 const data: DataType[] = [
@@ -46,7 +46,7 @@ const data: DataType[] = [
     address: 'Sidney No. 1 Lake Park',
     tags: ['cool', 'teacher']
   }
-];
+]
 
 const App: React.FC = () => (
   <Table dataSource={data}>
@@ -62,7 +62,7 @@ const App: React.FC = () => (
       key="tags"
       render={(tags: string[]) => (
         <>
-          {tags.map((tag) => (
+          {tags.map(tag => (
             <Tag color="blue" key={tag}>
               {tag}
             </Tag>
@@ -81,9 +81,9 @@ const App: React.FC = () => (
       )}
     />
   </Table>
-);
+)
 
-export default App;
+export default App
 ```
 
 # Table.Pagination
@@ -107,7 +107,21 @@ interface DataType {
 }
 
 const App: React.FC = () => {
+  let searchRef = createRef<any>();
   const [showDialod, setVisible] = useState(false);
+    const [formColumns, setFormColumns] = useState([
+    { name: 'machineNameMt', placeholder: '请输入故障设备' },
+    {
+      name: 'typeCode',
+      placeholder: '请选择任务类型',
+      type: 'select',
+      fieldNames: {
+        value: 'code'
+        // label:'name'
+      },
+      options: [] as any
+    }
+  ]);
   const handleContinue = () => {
     setVisible(true);
   };
@@ -200,13 +214,37 @@ const App: React.FC = () => {
     data: [],
     page: { total: 0, pageSize: 20, current: 1 }
   });
-
+  const getSearchData = ({ data, pageIndex, pageSize, total }: any) => {
+    setTableData({ data: data, page: { total: total, pageSize: pageSize, current: pageIndex } });
+  };
   const onChange: TableProps<DataType>['onChange'] = (pagination, filters, sorter, extra) => {
+    searchRef.current?.handleSearch({
+      pageIndex: pagination.current,
+      pageSize: pagination.pageSize
+    });
     console.log('params', pagination, filters, sorter, extra);
   };
-
+  const requestFn = async (params: getFailureInfoListParams, callback: Function) => {
+    let defaultParams: getFailureInfoListParams = {
+      // machineNameMt: '',
+      // typeCode: '',
+      pageSize: 20,
+      pageIndex: 1
+    };
+    params = { ...defaultParams, ...params };
+    params.machineNameMt === '' && (params.machineNameMt = undefined);
+    params.typeCode === '' && (params.typeCode = undefined);
+    let result = await getFailureInfoList(params);
+    callback && callback(result);
+  };
   return (
     <>
+      <Form.Search
+        columns={formColumns}
+        onRef={searchRef}
+        searchData={getSearchData}
+        requestFn={requestFn}
+      />
       <Table.Pagination tableData={tableData} columns={columns} onChange={onChange} />
       <Modal.Dialog showDialod={showDialod} changeDialog={changeDialog}>
         <div

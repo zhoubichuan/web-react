@@ -1,12 +1,11 @@
-@import 'antd/lib/modal/style';
-
+@import '../index.scss';
 .dialog {
     :global {
-        .ant-modal-content {
+        .#{$ant-prefix}-modal-content {
             border-radius: 20px;
         }
 
-        .ant-modal-close {
+        .#{$ant-prefix}-modal-close {
             position: absolute;
             right: 0;
             background: #F1F1F1;
@@ -15,7 +14,7 @@
             border-radius: 50%;
             height: 40px;
 
-            .ant-modal-close-x {
+            .#{$ant-prefix}-modal-close-x {
                 width: 100%;
                 height: 100%;
                 line-height: 40px;
@@ -24,13 +23,13 @@
     }
 
     :global {
-        .ant-card {
+        .#{$ant-prefix}-card {
             border: none;
-            .ant-card-body {
+            .#{$ant-prefix}-card-body {
                 padding: 0 !important;
                 height: calc(100vh - 224px) !important;
             }
-            .ant-btn-primary {
+            .#{$ant-prefix}-btn-primary {
                 background: #52CCA3;
                 border-color: #52CCA3
             }
