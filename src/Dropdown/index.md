@@ -20,7 +20,7 @@ const menu = (
           <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
             1st menu item
           </a>
-        )
+        ),
       },
       {
         key: '2',
@@ -30,7 +30,7 @@ const menu = (
           </a>
         ),
         icon: <SmileOutlined />,
-        disabled: true
+        disabled: true,
       },
       {
         key: '3',
@@ -39,13 +39,13 @@ const menu = (
             3rd menu item (disabled)
           </a>
         ),
-        disabled: true
+        disabled: true,
       },
       {
         key: '4',
         danger: true,
-        label: 'a danger item'
-      }
+        label: 'a danger item',
+      },
     ]}
   />
 );

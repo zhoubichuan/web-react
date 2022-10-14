@@ -22,7 +22,7 @@ const App: React.FC = () => (
         <Button key="2">Operation</Button>,
         <Button key="1" type="primary">
           Primary
-        </Button>
+        </Button>,
       ]}
     >
       <Descriptions size="small" column={3}>

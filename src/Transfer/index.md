@@ -20,7 +20,7 @@ interface RecordType {
 const mockData: RecordType[] = Array.from({ length: 20 }).map((_, i) => ({
   key: i.toString(),
   title: `content${i + 1}`,
-  description: `description of content${i + 1}`
+  description: `description of content${i + 1}`,
 }));
 
 const initialTargetKeys = mockData.filter((item) => Number(item.key) > 10).map((item) => item.key);

@@ -187,7 +187,7 @@ export { default as Tag } from './Tag';
 export { default as TimePicker } from './TimePicker';
 
 // export type { TimelineProps, TimelineItemProps } from './timeline';
-// export { default as Timeline } from './timeline';
+export { default as Timeline } from './Timeline';
 
 // export type { TooltipProps } from './tooltip';
 export { default as Tooltip } from './Tooltip';

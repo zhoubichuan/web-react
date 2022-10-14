@@ -76,7 +76,7 @@ const App: React.FC = () => {
   const [showDialod, setVisible] = useState(false);
   const [tableData, setTableData] = useState({
     data: [],
-    page: { total: 0, pageSize: 20, current: 1 }
+    page: { total: 0, pageSize: 20, current: 1 },
   });
   const getSearchData = ({ data, current, pageSize, total }: any) => {
     setTableData({ data: data, page: { total: total, pageSize: pageSize, current: current } });
@@ -87,7 +87,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="myantd">
+    <div className="antd">
       <Form.Search columns={[]} onRef={searchRef} searchData={getSearchData} requestFn={() => {}} />
     </div>
   );

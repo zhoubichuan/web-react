@@ -11,7 +11,7 @@ import { AutoComplete } from 'myantd';
 import React, { useState } from 'react';
 
 const mockVal = (str: string, repeat = 1) => ({
-  value: str.repeat(repeat)
+  value: str.repeat(repeat),
 });
 
 const App: React.FC = () => {
@@ -20,7 +20,7 @@ const App: React.FC = () => {
 
   const onSearch = (searchText: string) => {
     setOptions(
-      !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)]
+      !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)],
     );
   };
 

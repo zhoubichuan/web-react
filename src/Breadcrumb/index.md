@@ -7,7 +7,7 @@ nav:
 # Breadcrumb
 
 ```tsx
-import { Breadcrumb } from 'antd';
+import { Breadcrumb } from 'myantd';
 import React from 'react';
 
 const App: React.FC = () => (

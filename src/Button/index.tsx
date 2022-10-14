@@ -9,9 +9,7 @@ import React from 'react';
 const App = (props: ButtonProps) => {
   return (
     <span className={styles.button}>
-      <Button {...props}>
-        {props.children}
-      </Button>
+      <Button {...props}>{props.children}</Button>
     </span>
   );
 };

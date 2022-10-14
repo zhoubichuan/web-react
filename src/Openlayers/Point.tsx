@@ -19,7 +19,7 @@ const App = ({ point = [], children }: HeadProps) => {
       code: 'sanshui',
       controls: false,
       hideCenterCircle: true,
-      worker: true
+      worker: true,
     };
     if (window.location.host.includes('localhost')) {
       config.url = 'https://smart-sit.farmbgy.com';
@@ -36,7 +36,7 @@ const App = ({ point = [], children }: HeadProps) => {
       map.insertIcon('pointLayer', {
         point,
         icon: 'wurenji.png',
-        anchor: [0.48, 0.95]
+        anchor: [0.48, 0.95],
       });
     }
   }, [point]);

@@ -8,11 +8,8 @@ const { Header, Footer, Content, Sider } = Layout;
 const App = (props: LayoutProps) => {
   return (
     <span className={styles.layout}>
-      <Layout {...props}>
-        {props.children}
-      </Layout>
+      <Layout {...props}>{props.children}</Layout>
     </span>
-
   );
 };
 App.Header = Header;

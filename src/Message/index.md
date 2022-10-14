@@ -7,7 +7,7 @@ nav:
 # Message
 
 ```tsx
-import { Button, message } from 'antd';
+import { Button, message } from 'myantd';
 import React from 'react';
 
 const info = () => {

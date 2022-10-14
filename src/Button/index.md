@@ -13,11 +13,11 @@ nav:
  * title: 按钮类型
  * desc: 按钮有五种类型：主按钮、次按钮、虚线按钮(实际用不到)、文本按钮和链接按钮。主按钮在同一个操作区域最多出现一次。
  */
-import { Button, ConfigProvider } from 'myantd'
-import React from 'react'
+import { Button, ConfigProvider } from 'myantd';
+import React from 'react';
 const margin = {
-  marginRight: 20
-}
+  marginRight: 20,
+};
 const App: React.FC = () => {
   return (
     <>
@@ -34,9 +34,9 @@ const App: React.FC = () => {
         查看
       </Button>
     </>
-  )
-}
-export default App
+  );
+};
+export default App;
 ```
 
 ## 2.评分按钮
@@ -46,11 +46,11 @@ export default App
  * title: 评分按钮
  * desc: 按钮有三种类型：合格、良好、不合格。
  */
-import { Button, ConfigProvider } from 'myantd'
-import React from 'react'
+import { Button, ConfigProvider } from 'myantd';
+import React from 'react';
 const margin = {
-  marginRight: 20
-}
+  marginRight: 20,
+};
 const App: React.FC = () => {
   return (
     <>
@@ -64,9 +64,9 @@ const App: React.FC = () => {
         <span>不合格</span>
       </Button.Rate>
     </>
-  )
-}
-export default App
+  );
+};
+export default App;
 ```
 
 ## 3.图片按钮
@@ -76,11 +76,11 @@ export default App
  * title: 图片按钮
  * desc: 按钮有六种类型：搜索、刷新、告警、添加、展开、收起、重置。
  */
-import { Button } from 'myantd'
-import React from 'react'
+import { Button } from 'myantd';
+import React from 'react';
 const margin = {
-  marginRight: 20
-}
+  marginRight: 20,
+};
 const App: React.FC = () => {
   return (
     <>
@@ -103,9 +103,9 @@ const App: React.FC = () => {
         收起
       </Button.Image>
     </>
-  )
-}
-export default App
+  );
+};
+export default App;
 ```
 
 ### API

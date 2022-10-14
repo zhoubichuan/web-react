@@ -7,18 +7,18 @@ nav:
 # Table
 
 ```tsx
-import { Space, Table, Tag } from 'antd'
-import React from 'react'
+import { Space, Table, Tag } from 'myantd';
+import React from 'react';
 
-const { Column, ColumnGroup } = Table
+const { Column, ColumnGroup } = Table;
 
 interface DataType {
-  key: React.Key
-  firstName: string
-  lastName: string
-  age: number
-  address: string
-  tags: string[]
+  key: React.Key;
+  firstName: string;
+  lastName: string;
+  age: number;
+  address: string;
+  tags: string[];
 }
 
 const data: DataType[] = [
@@ -28,7 +28,7 @@ const data: DataType[] = [
     lastName: 'Brown',
     age: 32,
     address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer']
+    tags: ['nice', 'developer'],
   },
   {
     key: '2',
@@ -36,7 +36,7 @@ const data: DataType[] = [
     lastName: 'Green',
     age: 42,
     address: 'London No. 1 Lake Park',
-    tags: ['loser']
+    tags: ['loser'],
   },
   {
     key: '3',
@@ -44,9 +44,9 @@ const data: DataType[] = [
     lastName: 'Black',
     age: 32,
     address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher']
-  }
-]
+    tags: ['cool', 'teacher'],
+  },
+];
 
 const App: React.FC = () => (
   <Table dataSource={data}>
@@ -62,7 +62,7 @@ const App: React.FC = () => (
       key="tags"
       render={(tags: string[]) => (
         <>
-          {tags.map(tag => (
+          {tags.map((tag) => (
             <Tag color="blue" key={tag}>
               {tag}
             </Tag>
@@ -81,9 +81,9 @@ const App: React.FC = () => (
       )}
     />
   </Table>
-)
+);
 
-export default App
+export default App;
 ```
 
 # Table.Pagination
@@ -93,7 +93,7 @@ export default App
  * title: 按钮类型
  * desc: 按钮有五种类型：主按钮、次按钮、虚线按钮(实际用不到)、文本按钮和链接按钮。主按钮在同一个操作区域最多出现一次。
  */
-import { Button, Space,Table, Form, Modal } from 'myantd';
+import { Button, Space, Table, Form, Modal } from 'myantd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 interface DataType {
   key: React.Key;
@@ -109,18 +109,18 @@ interface DataType {
 const App: React.FC = () => {
   let searchRef = createRef<any>();
   const [showDialod, setVisible] = useState(false);
-    const [formColumns, setFormColumns] = useState([
+  const [formColumns, setFormColumns] = useState([
     { name: 'machineNameMt', placeholder: '请输入故障设备' },
     {
       name: 'typeCode',
       placeholder: '请选择任务类型',
       type: 'select',
       fieldNames: {
-        value: 'code'
+        value: 'code',
         // label:'name'
       },
-      options: [] as any
-    }
+      options: [] as any,
+    },
   ]);
   const handleContinue = () => {
     setVisible(true);
@@ -131,66 +131,66 @@ const App: React.FC = () => {
   const columns: ColumnsType<DataType> = [
     {
       title: '号码',
-      dataIndex: 'name'
+      dataIndex: 'name',
     },
     {
       title: '信息',
       dataIndex: 'a',
       sorter: {
         compare: (a, b) => a.a - b.a,
-        multiple: 3
+        multiple: 3,
       },
-      showSorterTooltip: false
+      showSorterTooltip: false,
     },
     {
       title: '名称',
       dataIndex: 'b',
       sorter: {
         compare: (a, b) => a.b - b.b,
-        multiple: 2
+        multiple: 2,
       },
       showSorterTooltip: false,
-      width: 180
+      width: 180,
     },
     {
       title: '年龄',
       dataIndex: 'c',
       sorter: {
         compare: (a, b) => a.c - b.c,
-        multiple: 1
+        multiple: 1,
       },
       showSorterTooltip: false,
-      width: 180
+      width: 180,
     },
     {
       title: '时间',
       dataIndex: 'd',
       sorter: {
         compare: (a, b) => a.d - b.d,
-        multiple: 1
+        multiple: 1,
       },
       showSorterTooltip: false,
-      width: 150
+      width: 150,
     },
     {
       title: '其他',
       dataIndex: 'e',
       sorter: {
         compare: (a, b) => a.e - b.e,
-        multiple: 1
+        multiple: 1,
       },
       showSorterTooltip: false,
-      width: 150
+      width: 150,
     },
     {
       title: '备注',
       dataIndex: 'f',
       sorter: {
         compare: (a, b) => a.f - b.f,
-        multiple: 1
+        multiple: 1,
       },
       showSorterTooltip: false,
-      width: 150
+      width: 150,
     },
     {
       title: '操作',
@@ -207,12 +207,12 @@ const App: React.FC = () => {
             详情
           </Button>
         </Space>
-      )
-    }
+      ),
+    },
   ];
   const [tableData, setTableData] = useState({
     data: [],
-    page: { total: 0, pageSize: 20, current: 1 }
+    page: { total: 0, pageSize: 20, current: 1 },
   });
   const getSearchData = ({ data, pageIndex, pageSize, total }: any) => {
     setTableData({ data: data, page: { total: total, pageSize: pageSize, current: pageIndex } });
@@ -220,13 +220,11 @@ const App: React.FC = () => {
   const onChange: TableProps<DataType>['onChange'] = (pagination, filters, sorter, extra) => {
     searchRef.current?.handleSearch({
       pageIndex: pagination.current,
-      pageSize: pagination.pageSize
+      pageSize: pagination.pageSize,
     });
     console.log('params', pagination, filters, sorter, extra);
   };
-  const requestFn = async (params: getFailureInfoListParams, callback: Function) => {
-
-  };
+  const requestFn = async (params: getFailureInfoListParams, callback: Function) => {};
   return (
     <>
       <Form.Search

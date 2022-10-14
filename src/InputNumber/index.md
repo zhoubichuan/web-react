@@ -7,7 +7,7 @@ nav:
 # InputNumber
 
 ```tsx
-import { InputNumber } from 'antd';
+import { InputNumber } from 'myantd';
 import React from 'react';
 
 const onChange = (value: number) => {

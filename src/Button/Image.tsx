@@ -9,7 +9,7 @@ enum TYPE {
   alarm = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAW9JREFUOE+l002IjmEUxvHfZc8SpWRkY2Pje2eBshKy8FEoiikrWcielJ0ykmIxQylkpSayI0mWNhqiiC1rR/fb807v5H0mcjZPnfu+/891zrlO/GdksfdV9bCdJ9nfd28eUFVLsDrJx6pq+d241j08i9kkVVVr8CnJrwF8SK6qW9iFnZjBZvzozpfiNY7gWQc7OQ+oqkO4iws4ihU4jUEJaCXcwDdM4zIOJ7k3UFBVc/iA+5hq8pM8Ha27qpqyWUziICaSrG1FbcEr7MOxrg8bxzWtqt7gM+7gEbY2wHHcxnI8bjKTNNgf0U1lJfbiO040wATW4wle4Gvf2KrqAVZhO/bg3QIfVNXLvwEk2TaUNw7wJcmBnhIGChYDvMfzJKd6AM0rO5KsW6CgqpZ1c7+C82h/qu7S6LeN7yrO4WaSn0MfXMeZf9yrqSSTQ8CGZowRQMtvwsUudwnNA6M9m0vytncbu4Vqtm4x3RZpnMLfjFWKv9PWFOUAAAAASUVORK5CYII=',
   add = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAAXNSR0IArs4c6QAAAD1JREFUOE9jZMAB/v//PxckxcjImIxNCSMejfuhGh1HrEZo6ClhCQADqNgFLHL3GMnWOBod4LRKcpLDm8gBMIw7QyjCINQAAAAASUVORK5CYII=',
   arrowleft = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAYAAAAi2ky3AAAAAXNSR0IArs4c6QAAASNJREFUOE+l07FKxTAUBuD/hAZfwMHJTeTq6Cu4uzela0cRpwteifoAiouDaw8UBHcF3cTV3UkQBwdBOlQqSSQXI7VW6a0Zf3K+kJMTQscqimJkjLkAsK2UOuva086oHXjEWnvtnFtwzm0lSXI0M9REfPEgqI0MgrqQz+vcAbgPVyOiJ+fcoVLqIWRaa6G1tvQH8ltrHqWUoyiK5qqqugSwCmBMzOz1xT4NDXuEEOsAlqy1Jz4jolcP7QA4mAGyUsrluq7nAdwQkQBwNX1+Zp4A2O+BvRHROI7j6Ugw8xqAFWPM+dcc5Xm+S0R7TUwIMXHOnYasLMuXLMveuw78NpBtbNAchVOa2L8gDzawTaXUcY/e4cdfC0XMvGGMuU3T9LkP9AH0rpvtSpH5PQAAAABJRU5ErkJggg==',
-  arrowright = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAYAAAAi2ky3AAAAAXNSR0IArs4c6QAAASFJREFUOE+d0j1LxTAUBuD3JFgsUgQHBxGc3F3F7Q66C0IhnQUX8f4ANSjoJOLYNTTd3fUnOKqIm5ODg6uk9EiKlVoqpDfzOc/5CiHwWWv3AFxJKXfSNH3up1Ggg6IojojomojehRCTPjYa8oWHsJmgIayBtNZCa123Y1pr14hoyswrndHXAWx0V9HtjKy1UwCXAB7jON6uqurLOeeXuRqyvxajsiw/mXnRJwkhDgC81nV9F4J0Yt58R/cAJszsR9uKoujDOffi3RHYMRljFqSUuwCelFIPPvln3AsA8wHYiVLq/N+r5Xk+lyTJUgsx8z6Asx7cIM0VAyo2Ie2H7MCnWZb9wjNBzPwHGdWRtfYQwM0QMgoyxixLKTeVUrdD6/gGsiB3axH5LPUAAAAASUVORK5CYII='
+  arrowright = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAYAAAAi2ky3AAAAAXNSR0IArs4c6QAAASFJREFUOE+d0j1LxTAUBuD3JFgsUgQHBxGc3F3F7Q66C0IhnQUX8f4ANSjoJOLYNTTd3fUnOKqIm5ODg6uk9EiKlVoqpDfzOc/5CiHwWWv3AFxJKXfSNH3up1Ggg6IojojomojehRCTPjYa8oWHsJmgIayBtNZCa123Y1pr14hoyswrndHXAWx0V9HtjKy1UwCXAB7jON6uqurLOeeXuRqyvxajsiw/mXnRJwkhDgC81nV9F4J0Yt58R/cAJszsR9uKoujDOffi3RHYMRljFqSUuwCelFIPPvln3AsA8wHYiVLq/N+r5Xk+lyTJUgsx8z6Asx7cIM0VAyo2Ie2H7MCnWZb9wjNBzPwHGdWRtfYQwM0QMgoyxixLKTeVUrdD6/gGsiB3axH5LPUAAAAASUVORK5CYII=',
 }
 type TYPES = keyof typeof TYPE;
 interface newButtonProps extends ButtonProps {
@@ -20,13 +20,14 @@ const App = ({ icon, imagestyle = [16, 16], ...props }: newButtonProps) => {
   if (['arrowleft', 'arrowright'].includes(icon)) {
     return (
       <span className={styles.dark}>
-          <Button
-            icon={
-              <Image src={TYPE[icon]} width={imagestyle[0]} height={imagestyle[1]} preview={false} />
-            }
-            {...props}>
-            {props.children}
-          </Button>
+        <Button
+          icon={
+            <Image src={TYPE[icon]} width={imagestyle[0]} height={imagestyle[1]} preview={false} />
+          }
+          {...props}
+        >
+          {props.children}
+        </Button>
       </span>
     );
   } else {
@@ -36,7 +37,8 @@ const App = ({ icon, imagestyle = [16, 16], ...props }: newButtonProps) => {
           icon={
             <Image src={TYPE[icon]} width={imagestyle[0]} height={imagestyle[1]} preview={false} />
           }
-          {...props}>
+          {...props}
+        >
           {props.children}
         </Button>
       </span>

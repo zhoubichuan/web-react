@@ -17,7 +17,7 @@ const onChange = (key: string) => {
 };
 
 const App: React.FC = () => (
-  <div className="myantd">
+  <div className="antd">
     <Tabs defaultActiveKey="1" onChange={onChange}>
       <TabPane tab="Tab 1" key="1">
         Content of Tab Pane 1

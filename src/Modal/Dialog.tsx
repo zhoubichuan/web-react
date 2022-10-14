@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 enum sizeEnum {
   big = 1500,
   middle = 1000,
-  small = 800
+  small = 800,
 }
 type sizeTYPES = keyof typeof sizeEnum;
 interface Props {

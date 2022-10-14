@@ -7,7 +7,7 @@ nav:
 # Timeline
 
 ```tsx
-import { Timeline } from 'antd';
+import { Timeline } from 'myantd';
 import React from 'react';
 
 const App: React.FC = () => (

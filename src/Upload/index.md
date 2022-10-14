@@ -12,7 +12,7 @@ nav:
  * desc: 按钮有五种类型：主按钮、次按钮、虚线按钮(实际用不到)、文本按钮和链接按钮。主按钮在同一个操作区域最多出现一次。
  */
 import { UploadOutlined } from '@ant-design/icons';
-import type { UploadProps } from 'antd';
+import type { UploadProps } from 'myantd';
 import { Button, message, Upload } from 'myantd';
 import React from 'react';
 
@@ -20,7 +20,7 @@ const props: UploadProps = {
   name: 'file',
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
   headers: {
-    authorization: 'authorization-text'
+    authorization: 'authorization-text',
   },
   onChange(info) {
     if (info.file.status !== 'uploading') {
@@ -31,7 +31,7 @@ const props: UploadProps = {
     } else if (info.file.status === 'error') {
       message.error(`${info.file.name} file upload failed.`);
     }
-  }
+  },
 };
 
 const App: React.FC = () => (

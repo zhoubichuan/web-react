@@ -15,7 +15,7 @@ const contentStyle: React.CSSProperties = {
   color: '#fff',
   lineHeight: '160px',
   textAlign: 'center',
-  background: '#364d79'
+  background: '#364d79',
 };
 
 const App: React.FC = () => {

@@ -15,7 +15,7 @@ const App = ({ point = [], index = 0, children, track }: HeadProps) => {
   const trackMap = useRef<any>(null);
   useEffect(() => {
     let {
-      ffarmRespVO: { code }
+      ffarmRespVO: { code },
     } = JSON.parse(localStorage.getItem('userInfo') || '{}');
     let config: any = {
       target: mapRef.current,
@@ -24,7 +24,7 @@ const App = ({ point = [], index = 0, children, track }: HeadProps) => {
       code,
       controls: false,
       hideCenterCircle: true,
-      worker: true
+      worker: true,
     };
     if (window.location.host.includes('localhost')) {
       config.url = 'https://smart-sit.farmbgy.com';
@@ -46,13 +46,13 @@ const App = ({ point = [], index = 0, children, track }: HeadProps) => {
     trackMap.current.insertIcon('icon', {
       point: point[index - 1] || [],
       icon: 'tractor.svg',
-      anchor: [0.48, 0.95]
+      anchor: [0.48, 0.95],
     });
     trackMap.current.clear('route');
     trackMap.current.insertLine('route', {
       color: '#FF7A46',
       width: 5,
-      point: point.slice(0, index + 1)
+      point: point.slice(0, index + 1),
     });
   }, [index]);
 

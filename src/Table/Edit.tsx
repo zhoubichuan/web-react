@@ -3,7 +3,7 @@ import { Button, Form, Input, Popconfirm, Table, Select } from 'antd';
 import type { FormInstance } from 'antd/es/form';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
-import './index.module.scss';
+import styles from './index.module.scss';
 import _ from 'lodash';
 
 const EditableContext = React.createContext<FormInstance<any> | null>(null);
@@ -88,8 +88,8 @@ const EditableCell: React.FC<EditableCellProps> = ({
             rules={[
               {
                 required: true,
-                message: `${title} 必填`
-              }
+                message: `${title} 必填`,
+              },
             ]}
           >
             <Input ref={inputRef} onPressEnter={save} onBlur={save} />
@@ -101,8 +101,8 @@ const EditableCell: React.FC<EditableCellProps> = ({
             rules={[
               {
                 required: true,
-                message: `${title} 必选`
-              }
+                message: `${title} 必选`,
+              },
             ]}
           >
             <Select placeholder={rowItem.placeholder} style={{ width: '100%' }} onChange={save}>
@@ -160,8 +160,8 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
       [...dataSource, ...data].map((i: any, index: any) => ({
         key: index + 1,
         sortkey: index + 1,
-        ...i
-      }))
+        ...i,
+      })),
     );
     setCount(data.length + 1);
     onChange(data);
@@ -174,7 +174,7 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
       newData.map((i) => {
         let { key, sortkey, ...rest } = i;
         return rest;
-      })
+      }),
     );
   };
   const defaultColumns: (ColumnTypes[number] & { editable?: boolean; dataIndex: string })[] = [
@@ -187,8 +187,8 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
           <Popconfirm title="确定删除?" onConfirm={() => handleDelete(record.key)}>
             <Button type="link">删除</Button>
           </Popconfirm>
-        ) : null
-    }
+        ) : null,
+    },
   ];
 
   const handleAdd = (val: any) => {
@@ -203,8 +203,8 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
         unit: target.unit,
         type: columnsField?.find((item: any) => item.name === 'type').options[0].value,
         value: 1,
-        duration: '1'
-      }
+        duration: '1',
+      },
     ];
     setDataSource(newData);
     setCount(count + 1);
@@ -212,7 +212,7 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
       newData.map((i) => {
         let { key, sortkey, ...rest } = i;
         return rest;
-      })
+      }),
     );
   };
 
@@ -239,19 +239,19 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
             console.log(targetCode, row, 'row-----');
             newData.splice(index, 1, {
               ...item,
-              ...row
+              ...row,
             });
             setDataSource(newData);
             onChange(
               newData.map((i) => {
                 let { key, sortkey, ...rest } = i;
                 return rest;
-              })
+              }),
             );
           },
-          columnsField
+          columnsField,
         };
-      }
+      },
     };
   });
 
@@ -261,8 +261,8 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
         components={{
           body: {
             row: EditableRow,
-            cell: EditableCell
-          }
+            cell: EditableCell,
+          },
         }}
         rowClassName={() => 'editable-row'}
         bordered
@@ -276,7 +276,7 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
         style={{
           display: 'block',
           margin: '10px 0',
-          width: '100%'
+          width: '100%',
         }}
         icon={<PlusOutlined />}
       >

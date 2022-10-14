@@ -19,7 +19,7 @@ const onChange = (checked: boolean) => {
 };
 
 const App: React.FC = () => (
-  <div className="myantd">
+  <div className="antd">
     <Switch defaultChecked onChange={onChange} />
   </div>
 );

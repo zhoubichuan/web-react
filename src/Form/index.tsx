@@ -1,7 +1,7 @@
 import { Form } from 'antd';
 import Item from './Item';
 import Search from './Search';
-import './index.module.scss';
+import styles from './index.module.scss';
 import React from 'react';
 
 const App = (props: any) => {

@@ -7,7 +7,7 @@ nav:
 # Image
 
 ```tsx
-import { Image } from 'antd';
+import { Image } from 'myantd';
 import React from 'react';
 
 const App: React.FC = () => (

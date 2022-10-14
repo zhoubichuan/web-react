@@ -119,7 +119,7 @@ const App = (props: SearchProps) => {
   };
   useImperativeHandle(props.onRef, () => {
     return {
-      handleSearch: handleSearch
+      handleSearch: handleSearch,
     };
   });
   const handleFieldChange = (changedValues: any, allValues: any) => {
@@ -136,7 +136,8 @@ const App = (props: SearchProps) => {
         layout={'inline'}
         form={form}
         initialValues={{ layout: 'inline' }}
-        onValuesChange={handleFieldChange}>
+        onValuesChange={handleFieldChange}
+      >
         <Row gutter={24} style={{ width: '100%' }}>
           {formItemData.map((item: any, index: number) => (
             <Col span={6} key={index}>

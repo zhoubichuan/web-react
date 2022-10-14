@@ -27,11 +27,11 @@ const options: Option[] = [
         children: [
           {
             value: 'xihu',
-            label: 'West Lake'
-          }
-        ]
-      }
-    ]
+            label: 'West Lake',
+          },
+        ],
+      },
+    ],
   },
   {
     value: 'jiangsu',
@@ -43,12 +43,12 @@ const options: Option[] = [
         children: [
           {
             value: 'zhonghuamen',
-            label: 'Zhong Hua Men'
-          }
-        ]
-      }
-    ]
-  }
+            label: 'Zhong Hua Men',
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 const onChange = (value: string[]) => {

@@ -1,83 +1,92 @@
 @import '../index.scss';
 .pagination {
-    margin-top: 28px;
-
-    // :global(.#{$ant-prefix}-table-tbody>tr>td) {
-    //     padding: 22px 16px !important
-    // }
-    :global(.tablePagination) {
-        position: relative;
-
-        li {
-            &:first-child {
-                position: absolute;
-                left: 0;
-            }
-        }
+  margin-top: 28px;
+  height: 100%;
+  :global {
+    .ant-table-wrapper {
+        height: 100%;
+      .ant-spin-nested-loading {
+        display: flex;
+        flex-direction: column;
+      }
     }
+  }
+  // :global(.#{$ant-prefix}-table-tbody>tr>td) {
+  //     padding: 22px 16px !important
+  // }
+  :global(.tablePagination) {
+    position: relative;
 
-    :global(.#{$ant-prefix}-table-body) {
-        height: 564px !important;
+    li {
+      &:first-child {
+        position: absolute;
+        left: 0;
+      }
     }
+  }
 
-    :global(.#{$ant-prefix}-pagination-item-active) {
-        background-color: #52CCA3;
-        border-color: #52CCA3;
+  :global(.#{$ant-prefix}-table-body) {
+    height: 564px !important;
+  }
 
-        a {
-            color: #FFFFFF;
-        }
-    }
+  :global(.#{$ant-prefix}-pagination-item-active) {
+    background-color: $base-color;
+    border-color: $base-color;
 
-    :global(.#{$ant-prefix}-pagination-item:hover) {
-        border-color: #52CCA3;
+    a {
+      color: #ffffff;
     }
-    :global(.#{$ant-prefix}-descriptions-item){
-        padding-bottom:0
-    }
+  }
+
+  :global(.#{$ant-prefix}-pagination-item:hover) {
+    border-color: $base-color;
+  }
+  :global(.#{$ant-prefix}-descriptions-item) {
+    padding-bottom: 0;
+  }
 }
 .table {
-    margin-top: 28px;
+  margin-top: 28px;
 
-    // :global(.#{$ant-prefix}-table-tbody>tr>td) {
-    //     padding: 22px 16px !important
-    // }
-    :global(.tablePagination) {
-        position: relative;
+  // :global(.#{$ant-prefix}-table-tbody>tr>td) {
+  //     padding: 22px 16px !important
+  // }
+  :global(.tablePagination) {
+    position: relative;
 
-        li {
-            &:first-child {
-                position: absolute;
-                left: 0;
-            }
-        }
+    li {
+      &:first-child {
+        position: absolute;
+        left: 0;
+      }
     }
+  }
 
-    :global(.#{$ant-prefix}-table-body) {
-        height: 564px !important;
-    }
+  :global(.#{$ant-prefix}-table-body) {
+    height: 564px !important;
+  }
 
-    :global(.#{$ant-prefix}-pagination-item-active) {
-        background-color: #52CCA3;
-        border-color: #52CCA3;
+  :global(.#{$ant-prefix}-pagination-item-active) {
+    background-color: $base-color;
+    border-color: $base-color;
 
-        a {
-            color: #FFFFFF;
-        }
+    a {
+      color: #ffffff;
     }
+  }
 
-    :global(.#{$ant-prefix}-pagination-item:hover) {
-        border-color: #52CCA3;
-    }
-    :global(.#{$ant-prefix}-descriptions-item){
-        padding-bottom:0
-    }
-    :global(.#{$ant-prefix}-btn-link) {
-        color: #52CCA3;
-    }
+  :global(.#{$ant-prefix}-pagination-item:hover) {
+    border-color: $base-color;
+  }
+  :global(.#{$ant-prefix}-descriptions-item) {
+    padding-bottom: 0;
+  }
+  :global(.#{$ant-prefix}-btn-link) {
+    color: $base-color;
+  }
 }
 .editable-row:hover .editable-cell-value-wrap {
-    padding: 4px 11px;
-    border: 1px solid #d9d9d9;
-    border-radius: 2px;
-  }
+  padding: 4px 11px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+}

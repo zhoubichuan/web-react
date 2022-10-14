@@ -1,7 +1,6 @@
 import { Descriptions } from 'antd';
 import type { DescriptionsProps } from 'antd';
 import Item from './Item';
-import './index.module.scss';
 import styles from './index.module.scss';
 const App = (props: DescriptionsProps) => <Descriptions {...props}>{props.children}</Descriptions>;
 App.Item = Item;

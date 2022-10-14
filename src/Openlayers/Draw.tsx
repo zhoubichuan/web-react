@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { IAMap } from './IAMap/index';
+import defalutConfig from './config';
 interface HeadProps {
   ref?: any;
   point?: any;
@@ -43,22 +44,18 @@ const App = ({ ref, point = [], type = 'coordinate', ...rest }: HeadProps) => {
   const drawMap = useRef<any>(null);
   const drawLayer = useRef<any>(null);
   useEffect(() => {
-    let {
-      ffarmRespVO: { code }
-    } = JSON.parse(localStorage.getItem('userInfo') || '{}');
     let config: any = {
+      ...defalutConfig,
       target: mapRef.current,
       interaction: true,
-      token: JSON.parse(localStorage.getItem('auth') || '')?.access_token,
-      code,
       controls: false,
       hideCenterCircle: true,
       worker: true,
       plugins: [
         'tile', // 卫星地图
         'tilePlugin', // 影像底图
-        'field' // 田块
-      ]
+        'field', // 田块
+      ],
     };
     if (window.location.host.includes('localhost')) {
       config.url = 'https://smart-sit.farmbgy.com';
@@ -76,7 +73,7 @@ const App = ({ ref, point = [], type = 'coordinate', ...rest }: HeadProps) => {
       change,
       clear,
       remove,
-      type
+      type,
     });
   }, [point]);
   const handleRemove = (map: any) => {};

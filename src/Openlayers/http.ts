@@ -8,7 +8,7 @@ interface HttpParams {
 // axios实例
 const instance = axios.create({
   baseURL: process.env.HX_HTTP_SERVER,
-  timeout: 50000
+  timeout: 50000,
 });
 
 // 请求拦截器
@@ -25,7 +25,7 @@ instance.interceptors.request.use(
   (error: any) => {
     console.error(error);
     Promise.reject(error);
-  }
+  },
 );
 
 // 响应拦截器
@@ -58,7 +58,7 @@ instance.interceptors.response.use(
     // })
     // console.error(error)
     // Promise.reject(error)
-  }
+  },
 );
 
 export function post(url: string, params?: HttpParams, config?: AxiosRequestConfig) {
@@ -67,6 +67,6 @@ export function post(url: string, params?: HttpParams, config?: AxiosRequestConf
 
 export function get(url: string, params?: HttpParams) {
   return instance.get(url, {
-    params: params
+    params: params,
   });
 }

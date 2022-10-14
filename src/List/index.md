@@ -16,17 +16,17 @@ import React from 'react';
 
 const data = [
   {
-    title: 'Title 1'
+    title: 'Title 1',
   },
   {
-    title: 'Title 2'
+    title: 'Title 2',
   },
   {
-    title: 'Title 3'
+    title: 'Title 3',
   },
   {
-    title: 'Title 4'
-  }
+    title: 'Title 4',
+  },
 ];
 
 const App: React.FC = () => (

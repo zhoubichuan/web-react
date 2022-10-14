@@ -1,5 +1,5 @@
 import { Table } from 'antd';
-import './index.module.scss';
+import styles from './index.module.scss';
 import Pagination from './Pagination';
 import Edit from './Edit';
 const App = (props: any) => {

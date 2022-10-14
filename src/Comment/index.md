@@ -8,7 +8,7 @@ nav:
 
 ```tsx
 import { DislikeFilled, DislikeOutlined, LikeFilled, LikeOutlined } from '@ant-design/icons';
-import { Avatar, Comment, Tooltip } from 'antd';
+import { Avatar, Comment, Tooltip } from 'myantd';
 import moment from 'moment';
 import React, { createElement, useState } from 'react';
 
@@ -42,7 +42,7 @@ const App: React.FC = () => {
         <span className="comment-action">{dislikes}</span>
       </span>
     </Tooltip>,
-    <span key="comment-basic-reply-to">Reply to</span>
+    <span key="comment-basic-reply-to">Reply to</span>,
   ];
 
   return (

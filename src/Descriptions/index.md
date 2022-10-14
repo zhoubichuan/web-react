@@ -32,7 +32,7 @@ import { Descriptions, Button } from 'myantd';
 import React from 'react';
 
 const App: React.FC = () => (
-  <div className="myantd" style={{ width: '450px' }}>
+  <div style={{ width: '450px' }}>
     <Descriptions.Row
       title="请对此次作业进行评估"
       content={[
@@ -44,7 +44,7 @@ const App: React.FC = () => (
         </Button.Rate>,
         <Button.Rate key={3} icon={'unqualified'}>
           <span>不合格</span>
-        </Button.Rate>
+        </Button.Rate>,
       ]}
     />
   </div>
@@ -60,7 +60,7 @@ import { Descriptions, Input } from 'myantd';
 import React from 'react';
 
 const App: React.FC = () => (
-  <div className="myantd" style={{ width: '450px' }}>
+  <div style={{ width: '450px' }}>
     <Descriptions.TableInput
       table={[
         '头部一',
@@ -77,7 +77,7 @@ const App: React.FC = () => (
         <Input.Circle key={3} />,
         '字段4',
         `${'14'} xx`,
-        <Input.Circle key={4} />
+        <Input.Circle key={4} />,
       ]}
     />
   </div>

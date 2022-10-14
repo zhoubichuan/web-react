@@ -48,7 +48,7 @@ export default App;
 /**
  * title: 弹框类型
  */
-import { Button, Space,Modal } from 'myantd';
+import { Button, Space, Modal } from 'myantd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import React, { createRef, useState } from 'react';
 
