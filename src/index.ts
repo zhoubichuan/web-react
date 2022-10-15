@@ -200,6 +200,6 @@ export { default as Typography } from './Typography';
 export { default as Upload } from './Upload';
 
 // export { default as version } from './version';
-// export * as Openlayers from './Openlayers';
+export * as Openlayers from './Openlayers';
 export * as Echarts from './Echarts';
 export { default as Segmented } from './Segmented';

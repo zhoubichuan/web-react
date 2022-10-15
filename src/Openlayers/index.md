@@ -7,31 +7,67 @@ nav:
 # Openlayers
 
 ```tsx
-import { Openlayers } from 'myantd';
-interface HeadProps {
-  data?: any;
+import { Openlayers, Button } from 'myantd'
+interface DrawProps {
+  point?: any
+  drawstart?: any
+  drawend?: any
+  change?: any
+  clear?: any
+  modifyend?: any
 }
-const drawstart = (val: any) => {};
+const point =
+  'POLYGON((12564707.080045568 2697898.1333784987,12564765.004981065 2697810.3502288274,12564896.978287714 2697914.2568141525,12564799.640509507 2697932.7689069402,12564707.080045568 2697898.1333784987))'
 const drawend = (val: any) => {
-  console.log(val, '11111111111111');
-};
-const change = (val: any) => {};
-const clear = (val: any) => {};
-const App = ({ data }: HeadProps) => {
+  setMapPoint(val)
+}
+const change = (val: any) => {
+  console.log(val, '333333333')
+}
+const modifyend = (val: any) => {
+  setMapPoint(val)
+}
+const App = ({
+  point = point,
+  drawstart = drawstart,
+  drawend = drawend,
+  change = change,
+  clear,
+  modifyend = modifyend
+}: DrawProps) => {
+  const onDrawstart = (val: any) => {
+    drawstart && drawstart(val)
+  }
+  const onDrawend = (val: any) => {
+    drawend && drawend(val)
+  }
+  const onChange = (val: any) => {
+    change && change(val)
+  }
+  const onClear = (val: any) => {
+    clear && clear(val)
+  }
+  const onModifyend = (val: any) => {
+    modifyend && modifyend(val)
+  }
+  const handleRemove = (map: any) => {}
   return (
-    <Openlayers.Edit
-      wkb={
-        'POLYGON((12564707.080045568 2697898.1333784987,12564765.004981065 2697810.3502288274,12564896.978287714 2697914.2568141525,12564799.640509507 2697932.7689069402,12564707.080045568 2697898.1333784987))'
-      }
-      drawstart={drawstart}
-      drawend={drawend}
-      change={change}
-      clear={clear}
-    />
-  );
-};
+    <>
+      <Openlayers.Draw
+        type="wkt"
+        point={point}
+        drawstart={onDrawstart}
+        drawend={onDrawend}
+        change={onChange}
+        clear={onClear}
+        modifyend={onModifyend}
+        remove={handleRemove}
+      ></Openlayers.Draw>
+    </>
+  )
+}
 
-export default App;
+export default App
 ```
 
 ### API
