@@ -14,14 +14,9 @@ const App = ({ point = [], index = 0, children, track }: HeadProps) => {
   const mapRef = useRef<any>(null);
   const trackMap = useRef<any>(null);
   useEffect(() => {
-    let {
-      ffarmRespVO: { code },
-    } = JSON.parse(localStorage.getItem('userInfo') || '{}');
     let config: any = {
       target: mapRef.current,
       interaction: true,
-      token: JSON.parse(localStorage.getItem('auth') || '')?.access_token,
-      code,
       controls: false,
       hideCenterCircle: true,
       worker: true,
