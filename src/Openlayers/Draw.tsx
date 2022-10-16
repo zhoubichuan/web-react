@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { IAMap } from './IAMap/index';
+import { Map } from './IAMap/index';
 import defalutConfig from './config';
 interface HeadProps {
   ref?: any;
@@ -52,15 +52,15 @@ const App = ({ ref, point = [], type = 'coordinate', ...rest }: HeadProps) => {
       hideCenterCircle: true,
       worker: true,
       plugins: [
-        'tile', // 卫星地图
+        'satellite', // 卫星地图
         'tilePlugin', // 影像底图
-        'field', // 田块
+        // 'field', // 田块
       ],
     };
     if (window.location.host.includes('localhost')) {
       config.url = 'https://smart-sit.farmbgy.com';
     }
-    drawMap.current = new IAMap(config);
+    drawMap.current = new Map(config);
     drawLayer.current = drawMap.current.insertLayer('line', { zIndex: 1006 });
   }, []);
 
@@ -76,8 +76,10 @@ const App = ({ ref, point = [], type = 'coordinate', ...rest }: HeadProps) => {
       type,
     });
   }, [point]);
+  console.log(drawMap,'drawMap')
   const handleRemove = (map: any) => {};
   return <div ref={mapRef} style={{ width: '100%', height: '100%' }}></div>;
 };
 
 export default App;
+

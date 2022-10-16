@@ -7,34 +7,26 @@ nav:
 # Openlayers
 
 ```tsx
-import { Openlayers, Button } from 'myantd'
-interface DrawProps {
-  point?: any
-  drawstart?: any
-  drawend?: any
-  change?: any
-  clear?: any
-  modifyend?: any
-}
-const point =
-  'POLYGON((12564707.080045568 2697898.1333784987,12564765.004981065 2697810.3502288274,12564896.978287714 2697914.2568141525,12564799.640509507 2697932.7689069402,12564707.080045568 2697898.1333784987))'
-const drawend = (val: any) => {
-  setMapPoint(val)
-}
-const change = (val: any) => {
-  console.log(val, '333333333')
-}
-const modifyend = (val: any) => {
-  setMapPoint(val)
-}
-const App = ({
-  point = point,
-  drawstart = drawstart,
-  drawend = drawend,
-  change = change,
-  clear,
-  modifyend = modifyend
-}: DrawProps) => {
+import { Openlayers } from 'myantd'
+import React from 'react'
+const App: React.FC = () => {
+  interface DrawProps {
+    point?: any
+    drawstart?: any
+    drawend?: any
+    change?: any
+    clear?: any
+    modifyend?: any
+  }
+  let target: DrawProps = {
+    point:
+      'POLYGON((12564707.080045568 2697898.1333784987,12564765.004981065 2697810.3502288274,12564896.978287714 2697914.2568141525,12564799.640509507 2697932.7689069402,12564707.080045568 2697898.1333784987))',
+    drawstart: (val: any) => {},
+    drawend: (val: any) => {},
+    change: (val: any) => {},
+    modifyend: (val: any) => {}
+  }
+  let { drawstart, drawend, change, modifyend, clear, point } = target
   const onDrawstart = (val: any) => {
     drawstart && drawstart(val)
   }
@@ -52,7 +44,7 @@ const App = ({
   }
   const handleRemove = (map: any) => {}
   return (
-    <>
+    <div style={{ width: '100%', height: '500px' }}>
       <Openlayers.Draw
         type="wkt"
         point={point}
@@ -63,7 +55,7 @@ const App = ({
         modifyend={onModifyend}
         remove={handleRemove}
       ></Openlayers.Draw>
-    </>
+    </div>
   )
 }
 

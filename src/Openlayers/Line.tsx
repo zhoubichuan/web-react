@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'; //eslint-disable-line
 // import styles from "./index.module.scss";
-import { IAMap } from './IAMap/index';
+import { Map } from './IAMap/index';
 interface HeadProps {
   ref?: any;
   line?: any;
@@ -21,7 +21,7 @@ const App = ({ line = [] }: HeadProps) => {
     if (window.location.host.includes('localhost')) {
       config.url = 'https://smart-sit.farmbgy.com';
     }
-    map = new IAMap(config);
+    map = new Map(config);
     map.insertLayer('line'); // 实时路径图层
   };
   useEffect(() => {

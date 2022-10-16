@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'; //eslint-disable-line
 // import styles from "./index.module.scss";
-import { IAMap } from './IAMap/index';
+import { Map } from './IAMap/index';
 import { transform } from 'ol/proj';
 interface HeadProps {
   ref?: any;
@@ -24,7 +24,7 @@ const App = ({ point = [], children }: HeadProps) => {
     if (window.location.host.includes('localhost')) {
       config.url = 'https://smart-sit.farmbgy.com';
     }
-    map = new IAMap(config);
+    map = new Map(config);
     map.insertLayer('pointLayer');
   };
   useEffect(() => {

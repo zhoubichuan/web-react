@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'; //eslint-disable-line
 // import styles from "./index.module.scss";
-import { IAMap } from './IAMap/index';
+import { Map } from './IAMap/index';
 import { transform } from 'ol/proj';
 interface HeadProps {
   ref?: any;
@@ -29,7 +29,7 @@ const App = ({ point = [], index = 0, children, track }: HeadProps) => {
     if (window.location.host.includes('localhost')) {
       config.url = 'https://smart-sit.farmbgy.com';
     }
-    trackMap.current = new IAMap(config);
+    trackMap.current = new Map(config);
     trackMap.current.insertLayer('icon', { zIndex: 1005 });
     trackMap.current.insertLayer('route', { zIndex: 1004 });
     // trackMap.current.insertLayer('planRoute', { zIndex: 999 });
