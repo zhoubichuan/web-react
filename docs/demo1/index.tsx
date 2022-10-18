@@ -1,29 +1,39 @@
-import { Card, Tabs } from 'antd';
-import React from 'react';
-import Content1 from './Content'
-import Content2 from './Content'
-import styles from "./index.module.scss";
-import 'antd/lib/card/style'; 
-import 'antd/lib/tabs/style'; 
-const { TabPane } = Tabs;
-
-const handleOnChange = (key: string) => {
-    console.log(key);
-};
+import { Layout, Button } from '../../src/.';
+import React, { useState } from 'react';
+import AlarmRecord from './AlarmRecord';
+import FaultRecord from './FaultRecord';
 
 const App: React.FC = () => {
-    return (
-        <Card className={styles.card}>
-            <Tabs defaultActiveKey="1" onChange={handleOnChange}>
-                <TabPane tab="页签一" key="1">
-                    <Content1 />
-                </TabPane>
-                <TabPane tab="页签二" key="2">
-                    <Content2 />
-                </TabPane>
-            </Tabs>
-        </Card>
-    )
+  const [key, setKey] = useState('0');
+  const [isShow, setVisible] = useState(false);
+  return (
+    <Layout.TabsTemplate
+      targetKey={key}
+      keyChnage={(key: any) => setKey(key)}
+      tabBarExtraContent={
+        <Button.Image
+          size="large"
+          style={{ position: 'absolute', right: '10px', top: '10px' }}
+          type="primary"
+          onClick={() => setVisible(true)}
+          icon={'add'}
+        >
+          {key.includes('0') ? '新增围栏' : '新增阈值'}
+        </Button.Image>
+      }
+    >
+      <AlarmRecord
+        title="围栏设置"
+        showDialog={isShow}
+        stateChange={(val: boolean) => setVisible(val)}
+      />
+      <FaultRecord
+        title="阈值设置"
+        showDialog={isShow}
+        stateChange={(val: boolean) => setVisible(val)}
+      />
+    </Layout.TabsTemplate>
+  );
 };
 
 export default App;

@@ -27,7 +27,6 @@ const App: React.FC = () => (
 
 export default App;
 ```
-
 ### API
 
 | Name                  | Description            | Type    | Default |
