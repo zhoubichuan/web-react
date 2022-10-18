@@ -1,23 +1,22 @@
-import { Card, Tabs } from '@/antd';
+import { Card, Tabs, Button } from '../.';
 import React, { useState } from 'react';
 import styles from './index.module.scss';
 
 const App = (props: any) => {
-  let { children } = props;
-  const [key, setKey] = useState('0');
+  let { children, tabBarExtraContent, targetKey, keyChnage } = props;
   const handleOnChange = (key: string) => {
-    setKey(key);
+    keyChnage(key);
   };
   let { TabPane } = Tabs;
   return (
     <Card className={styles.tabsTemplate}>
-      <Tabs defaultActiveKey="0" onChange={handleOnChange}>
+      <Tabs defaultActiveKey="0" onChange={handleOnChange} tabBarExtraContent={tabBarExtraContent}>
         {React.Children.map(children, (item: any, index: number) => {
           let { title } = item.props;
-          let targetKey = String(index);
+          let key = String(index);
           return (
-            <TabPane tab={title} key={targetKey}>
-              {item}
+            <TabPane tab={title} key={key}>
+              {targetKey.includes(key) && item}
             </TabPane>
           );
         })}

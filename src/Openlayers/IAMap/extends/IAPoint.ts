@@ -4,7 +4,7 @@ import { Style, Circle, Stroke, Fill } from 'ol/style';
 
 export default class IAPoint extends Feature {
   [x: string]: any;
-  constructor(options:any) {
+  constructor(options: any) {
     super({
       info: options.info, // 调用者自定义属性
       type: 'point',
@@ -14,7 +14,7 @@ export default class IAPoint extends Feature {
     this._init(options);
   }
 
-  _init(options:any) {
+  _init(options: any) {
     const _this = this;
 
     this.setStyle(
@@ -35,26 +35,26 @@ export default class IAPoint extends Feature {
     );
   }
 
-//   change(options:any) {
-//     let geo = this.getGeometry();
-//     let opts = Object.assign(this.$options, options);
-//     geo.setCoordinates(opts.point);
+  //   change(options:any) {
+  //     let geo = this.getGeometry();
+  //     let opts = Object.assign(this.$options, options);
+  //     geo.setCoordinates(opts.point);
 
-//     this.setStyle(
-//       new Style({
-//         image: new Circle({
-//           // 半径
-//           radius: opts.radius,
-//           // 描边
-//           stroke: new Stroke({
-//             color: opts.stroke,
-//           }),
-//           // 填充
-//           fill: new Fill({
-//             color: opts.fill,
-//           }),
-//         }),
-//       }),
-//     );
-//   }
+  //     this.setStyle(
+  //       new Style({
+  //         image: new Circle({
+  //           // 半径
+  //           radius: opts.radius,
+  //           // 描边
+  //           stroke: new Stroke({
+  //             color: opts.stroke,
+  //           }),
+  //           // 填充
+  //           fill: new Fill({
+  //             color: opts.fill,
+  //           }),
+  //         }),
+  //       }),
+  //     );
+  //   }
 }

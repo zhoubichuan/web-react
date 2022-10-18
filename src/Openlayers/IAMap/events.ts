@@ -1,7 +1,7 @@
 import { Select } from 'ol/interaction';
 import { NOT_CLICK_ABLE } from './constant';
 
-export function eventsMixin(IAMap:any) {
+export function eventsMixin(IAMap: any) {
   /**
    *
    * 初始化事件

@@ -1,4 +1,4 @@
-import { Map, View, } from 'ol';
+import { Map, View } from 'ol';
 import { MousePosition, ScaleLine } from 'ol/control';
 import { createStringXY } from 'ol/coordinate';
 import { normalizePlugins } from './options';
@@ -7,7 +7,7 @@ import proj4 from 'proj4';
 import { getFarmCenter } from './constant';
 // const jsts = require("jsts/dist/jsts.min.js")
 
-// import Douglas from './worker/douglas.worker'; 
+// import Douglas from './worker/douglas.worker';
 
 export function initMaxin(IAMap: any) {
   IAMap.prototype._init = function (options: any) {
@@ -47,7 +47,7 @@ export function initMaxin(IAMap: any) {
 
     // 缓存插件
     ia._cache = Object.create(null);
-    ia.$map = ia.initMap({ target: ia.$options.target, controls: ia.$options.controls });
+    ia.$map = ia.initMap({ target: ia.$options.target, controls: ia.$options.control });
     ia.initEvent();
     ia.initView();
     ia.initPlugins();
@@ -62,7 +62,7 @@ export function initMaxin(IAMap: any) {
   IAMap.prototype.initMap = function ({ target, controls }) {
     return new Map({
       target: target,
-      controls: controls ? [new ScaleLine()] : [],
+      controls: controls.scaleLine ? [new ScaleLine()] : [],
     });
   };
 

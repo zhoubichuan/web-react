@@ -7,10 +7,10 @@ const onlineStyle = () => {};
 export default {
   name: 'camera',
 
-  install(vm:any) {
+  install(vm: any) {
     const ia = vm;
     const { $token, $options } = ia;
-    const source:any = new VectorSource({
+    const source: any = new VectorSource({
       format: new GeoJSON(),
       loader: async (extent) => {
         let res = await ia.$http.get(

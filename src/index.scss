@@ -1,4 +1,4 @@
-$ant-prefix: "myantd";
+$ant-prefix: 'ant';
 // 车联网前端主题色
 // $primary-color: #52CCA3;
 // $default-color: #F5F5F5;
@@ -30,15 +30,19 @@ $ant-prefix: "myantd";
 // $btn-disable-border: #ddd;
 // $modal-footer-padding-vertical: 12px;
 // $modal-footer-padding-horizontal: 24px;
+// @mixin modal-close-position {
+//     top: -46px;
+//     right: 0;
+//   }
 
 // 车联网后端主题色
-$base-color:#4890FF;
+$base-color: #4890ff;
 $primary-color: $base-color;
-$default-color: #F5F5F5;
+$default-color: #f5f5f5;
 $iconfont-css-prefix: 'anticon';
-$tabs-color:$base-color;
-$success-color: #52CCA3; // badge
-$error-color: #FF3B3B; //badge
+$tabs-color: $base-color;
+$success-color: #52cca3; // badge
+$error-color: #ff3b3b; //badge
 $warning-color: #ff9037;
 
 $border-radius-base: 4px;
@@ -63,3 +67,8 @@ $btn-disable-bg: #f0f0f0;
 $btn-disable-border: #ddd;
 $modal-footer-padding-vertical: 12px;
 $modal-footer-padding-horizontal: 24px;
+
+@mixin modal-close-position {
+  top: -23px;
+  right: -20px;
+}

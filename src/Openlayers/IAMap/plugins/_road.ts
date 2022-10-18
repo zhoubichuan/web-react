@@ -4,7 +4,7 @@ import XYZ from 'ol/source/XYZ';
 export default {
   name: 'road',
 
-  install(vm:any) {
+  install(vm: any) {
     return new TileLayer({
       source: new XYZ({}),
     });

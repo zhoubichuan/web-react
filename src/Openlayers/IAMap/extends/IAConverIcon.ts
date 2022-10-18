@@ -13,7 +13,6 @@ export default class IAConverIcon extends Overlay {
   //       options.rotate
   //     }deg);" src="${require(`@/antd/Openlayers/IAMap/icons/${options.icon}`)}" />
   //   `;
-
   //   const opts = Object.assign(
   //     {
   //       positioning: 'center-center',
@@ -22,13 +21,10 @@ export default class IAConverIcon extends Overlay {
   //     },
   //     options,
   //   );
-
   //   super(opts);
-
   //   element.parentElement.style.transition = 'all';
   //   this._init(opts);
   // }
-
   // _init(options) {
   //   this.$options = options;
   //   this.$icon = options.icon;
@@ -45,24 +41,19 @@ export default class IAConverIcon extends Overlay {
   //   this.define();
   //   this.initEvent();
   // }
-
   // initEvent() {
   //   const _this = this;
   //   const { $element, $ia, $type } = this;
-
   //   $element.addEventListener('click', function (e) {
   //     $ia.$icons.forEach((item) => {
   //       if (item._uid !== _this._uid) {
   //         item.active = false;
   //       }
   //     });
-
   //     _this.active = !_this.active;
-
   //     $ia.$emit($type, _this.info, _this, _this.active);
   //   });
   // }
-
   // define() {
   //   Object.defineProperty(this, 'active', {
   //     get() {
@@ -82,16 +73,13 @@ export default class IAConverIcon extends Overlay {
   //     },
   //   });
   // }
-
   // move(point) {
   //   this.setPosition(point);
   // }
-
   // change(icon) {
   //   let img = this.$element.querySelector('.h-map-icon-img');
   //   img.src = require(`@/antd/Openlayers/IAMap/icons/${icon}`);
   // }
-
   // update({ point, icon, rotate }) {
   //   if (point) {
   //     this.move(point);
@@ -103,12 +91,10 @@ export default class IAConverIcon extends Overlay {
   //     this.$element.style.transform = `rotate(${rotate}deg)`;
   //   }
   // }
-
   // hide() {
   //   this.$element.classList.add('is-hide');
   //   this._show = false;
   // }
-
   // show() {
   //   this.$element.classList.remove('is-hide');
   //   this._show = true;

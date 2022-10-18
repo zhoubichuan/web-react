@@ -8,5 +8,7 @@ export default {
   view: {},
   layer: {},
   source: {},
-  control: {},
+  control: {
+    scaleLine: true,
+  },
 };

@@ -8,12 +8,12 @@ import {
   Polygon,
   LinearRing,
 } from 'ol/geom';
-import { Style, Stroke, Fill } from 'ol/style'; 
+import { Style, Stroke, Fill } from 'ol/style';
 // const jsts = require("jsts/dist/jsts.min.js")
 
 export default class IABuffer extends Feature {
   [x: string]: any;
-  constructor(options:any) {
+  constructor(options: any) {
     super({
       type: 'line',
       geometry: new LineString(options.point),
@@ -22,7 +22,7 @@ export default class IABuffer extends Feature {
     this._init(options);
   }
 
-  _init(options:any) {
+  _init(options: any) {
     this.$options = options;
     // this.$parser = new jsts.io.OL3Parser()
     this.$parser.inject(
@@ -49,8 +49,8 @@ export default class IABuffer extends Feature {
     );
   }
 
-  update({ points, width }:any) {
-    const _this = this; 
+  update({ points, width }: any) {
+    const _this = this;
 
     if (points) {
       let line = new LineString(points);

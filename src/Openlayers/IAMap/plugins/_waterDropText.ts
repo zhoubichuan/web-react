@@ -9,7 +9,7 @@ import { Icon, Style, Text, Fill } from 'ol/style';
 export default {
   name: 'waterDropText',
 
-  install(vm:any) {
+  install(vm: any) {
     const ia = this;
     // layer
     const layer = new VectorLayer({

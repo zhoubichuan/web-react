@@ -7,7 +7,7 @@ import _ from 'lodash';
 export default {
   name: 'tile',
 
-  install(vm:any) {
+  install(vm: any) {
     const ia = vm;
     const proj = getProjection('EPSG:900913');
     const extent = proj.getExtent();
@@ -25,7 +25,7 @@ export default {
       resolutions[i] = size / Math.pow(2, i);
       matrixIds[i] = `EPSG:900913:${i}`;
     }
-    const source:any = new WMTS({
+    const source: any = new WMTS({
       url: `/gis/geoserver/gwc/service/wmts`,
       layer: `gisdata:raster_basemap_${ia.$options.code}`,
       style: '',

@@ -5,23 +5,16 @@ import { getFarmCenter } from './constant';
 
 import 'ol/ol.css';
 import Feature from 'ol/Feature';
-import GeoJSON from 'ol/format/GeoJSON'; 
-import LinearRing from 'ol/geom/LinearRing'; 
-import Map from 'ol/Map'; 
-import OSM from 'ol/source/OSM'; 
-import VectorSource from 'ol/source/Vector'; 
-import View from 'ol/View'; 
-import {
-  LineString,
-  MultiLineString, 
-  MultiPoint, 
-  MultiPolygon, 
-  Point,
-  Polygon, 
-} from 'ol/geom';
-import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer'; 
-import { fromLonLat } from 'ol/proj'; 
-import { Style, Stroke, Fill, Circle, Icon, Text } from 'ol/style'; 
+import GeoJSON from 'ol/format/GeoJSON';
+import LinearRing from 'ol/geom/LinearRing';
+import Map from 'ol/Map';
+import OSM from 'ol/source/OSM';
+import VectorSource from 'ol/source/Vector';
+import View from 'ol/View';
+import { LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon } from 'ol/geom';
+import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
+import { fromLonLat } from 'ol/proj';
+import { Style, Stroke, Fill, Circle, Icon, Text } from 'ol/style';
 // import IAFeatureIcon from './extends/IAFeatureIcon';
 import { clearSpread } from './animation/selected-spread';
 import { transform } from 'ol/proj';
@@ -29,7 +22,7 @@ import { Draw, Modify, Select, Snap } from 'ol/interaction';
 import WKT from 'ol/format/WKT';
 import { __getFeatureByWKB, __getFeatureByWKT } from './utils/types';
 
-export function globalApiMixin(IAMap:any) {
+export function globalApiMixin(IAMap: any) {
   /**
    *
    * 通过名称寻找layer
@@ -121,7 +114,7 @@ export function globalApiMixin(IAMap:any) {
   //   let field = this._fieldCache[code];
 
   //   if (center) {
-  //     
+  //
   //     let view = this.$map.getView();
   //     view.animate({
   //       center: field.center
@@ -203,7 +196,7 @@ export function globalApiMixin(IAMap:any) {
       source: source,
     });
 
-    modify.on('modifyend', function (e:any) {
+    modify.on('modifyend', function (e: any) {
       var features = e.features.array_;
       var wktformat = new WKT();
       options.drawend(wktformat.writeGeometry(features[0].getGeometry()));
@@ -237,7 +230,7 @@ export function globalApiMixin(IAMap:any) {
       ia.$map.removeInteraction(draw);
       ia.$map.removeInteraction(snap);
     });
-    draw.on('change', function (e:any) {
+    draw.on('change', function (e: any) {
       let format = new WKT();
       let data;
       data = format.writeFeature(e.feature);
@@ -441,7 +434,6 @@ export function globalApiMixin(IAMap:any) {
   };
 
   IAMap.prototype.testBuffered = function (points) {
-    
     // const parser = new jsts.io.OL3Parser();
     // parser.inject(
     //   Point,
@@ -487,7 +479,7 @@ export function globalApiMixin(IAMap:any) {
    */
   IAMap.prototype.addFeatureIcon = function (options) {
     const ia = this;
-    const { $map, $featureIcons } = ia; 
+    const { $map, $featureIcons } = ia;
 
     let icon = $featureIcons({
       ia: ia,
@@ -517,7 +509,7 @@ export function globalApiMixin(IAMap:any) {
       // icon.on('show', () => {
       //   let active = icon.get('active');
       //   if (active) {
-      //     let aniKey = selectedSpread(icon, layer, ia); 
+      //     let aniKey = selectedSpread(icon, layer, ia);
       //     icon.set('aniKey', aniKey);
       //   }
       // });
@@ -576,7 +568,7 @@ export function globalApiMixin(IAMap:any) {
 
     ia.$icons.forEach((item) => {
       // if (item.$type === type) {
-      //   
+      //
       //   if (item._show) {
       //     item.hide();
       //   } else {
@@ -623,9 +615,7 @@ export function globalApiMixin(IAMap:any) {
           rej(e);
         };
       });
-    } catch (error) {
-      
-    }
+    } catch (error) {}
   };
 
   IAMap.prototype.clearWorker = function () {
@@ -688,7 +678,7 @@ export function globalApiMixin(IAMap:any) {
       let source = layer.getSource();
       let straightLines = [], // 直线
         curveLines = []; // 曲线
-      let linePoints = [], 
+      let linePoints = [],
         lineCountPoints = [],
         arrowLines = [],
         curveArrowLines = [];
@@ -777,7 +767,7 @@ export function globalApiMixin(IAMap:any) {
           }
         } else {
           if (lineCountPoint.line) {
-            let line:any = {
+            let line: any = {
               line: lineCountPoint.line,
             };
             if (lineCountPoint.category === 0) {
@@ -946,7 +936,6 @@ export function globalApiMixin(IAMap:any) {
         }),
       });
       curveLines.forEach((line, index) => {
-        
         let coords = line.points.map((p) => {
           return [p.x, p.y];
         });
@@ -1089,9 +1078,9 @@ export function globalApiMixin(IAMap:any) {
       lIcon.insertFeatures(feature);
     }
 
-    let temp = []; 
-    let path = []; 
-    let farm = []; 
+    let temp = [];
+    let path = [];
+    let farm = [];
 
     let road = [];
     let straight = [];
@@ -1332,7 +1321,7 @@ export function globalApiMixin(IAMap:any) {
   };
 }
 
-function getAngle(first:any, second:any) {
+function getAngle(first: any, second: any) {
   let y = second[1] - first[1];
   let x = second[0] - first[0];
   let radAngle = Math.atan(y / x);

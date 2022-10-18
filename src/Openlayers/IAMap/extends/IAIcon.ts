@@ -12,10 +12,8 @@ export default class IAIcon extends Feature {
   //   this.$options = options;
   //   this._init(options);
   // }
-
   // _init(options) {
   //   const _this = this;
-
   //   _this.icon = options.icon;
   //   _this.rotation = options.rotation;
   //   let _options = {
@@ -29,7 +27,6 @@ export default class IAIcon extends Feature {
   //       image: new Icon(_options),
   //     }),
   //   ];
-
   //   if (options.corner) {
   //     style.push(
   //       new Style({
@@ -42,16 +39,13 @@ export default class IAIcon extends Feature {
   //       }),
   //     );
   //   }
-
   //   this.setStyle(style);
   // }
-
   // change(options) {
   //   let point = new Point(options.point);
   //   this.setGeometry(point);
   //   let opts = Object.assign(this.$options, options);
   //   this.values_.info = opts.info;
-
   //   if (opts.corner) {
   //     this.setStyle([
   //       new Style({

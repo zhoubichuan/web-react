@@ -13,7 +13,11 @@ export const __isPromise = (target: any) => target.toString() === '[object Promi
  */
 export const __isArray = (target: any) => Array.isArray(target);
 
-export const __getFeatureByWKT = function getFeatureByWKT(wkt: any, sourceCode: any, targetCode: any) {
+export const __getFeatureByWKT = function getFeatureByWKT(
+  wkt: any,
+  sourceCode: any,
+  targetCode: any,
+) {
   try {
     if (!wkt) {
       return null;
@@ -31,7 +35,11 @@ export const __getFeatureByWKT = function getFeatureByWKT(wkt: any, sourceCode: 
     return null;
   }
 };
-export const __getFeatureByWKB = function getFeatureByWKB(coordinate: string, sourceCode: any, targetCode: any) {
+export const __getFeatureByWKB = function getFeatureByWKB(
+  coordinate: string,
+  sourceCode: any,
+  targetCode: any,
+) {
   try {
     if (!coordinate) {
       return null;

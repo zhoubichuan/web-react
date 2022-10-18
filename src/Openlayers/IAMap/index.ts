@@ -5,7 +5,7 @@ import { pluginsMixin } from './plugins';
 import { eventsMixin } from './events';
 
 export class Map {
-  constructor(options:any) {
+  constructor(options: any) {
     this._init(options);
   }
   private _init(options: any) {

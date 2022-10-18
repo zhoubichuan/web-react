@@ -1,4 +1,4 @@
-import { Form, Table } from '../.';
+import { Form, Table, Modal } from '../.';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import React, { createRef, useEffect, useState } from 'react';
 import styles from './index.module.scss';
@@ -9,6 +9,7 @@ const App = (props: any) => {
     search: { template: searchTemplate, data: searchData },
     table: { template: tableTemplate, data: initTableData },
     request,
+    children,
   } = props;
   let searchRef = createRef<any>();
   const [formColumns, setFormColumns] = useState(searchTemplate);
@@ -23,7 +24,6 @@ const App = (props: any) => {
   };
   const requestFn = async (params: any, callback?: Function) => {
     let data = await request(tableData.page, params, callback);
-    console.log(data, 'data');
     setTableData(data);
   };
   useEffect(() => {

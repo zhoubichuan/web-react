@@ -15,3 +15,4 @@ export { default as roadblock } from './_roadblock';
 // export { default as machine } from './_machine';
 export { default as farmland } from './_farmland';
 export { default as fields } from './_fields';
+export { default as china } from './china';

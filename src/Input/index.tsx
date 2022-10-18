@@ -13,5 +13,6 @@ const App = (props: InputProps) => {
 };
 App.TextArea = Input.TextArea;
 App.Password = Input.Password;
+App.Group = Input.Group;
 App.Circle = Circle;
 export default App;

@@ -6,10 +6,10 @@ import { Stroke, Style, Fill, Icon } from 'ol/style';
 export default {
   name: 'sign',
 
-  install(vm:any) {
+  install(vm: any) {
     const ia = vm;
     const token = ia.$token;
-    const source:any = new VectorSource({
+    const source: any = new VectorSource({
       format: new GeoJSON(),
       loader: async (extent) => {
         let res = await ia.$http.get(

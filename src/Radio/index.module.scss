@@ -3,17 +3,17 @@
   :global {
     .#{$ant-prefix}-radio-checked {
       &::after {
-        border: 1px solid $base-color;
+        border: 1px solid #52cca3;
       }
     }
     .#{$ant-prefix}-radio-checked {
       .#{$ant-prefix}-radio-inner {
-        border-color: $base-color;
+        border-color: #52cca3;
       }
     }
     .#{$ant-prefix}-radio-inner {
       &::after {
-        background-color: $base-color;
+        background-color: #52cca3;
       }
     }
   }

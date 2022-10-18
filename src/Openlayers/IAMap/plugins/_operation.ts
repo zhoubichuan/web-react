@@ -11,7 +11,7 @@ import { transform } from 'ol/proj';
 export default {
   name: 'operation',
 
-  async install(vm:any) {
+  async install(vm: any) {
     const ia = vm;
     const { $token, $options } = ia;
 
@@ -20,7 +20,7 @@ export default {
     );
 
     // [12564729.146098873, 2697820.142700865]
-    res.features.forEach((item:any) => {
+    res.features.forEach((item: any) => {
       ia.addFeatureIcon({
         type: 'operationIcon',
         position: transform(item.geometry.coordinates, 'EPSG:4326', 'EPSG:900913'),

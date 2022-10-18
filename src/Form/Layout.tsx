@@ -1,4 +1,5 @@
 import { Button, Form, Input, Select, Space, Radio, DatePicker, message } from '../.';
+import { Row, Col } from 'antd';
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import type {
@@ -9,9 +10,13 @@ import type {
 import moment from 'moment';
 const dateFormat = 'YYYY-MM-DD HH:mm:ss';
 const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
+  name: 'wrap',
+  labelCol: { flex: '110px' },
+  colon: false,
+  wrapperCol: { flex: 1 },
   autoComplete: 'off',
+  labelWrap: true,
+  labelAlign: 'left',
 };
 interface FormProps {
   formItemData: any;
@@ -93,33 +98,30 @@ const App = ({ formItemData, mapPoint, data, onFinish: handleFinish }: FormProps
   };
 
   return (
-    <Form {...layout} form={form} onFinish={onFinish} className={styles.electronForm}>
+    <Form {...layout} form={form} onFinish={onFinish} className={styles.layout}>
       {formItemData.map((item: any, index: number) => {
-        let { render, ...rest } = item;
         return (
-          <Form.Item {...rest} key={item.name}>
-            {render()}
-          </Form.Item>
+          <Row key={index} gutter={16}>
+            {item.map((i: any, childIndex: number) => {
+              let { render, ...rest } = i;
+              let span = 24 / item.length;
+              return (
+                <Col key={childIndex} span={span}>
+                  <Form.Item {...rest}>{render()}</Form.Item>
+                </Col>
+              );
+            })}
+          </Row>
         );
       })}
-      <Space size={[10, 8]}>
-        <Button
-          size="large"
-          htmlType="button"
-          onClick={onReset}
-          style={{ width: '168px', display: 'inline' }}
-        >
+      <Row justify="end">
+        <Button size="large" htmlType="button" onClick={onReset}>
           取消
         </Button>
-        <Button
-          size="large"
-          type="primary"
-          htmlType="submit"
-          style={{ width: '168px', display: 'inline' }}
-        >
+        <Button size="large" type="primary" htmlType="submit" style={{ margin: '0 0 0 20px' }}>
           保存
         </Button>
-      </Space>
+      </Row>
     </Form>
   );
 };

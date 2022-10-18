@@ -20,7 +20,7 @@ import { getCenter } from 'ol/extent';
 
 // 插件列表
 export const PluginList = [
-  fields,//田块地图
+  fields, //田块地图
   satellitePlugin, // 卫星地图
   // roadblock, // 路障
   // machine, // 农机库

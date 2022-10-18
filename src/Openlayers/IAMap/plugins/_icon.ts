@@ -4,7 +4,7 @@ import { Vector as VectorLayer } from 'ol/layer';
 export default {
   name: 'line',
 
-  install(vm:any) {
+  install(vm: any) {
     const ia = vm;
     // ia._lineCache = Object.create(null)
 

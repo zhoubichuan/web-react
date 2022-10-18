@@ -13,3 +13,48 @@
     }
   }
 }
+.electronForm {
+  margin-top: 20px;
+  padding: 0 10px;
+
+  :global {
+    .ant-form-item {
+      box-shadow: 0px 1px 24px 0px rgba(0, 0, 0, 0.04);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+
+      .ant-form-item-label>label {
+        font-weight: 400;
+        font-size: 16px;
+        height: 100%;
+      }
+
+      .ant-input {
+        border: none;
+        margin: 14px 0 10px
+      }
+
+      .ant-select-selector {
+        border: none;
+        margin: 14px 0 10px
+      }
+
+      .ant-radio-group {
+        margin: 14px 10px 14px
+      }
+
+      .ant-picker {
+        border: none;
+        margin: 14px 0 10px
+      }
+      .ant-btn-default{
+        background:#FFFFFF ;
+      }
+    }
+  }
+}
+
+.layout{
+  
+}

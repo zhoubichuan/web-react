@@ -6,7 +6,7 @@ import { Text, Style, Fill, Circle, Stroke } from 'ol/style';
 export default {
   name: 'center',
 
-  async install(vm:any) {
+  async install(vm: any) {
     const ia = vm;
     const { $token, $farmId } = ia;
 
@@ -15,9 +15,9 @@ export default {
       limit: -1,
       page: 0,
     };
-    let land:any = await fetch(`/hx-farm/api-farm/v3/farmland/getPage`);
+    let land: any = await fetch(`/hx-farm/api-farm/v3/farmland/getPage`);
 
-    const source:any = new VectorSource({
+    const source: any = new VectorSource({
       format: new GeoJSON(),
       loader: async (extent) => {
         let res = await ia.$http.get(
@@ -31,8 +31,8 @@ export default {
           }),
         );
 
-        source.getFeatures().forEach((item:any) => {
-          let target = land.result.data.find((l:any) => l.gisCode === item.values_.pcode);
+        source.getFeatures().forEach((item: any) => {
+          let target = land.result.data.find((l: any) => l.gisCode === item.values_.pcode);
           item.values_.name = target && target.name ? target.name : '';
           item.isSelect = false;
           item._isSelect = false;
@@ -111,7 +111,7 @@ export default {
       minZoom: 0,
       maxZoom: 22,
       declutter: false,
-      style: (res:any) => {
+      style: (res: any) => {
         return new Style({
           text: new Text({
             font: '16px',
@@ -126,13 +126,13 @@ export default {
       },
     });
 
-    ia.$on('field:multiple', function (list:any) {
+    ia.$on('field:multiple', function (list: any) {
       layer
         .getSource()
         .getFeatures()
-        .forEach((item:any) => {
+        .forEach((item: any) => {
           item.isSelect = false;
-          list.forEach((l:any, index:any) => {
+          list.forEach((l: any, index: any) => {
             if (item.values_.pcode === l) {
               item.isSelect = true;
               item.values_.idx = index + 1;

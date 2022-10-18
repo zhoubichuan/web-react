@@ -76,10 +76,9 @@ const App = ({ ref, point = [], type = 'coordinate', ...rest }: HeadProps) => {
       type,
     });
   }, [point]);
-  console.log(drawMap,'drawMap')
+  console.log(drawMap, 'drawMap');
   const handleRemove = (map: any) => {};
   return <div ref={mapRef} style={{ width: '100%', height: '100%' }}></div>;
 };
 
 export default App;
-

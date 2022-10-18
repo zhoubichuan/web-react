@@ -12,7 +12,7 @@ import { getCenter } from 'ol/extent';
 export default {
   name: 'roadblock',
 
-  install(vm:any) {
+  install(vm: any) {
     const ia = vm;
     const { $token, $options } = vm;
 
@@ -32,7 +32,7 @@ export default {
         // )
 
         if (res.features) {
-          res.features.forEach((item:any) => {
+          res.features.forEach((item: any) => {
             ia.addFeatureIcon({
               type: 'roadblock',
               position: transform(getCenter(item.bbox), 'EPSG:4326', 'EPSG:900913'),

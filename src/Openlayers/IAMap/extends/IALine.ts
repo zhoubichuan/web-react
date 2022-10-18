@@ -5,7 +5,7 @@ import Douglas from '../worker/douglas.worker';
 
 export default class IALine extends Feature {
   [x: string]: any;
-  constructor(options:any) {
+  constructor(options: any) {
     super({
       type: 'line',
       geometry: new LineString(options.point),
@@ -14,7 +14,7 @@ export default class IALine extends Feature {
     this._init(options);
   }
 
-  _init(options:any) {
+  _init(options: any) {
     const _this = this;
 
     _this.setStyle(
@@ -25,7 +25,7 @@ export default class IALine extends Feature {
   }
 
   // 实时路径
-  update({ point }:any) {
+  update({ point }: any) {
     const _this = this;
     const geo = _this.getGeometry();
 
@@ -35,13 +35,13 @@ export default class IALine extends Feature {
   }
 
   // 完整路径
-  completeLine(points:any) {
+  completeLine(points: any) {
     const _this = this;
     _this.setGeometry(new LineString(points));
   }
 
   // 完整路径
-  change(points:any) {
+  change(points: any) {
     const _this = this;
 
     _this.setGeometry(new LineString(points));

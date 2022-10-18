@@ -10,7 +10,7 @@ import { toContext } from 'ol/render';
 export default {
   name: 'fields',
 
-  async install(vm:any) {
+  async install(vm: any) {
     const ia = vm;
     const { $token, $farmId, $farmCode, $mode, $limit, $field } = ia;
 
@@ -25,9 +25,9 @@ export default {
       page: 0,
     };
 
-    let land:any = await fetch(`/hx-farm/api-farm/v3/farmland/getPage`);
+    let land: any = await fetch(`/hx-farm/api-farm/v3/farmland/getPage`);
 
-    function add(code:any, idx:any) {
+    function add(code: any, idx: any) {
       let info = ia._fieldCache[code];
       const layer = ia.findLayer('fields');
 
@@ -69,20 +69,20 @@ export default {
       layer.insertFeatures(feature);
     }
 
-    function remove(code:any) {
+    function remove(code: any) {
       const layer = ia.findLayer('fields');
 
       layer
         .getSource()
         .getFeatures()
-        .forEach((item:any) => {
+        .forEach((item: any) => {
           if (item.id_ === code) {
             layer.getSource().removeFeature(item);
           }
         });
     }
 
-    const source:any = new VectorSource({
+    const source: any = new VectorSource({
       format: new GeoJSON(),
       loader: async (extent) => {
         // 获取田块要素
@@ -99,8 +99,8 @@ export default {
             }),
           );
 
-          source.getFeatures().forEach((item:any) => {
-            let target = land.result.data.find((l:any) => l.gisCode === item.values_.code);
+          source.getFeatures().forEach((item: any) => {
+            let target = land.result.data.find((l: any) => l.gisCode === item.values_.code);
 
             item.values_.idx = 0;
 
@@ -229,14 +229,14 @@ export default {
       },
     });
 
-    const layer:any = new VectorLayer({
+    const layer: any = new VectorLayer({
       source: source,
       opacity: 1,
       visible: true,
       minZoom: 0,
       maxZoom: 22,
       declutter: false,
-      style: (res:any) => {
+      style: (res: any) => {
         return new Style({
           text: new Text({
             font: '16px',
@@ -262,14 +262,14 @@ export default {
     });
 
     // 田块点击事件
-    ia.$on('fields', (feature:any, layer:any) => {
+    ia.$on('fields', (feature: any, layer: any) => {
       if (ia.frozen) {
         return;
       }
       layer
         .getSource()
         .getFeatures()
-        .forEach((item:any) => {
+        .forEach((item: any) => {
           if ($mode === 'single') {
             if (item === feature) {
               item.isSelect = !item.isSelect;

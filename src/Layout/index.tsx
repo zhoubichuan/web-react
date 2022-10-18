@@ -3,7 +3,9 @@ import type { LayoutProps } from 'antd';
 import './index.module.scss';
 import styles from './index.module.scss';
 import React from 'react';
-// import Page from './Page'
+import PageContent from './PageContent';
+import TabsTemplate from './TabsTemplate';
+import PageTemplate from './PageTemplate';
 const { Header, Footer, Content, Sider } = Layout;
 const App = (props: LayoutProps) => {
   return (
@@ -16,5 +18,7 @@ App.Header = Header;
 App.Footer = Footer;
 App.Content = Content;
 App.Sider = Sider;
-// App.Page = Page;
+App.PageContent = PageContent;
+App.TabsTemplate = TabsTemplate;
+App.PageTemplate = PageTemplate;
 export default App;

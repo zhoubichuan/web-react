@@ -7,8 +7,8 @@ nav:
 # Empty
 
 ```tsx
-import { Empty } from 'antd';
-import React from 'react';
+import { Empty } from 'myantd';
+
 const App: React.FC = () => <Empty />;
 
 export default App;

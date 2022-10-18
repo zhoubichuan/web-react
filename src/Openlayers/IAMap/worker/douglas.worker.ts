@@ -13,7 +13,7 @@ class Douglas {
    * @param point2
    * @return
    */
-  calculationDistance(point1: { [x: string]: any; }, point2: { [x: string]: any; }) {
+  calculationDistance(point1: { [x: string]: any }, point2: { [x: string]: any }) {
     let lat1 = point1['x'];
     let lat2 = point2['x'];
     let lng1 = point1['y'];
@@ -105,7 +105,7 @@ class Douglas {
       coordinate2.push(point);
     }
 
-    let result: { x: any; y: any; idx: number; }[] = [];
+    let result: { x: any; y: any; idx: number }[] = [];
     result = this.compressLine(coordinate2, result, 0, coordinate2.length - 1, dMax);
     result.push(coordinate2[0]);
     result.push(coordinate2[coordinate2.length - 1]);
@@ -131,7 +131,7 @@ class Douglas {
    * @param target 目标坐标系
    * @return
    */
-  getList({ coordinate, dMax }:any) {
+  getList({ coordinate, dMax }: any) {
     if (null == coordinate) {
       return null;
     }
@@ -163,7 +163,7 @@ class Douglas {
 }
 
 // self.onmessage = (event) => {
-//   
+//
 //   let data = JSON.parse(event.data);
 //   let dou = new Douglas();
 //   let value = dou.getValue(data.length);
@@ -172,7 +172,7 @@ class Douglas {
 //     dMax: value * dou.DMAX_UNIT
 //   });
 
-//   self.postMessage(points); 
+//   self.postMessage(points);
 // };
 
 export default Douglas;

@@ -45,7 +45,7 @@ export function pluginsMixin(IAMap: any) {
    * 对外暴露的挂载方法, 调用插件的install方法
    * @param {*} plugin
    */
-  IAMap.prototype.$use = function (plugin:any) {
+  IAMap.prototype.$use = function (plugin: any) {
     const ia = this;
     const { _cache } = ia;
 
@@ -70,7 +70,7 @@ export function pluginsMixin(IAMap: any) {
    * @param {*} name
    * @param {*} plugin
    */
-  IAMap.prototype._mount = function (name:any, plugin:any) {
+  IAMap.prototype._mount = function (name: any, plugin: any) {
     const ia = this;
     const { _cache, $layers, $map } = ia;
 

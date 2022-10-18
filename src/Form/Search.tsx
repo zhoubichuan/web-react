@@ -51,7 +51,7 @@ const SelectComponent = (item: any) => {
 };
 const InputComponent = (item: any) => {
   return (
-    <Form.Item name={item.name} key={item.name}>
+    <Form.Item name={item.name} key={item.name} rules={item.rules || []}>
       <Input
         allowClear
         placeholder={item.placeholder}

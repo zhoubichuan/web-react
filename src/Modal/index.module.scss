@@ -6,18 +6,17 @@
         }
 
         .#{$ant-prefix}-modal-close {
+            @include modal-close-position;
             position: absolute;
-            right: 0;
             background: #F1F1F1;
-            top: -46px;
             width: 40px;
             border-radius: 50%;
             height: 40px;
 
             .#{$ant-prefix}-modal-close-x {
-                width: 100%;
-                height: 100%;
-                line-height: 40px;
+                width: 100%!important;
+                height: 100%!important;
+                line-height: 40px!important;
             }
         }
     }

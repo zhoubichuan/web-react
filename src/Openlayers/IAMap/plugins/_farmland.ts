@@ -15,7 +15,7 @@ import { Point } from 'ol/geom';
 export default {
   name: 'farmland',
 
-  install(vm:any) {
+  install(vm: any) {
     const ia = vm;
     const { $token, $options } = ia;
 
@@ -27,7 +27,7 @@ export default {
           `${ia.$options.url}/gis/geoserver/gisdata/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=gisdata:dy_farmland&outputFormat=application/json&access_token=${$token}`,
         );
         if (res.features) {
-          res.features.forEach((item:any) => {
+          res.features.forEach((item: any) => {
             // let targetFeature = new Feature({
             //   geometry: new Point(transform(item.geometry.coordinates, 'EPSG:4326', 'EPSG:900913'))
             // })

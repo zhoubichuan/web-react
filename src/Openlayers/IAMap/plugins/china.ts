@@ -1,13 +1,16 @@
 import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
 import url from './source/index';
+
 export default {
-  name: 'satellite',
+  name: 'china',
 
   install(vm: any) {
     return new TileLayer({
+      minZoom: 4,
+      maxZoom: 20,
       source: new XYZ({
-        url: url.tianditu,
+        url: url.grayChinaProvince,
       }),
     });
   },

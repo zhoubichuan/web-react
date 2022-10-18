@@ -11,14 +11,14 @@ import { getCenter } from 'ol/extent';
 export default {
   name: 'field',
 
-  install(vm:any) {
+  install(vm: any) {
     const ia = vm;
     const { $token, $farmCode, $mode, $limit } = ia;
 
     // 田块缓存
     ia._fieldCache = Object.create(null);
     // source
-    const source :any= new VectorSource({
+    const source: any = new VectorSource({
       format: new GeoJSON(),
       loader: async (extent) => {
         // 获取田块要素
@@ -33,7 +33,7 @@ export default {
           }),
         );
 
-        source.getFeatures().forEach((item:any) => {
+        source.getFeatures().forEach((item: any) => {
           // defineSelect(item, defaultStyle, selectStyle)
           Object.defineProperty(item, 'isSelect', {
             get() {
@@ -95,7 +95,7 @@ export default {
       minZoom: 0,
       maxZoom: 22,
       declutter: false,
-      style: (res:any) => {
+      style: (res: any) => {
         return new Style({
           text: new Text({
             font: '16px',
@@ -121,14 +121,14 @@ export default {
     });
 
     // 田块点击事件
-    ia.$on('field', (feature:any, layer:any) => {
+    ia.$on('field', (feature: any, layer: any) => {
       if (ia.frozen) {
         return;
       }
       layer
         .getSource()
         .getFeatures()
-        .forEach((item:any) => {
+        .forEach((item: any) => {
           if ($mode === 'multiple') {
             if (item === feature) {
               if (item.isSelect) {
@@ -155,11 +155,11 @@ export default {
         });
     });
 
-    ia.$on('field:multiple', function (list:any) {
+    ia.$on('field:multiple', function (list: any) {
       layer
         .getSource()
         .getFeatures()
-        .forEach((item:any) => {
+        .forEach((item: any) => {
           if (list.includes(item.values_.code)) {
             item.isSelect = true;
           } else {

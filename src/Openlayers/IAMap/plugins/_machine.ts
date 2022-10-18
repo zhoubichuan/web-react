@@ -12,7 +12,7 @@ import { getCenter } from 'ol/extent';
 export default {
   name: 'machine',
 
-  install(vm:any) {
+  install(vm: any) {
     const ia = vm;
     const { $token, $options } = ia;
 
@@ -31,7 +31,7 @@ export default {
         //   })
         // )
 
-        res.features.forEach((item:any) => {
+        res.features.forEach((item: any) => {
           //   ia.addFeatureIcon({
           //     type: 'machine',
           //     position: transform(getCenter(item.bbox), 'EPSG:4326', 'EPSG:900913'),

@@ -8,7 +8,7 @@ import { clearSpread, selectedSpread } from '../animation/selected-spread';
 export default {
   name: 'animation',
 
-  install(vm:any) {
+  install(vm: any) {
     const ia = vm;
 
     const source = new VectorSource();
@@ -55,23 +55,23 @@ export default {
         });
       },
     });
-    ia.$on('animation', (fea:any, layer:any) => {
+    ia.$on('animation', (fea: any, layer: any) => {
       layer
         .getSource()
         .getFeatures()
-        .forEach((feaEle:any) => {
+        .forEach((feaEle: any) => {
           if (feaEle.ol_uid === fea.ol_uid) {
             // if (feaEle instanceof IAFeatureIcon) {
-              let { active, disableSelect, aniKey } = feaEle.getProperties();
-              feaEle.active = !active;
-              if (!disableSelect) {
-                if (!active) {
-                  let aniKey = selectedSpread(feaEle, layer, ia);
-                  feaEle.set('aniKey', aniKey);
-                } else {
-                  clearSpread(aniKey);
-                }
+            let { active, disableSelect, aniKey } = feaEle.getProperties();
+            feaEle.active = !active;
+            if (!disableSelect) {
+              if (!active) {
+                let aniKey = selectedSpread(feaEle, layer, ia);
+                feaEle.set('aniKey', aniKey);
+              } else {
+                clearSpread(aniKey);
               }
+            }
             // } else {
             //   feaEle.set('active', true);
             // }

@@ -1,9 +1,9 @@
-import { Breadcrumb } from 'antd';
-import type { BreadcrumbProps } from 'antd';
+import { Button } from 'antd';
+import type { ButtonProps } from 'antd';
 import React from 'react';
-import style from './index.module.scss';
-const App = (props: BreadcrumbProps) => {
-  return <Breadcrumb {...props}>{props.children}</Breadcrumb>;
+import './index.module.scss';
+const App = (props: ButtonProps) => {
+  return <Button {...props}>{props.children}</Button>;
 };
-App.Item = Breadcrumb.Item
+
 export default App;

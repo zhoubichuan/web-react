@@ -9,7 +9,7 @@ import XYZ from 'ol/source/XYZ';
 export default {
   name: 'electron',
 
-  install(vm:any) {
+  install(vm: any) {
     return new TileLayer({
       source: new XYZ({}),
     });

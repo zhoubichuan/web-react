@@ -92,7 +92,7 @@ export const mergeFocusOptions = (opts: any) => {
   );
 };
 
-export const normalizePlugins = (plugins:any) => {
+export const normalizePlugins = (plugins: any) => {
   if (isNil(plugins) || isEmpty(plugins)) {
     return PluginList;
   }
