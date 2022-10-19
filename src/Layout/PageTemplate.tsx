@@ -1,16 +1,21 @@
 import { Card, Tabs } from '../.';
-import React from 'react';
 import PageContent from './PageContent';
 import styles from './index.module.scss';
 
 const handleOnChange = (key: string) => {
   console.log(key);
 };
-
-const App = (props: any) => {
+interface Props {
+  title: string;
+  search: any;
+  table: object;
+  request?: Function;
+  tabBarExtraContent?: any;
+}
+const App = (props: Props) => {
   let {
     title,
-    search = { template: [], data: [] },
+    search = { template: [], data: [], button: [] },
     table = {
       template: [],
       data: {
@@ -19,15 +24,16 @@ const App = (props: any) => {
       },
     },
     request,
+    tabBarExtraContent,
   } = props;
   return (
-    <div className={styles.pageTemplate}>
-      <Tabs defaultActiveKey="2" onChange={handleOnChange}>
+    <Card className={styles.pageTemplate}>
+      <Tabs defaultActiveKey="2" onChange={handleOnChange} tabBarExtraContent={tabBarExtraContent}>
         <Tabs.TabPane tab={title} key="1">
-          <PageContent search={search} table={table} request={request} />
+          <PageContent search={search} table={table} request={request} button={search.button} />
         </Tabs.TabPane>
       </Tabs>
-    </div>
+    </Card>
   );
 };
 

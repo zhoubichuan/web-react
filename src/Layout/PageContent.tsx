@@ -6,8 +6,8 @@ import _ from 'lodash';
 
 const App = (props: any) => {
   let {
-    search: { template: searchTemplate, data: searchData },
-    table: { template: tableTemplate, data: initTableData },
+    search: { template: searchTemplate, data: searchData, button },
+    table: { template: tableTemplate, data: initTableData, attrs },
     request,
     children,
   } = props;
@@ -23,8 +23,10 @@ const App = (props: any) => {
     searchRef.current?.handleSearch({ curPage: current, pageSize: pageSize });
   };
   const requestFn = async (params: any, callback?: Function) => {
-    let data = await request(tableData.page, params, callback);
-    setTableData(data);
+    if (request) {
+      let data = await request(tableData.page, params, callback);
+      setTableData(data);
+    }
   };
   useEffect(() => {
     if (!props.search) {
@@ -39,13 +41,16 @@ const App = (props: any) => {
           onRef={searchRef}
           searchData={getSearchData}
           requestFn={requestFn}
-        />
+        >
+          {button.length && <div className={styles.searchButton}>{button}</div>}
+        </Form.Search>
       )}
       <Table.Pagination
         rowKey={(record: any, index: number) => index}
         tableData={tableData}
         columns={tableTemplate}
         onChange={onChange}
+        {...attrs}
       />
     </div>
   );

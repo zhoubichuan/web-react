@@ -140,11 +140,12 @@ const App = (props: SearchProps) => {
       >
         <Row gutter={24} style={{ width: '100%' }}>
           {formItemData.map((item: any, index: number) => (
-            <Col span={6} key={index}>
-              {item.type === undefined && InputComponent(item)}
+            <Col span={4} key={index}>
+              {item.render && <Form.Item {...item.rest}>{item.render()}</Form.Item>}
+              {/* {item.type === undefined && InputComponent(item)}
               {item.type === 'select' && SelectComponent(item)}
               {item.type === 'textarea' && TextAreaComponent(item)}
-              {item.type === 'cascader' && CascaderComponent(item)}
+              {item.type === 'cascader' && CascaderComponent(item)} */}
             </Col>
           ))}
           {!props.type && (

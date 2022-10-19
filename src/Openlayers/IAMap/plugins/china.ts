@@ -7,7 +7,7 @@ export default {
 
   install(vm: any) {
     return new TileLayer({
-      minZoom: 4,
+      minZoom: 2,
       maxZoom: 20,
       source: new XYZ({
         url: url.grayChinaProvince,
