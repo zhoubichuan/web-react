@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'; //eslint-disable-lin
 // import styles from "./index.module.scss";
 import { Map } from './IAMap/index';
 import { transform } from 'ol/proj';
+import defalutConfig from './config';
 interface HeadProps {
   ref?: any;
   point: any;
@@ -15,6 +16,7 @@ const App = ({ point = [], index = 0, children, track }: HeadProps) => {
   const trackMap = useRef<any>(null);
   useEffect(() => {
     let config: any = {
+      ...defalutConfig,
       target: mapRef.current,
       interaction: true,
       controls: false,

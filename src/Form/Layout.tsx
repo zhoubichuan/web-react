@@ -1,6 +1,7 @@
-import { Button, Form } from '@/antd';
+import { Button, Form } from '../.';
 import { Row, Col } from 'antd';
 import styles from './index.module.scss';
+import React from 'react';
 const layout = {
   name: 'wrap',
   labelCol: { flex: '110px' },
