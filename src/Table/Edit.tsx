@@ -151,8 +151,9 @@ interface tableProps {
   data?: any;
   page?: any;
   columnsField?: Array<any>;
+  initTemplate?: any;
 }
-const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) => {
+const App = ({ columns, onChange, data = [], page, columnsField, initTemplate }: tableProps) => {
   let targetCode = columnsField?.find((item: any) => item.name === 'code');
   const [dataSource, setDataSource] = useState<DataType[]>([]);
   useEffect(() => {
@@ -192,20 +193,7 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
   ];
 
   const handleAdd = (val: any) => {
-    let target = targetCode.options[0];
-    const newData: Array<DataType> = [
-      ...dataSource,
-      {
-        key: count,
-        sortkey: count,
-        code: target.value,
-        name: target.name,
-        unit: target.unit,
-        type: columnsField?.find((item: any) => item.name === 'type').options[0].value,
-        value: 1,
-        duration: '1',
-      },
-    ];
+    const newData: Array<DataType> = [...dataSource, initTemplate];
     setDataSource(newData);
     setCount(count + 1);
     onChange(
@@ -265,13 +253,13 @@ const App = ({ columns, onChange, data = [], page, columnsField }: tableProps) =
           },
         }}
         rowClassName={() => 'editable-row'}
-        bordered
+        bordered={false}
         dataSource={dataSource}
         columns={column as ColumnTypes}
       />
       <Button
         type="dashed"
-        disabled={!columnsField?.length}
+        // disabled={!columnsField?.length}
         onClick={handleAdd}
         style={{
           display: 'block',

@@ -6,7 +6,7 @@ import Submit from './Submit';
 import Layout from './Layout';
 import styles from './index.module.scss';
 import React from 'react';
-
+import Text from './Text';
 const App = (props: any) => {
   return <Form {...props}>{props.children}</Form>;
 };
@@ -17,4 +17,5 @@ App.Search = Search;
 App.Search2 = Search2;
 App.Submit = Submit;
 App.Layout = Layout;
+App.Text = Text;
 export default App;

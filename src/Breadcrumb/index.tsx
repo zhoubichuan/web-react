@@ -5,5 +5,5 @@ import './index.module.scss';
 const App = (props: BreadcrumbProps) => {
   return <Breadcrumb {...props}>{props.children}</Breadcrumb>;
 };
-App.Item = Breadcrumb.Item
+App.Item = Breadcrumb.Item;
 export default App;

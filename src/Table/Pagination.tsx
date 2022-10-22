@@ -21,6 +21,7 @@ const App = (props: tableProps) => {
     tableData: { data, page },
     ...rest
   } = props;
+  console.log(data, page, 'data, page ');
   return (
     <div className={styles.pagination}>
       <Table

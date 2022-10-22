@@ -1,6 +1,7 @@
 import { Input } from 'antd';
 import type { InputProps } from 'antd';
 import Circle from './Circle';
+import Password from './Password';
 import React from 'react';
 import styles from './index.module.scss';
 
@@ -12,7 +13,7 @@ const App = (props: InputProps) => {
   );
 };
 App.TextArea = Input.TextArea;
-App.Password = Input.Password;
+App.Password = Password;
 App.Group = Input.Group;
 App.Circle = Circle;
 export default App;

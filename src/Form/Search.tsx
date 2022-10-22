@@ -111,6 +111,7 @@ const App = (props: SearchProps) => {
         }
       }
     });
+    console.log(values, 'values');
     handleSearch({ ...targetField });
   };
   const onReset = () => {
@@ -141,7 +142,11 @@ const App = (props: SearchProps) => {
         <Row gutter={24} style={{ width: '100%' }}>
           {formItemData.map((item: any, index: number) => (
             <Col span={4} key={index}>
-              {item.render && <Form.Item {...item.rest}>{item.render()}</Form.Item>}
+              {item.render && (
+                <Form.Item name={item.name} key={item.name}>
+                  {item.render()}
+                </Form.Item>
+              )}
               {/* {item.type === undefined && InputComponent(item)}
               {item.type === 'select' && SelectComponent(item)}
               {item.type === 'textarea' && TextAreaComponent(item)}

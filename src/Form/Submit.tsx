@@ -20,7 +20,6 @@ interface FormProps {
   onFinish: Function;
 }
 const App = ({ formItemData, mapPoint, data, onFinish: handleFinish }: FormProps) => {
-  const [machineOptions, setMachineOptions] = useState([]);
   useEffect(() => {
     let pageParams: getPageParams = {
       pageIndex: '1',

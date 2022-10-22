@@ -23,6 +23,7 @@ const App = (props: any) => {
     searchRef.current?.handleSearch({ curPage: current, pageSize: pageSize });
   };
   const requestFn = async (params: any, callback?: Function) => {
+    console.log(params, 'params-----');
     if (request) {
       let data = await request(tableData.page, params, callback);
       setTableData(data);
@@ -42,7 +43,7 @@ const App = (props: any) => {
           searchData={getSearchData}
           requestFn={requestFn}
         >
-          {button.length && <div className={styles.searchButton}>{button}</div>}
+          {button && button.length && <div className={styles.searchButton}>{button}</div>}
         </Form.Search>
       )}
       <Table.Pagination

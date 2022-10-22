@@ -2,7 +2,7 @@
 .switch {
   :global {
     .#{$ant-prefix}-switch-checked {
-      background: #52cca3;
+      background: $base-color;
       .#{$ant-prefix}-switch-handle {
         &::before {
           transform: translateX(-50%);

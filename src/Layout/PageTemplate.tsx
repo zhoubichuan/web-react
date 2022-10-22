@@ -1,18 +1,20 @@
 import { Card, Tabs } from '../.';
 import PageContent from './PageContent';
 import styles from './index.module.scss';
+import React from 'react';
 
 const handleOnChange = (key: string) => {
   console.log(key);
 };
-interface Props {
+interface PageProps {
   title: string;
   search: any;
   table: object;
   request?: Function;
   tabBarExtraContent?: any;
+  style?: any;
 }
-const App = (props: Props) => {
+const App: React.FC<PageProps> = (props) => {
   let {
     title,
     search = { template: [], data: [], button: [] },
@@ -27,7 +29,7 @@ const App = (props: Props) => {
     tabBarExtraContent,
   } = props;
   return (
-    <Card className={styles.pageTemplate}>
+    <Card className={styles.pageTemplate} style={props.style}>
       <Tabs defaultActiveKey="2" onChange={handleOnChange} tabBarExtraContent={tabBarExtraContent}>
         <Tabs.TabPane tab={title} key="1">
           <PageContent search={search} table={table} request={request} button={search.button} />

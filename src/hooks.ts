@@ -71,3 +71,20 @@ export function useSetInterval(callback: Function, delay: Number) {
     return () => clearInterval(id);
   }, [delay]);
 }
+
+export const useRequest = (request: any, params?: any) => {
+  const [data, setData] = useState<any>();
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    request(params)
+      .then((res: any) => {
+        setLoading(false);
+        setData(res);
+      })
+      .catch((err: any) => {
+        setLoading(false);
+      });
+  }, [params]);
+  return [data, loading];
+};

@@ -101,4 +101,4 @@ export default App;
 | change | 图形改变时触发 | function | 事件对象 |
 | clear | 清除图形时触发 | function | - |
 
-其他 API 见`antd`文档：https://ant.design/components/button-cn/
+其他 API 见`myantd`文档：https://ant.design/components/button-cn/
