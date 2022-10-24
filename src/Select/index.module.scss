@@ -1,8 +1,0 @@
-@import '../index.scss';
-:global{
-    .myantd{
-        .#{$ant-prefix}-select-selector{
-            border-radius: 6px!important;
-        }
-    }
-}

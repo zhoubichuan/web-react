@@ -1,9 +1,0 @@
-@import '../index.scss';
-.card {
-  margin: 0 0 20px;
-  border-radius: 16px;
-
-  :global(.#{$ant-prefix}-card-body) {
-    padding: 15px 24px 8px 24px;
-  }
-}

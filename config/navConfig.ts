@@ -8,14 +8,6 @@ module.exports = [
     path: '/2.senior'
   },
   {
-    title: '基础组件',
-    path: '/components'
-  },
-  {
-    title: '综合案例',
-    path: '/quick-start'
-  },
-  {
     title: '源码知识',
     path: '/3.source'
   },
