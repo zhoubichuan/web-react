@@ -13,20 +13,26 @@ order: 7
 
 ## 1.useState
 
-- `useState`会返回一对值：当前状态和一个让你更新它的函数
+- `useState`会返回一对值：当前状态和一个让你更新它的函数，
 - `useState`唯一的参数就是初始`state`
+
+  **当执行状态改变函数时（不管此状态的前后值是否相同）会重新渲染本组件中所有组件（包含即使没有传递任何参数的子组件）**
 
 ### 1.1 使用
 
 ```jsx
-import React from "react"
-import {Button} from "antd"
+import React, { useState } from 'react'
+import { Button, Divider } from 'antd'
 export default function Counter() {
-  const [number, setNumber] = React.useState(0)
+  const [number1, setNumber1] = useState(0)
+  const [number2, setNumber2] = useState(0)
   return (
     <>
-      <p>{number}</p>
-      <Button onClick={() => setNumber(number + 1)}>+</Button>
+      <p>{number1}</p>
+      <Button onClick={() => setNumber1(number1 + 1)}>+</Button>
+      <Divider />
+      <p>{number2}</p>
+      <Button onClick={() => setNumber2(number2 + 1)}>+</Button>
     </>
   )
 }
@@ -35,76 +41,34 @@ export default function Counter() {
 ### 1.2 实现
 
 ```js
-let lastState
-function useState(initialState) {
-  lastState = lastState || initialState
-  function setState(newState) {
-    lastState = newState
-    render()
-  }
-  return [lastState, setState]
-}
-```
-
-## 2.多 useState
-
-### 2.1 使用
-
-```js
-import React from "react"
-import ReactDOM from "react-dom"
-function Counter() {
-  const [number1, setNumber1] = React.useState(0)
-  const [number2, setNumber2] = React.useState(0)
-  return (
-    <>
-      <p>{number1}</p>
-      <button onClick={() => setNumber1(number1 + 1)}>+</button>
-      <hr />
-      <p>{number2}</p>
-      <button onClick={() => setNumber2(number2 + 1)}>+</button>
-    </>
-  )
-}
-function render() {
-  ReactDOM.render(<Counter />, document.getElementById("root"))
-}
-render()
-```
-
-### 2.2 实现
-
-```js
 let hookStates = []
 let hookIndex = 0
 function useState(initialState) {
-  //如果有老值取老值,没有取默认值
   hookStates[hookIndex] = hookStates[hookIndex] || initialState
-  //暂存索引
   let currentIndex = hookIndex
   function setState(newState) {
     hookStates[currentIndex] = newState
-    render()
+    render() //更新组件的函数
   }
   return [hookStates[hookIndex++], setState]
 }
 ```
 
-## 3.useEffect
+## 2.useEffect
 
 - useEffect 就是一个`Effect Hook`，给函数组件增加了操作副作用的能力
 - 它跟 class 组件中的`componentDidMount`、`componentDidUpdate`和`componentWillUnmount`具有相同的用途，只不过被合并成了一个 API
 
-### 3.1 componentDidMount 场景
+### 2.1 componentDidMount 场景
 
 ```jsx
-import React from "react"
+import React from 'react'
 
 export default function Counter() {
-  const [name, setName] = React.useState("接口数据请求中...")
+  const [name, setName] = React.useState('接口数据请求中...')
   React.useEffect(() => {
     setTimeout(() => {
-      setName("数据请求成功")
+      setName('数据请求成功')
     }, 5000)
   }, [])
   return (
@@ -115,35 +79,37 @@ export default function Counter() {
 }
 ```
 
-### 3.2 componentDidUpdate 场景
+### 2.2 componentDidUpdate 场景
 
 ```jsx
-import React from "react"
+import React from 'react'
+import { Button } from 'antd'
 
 export default function Counter() {
-  const [name, setName] = React.useState("小明")
+  const [name, setName] = React.useState('小明')
   const [number, setNumber] = React.useState(0)
   React.useEffect(() => {
-    setName(name === "小红" ? "小明" : "小红")
+    setName(name === '小红' ? '小明' : '小红')
   }, [number])
   return (
     <>
       <p>{name}</p>
       <p>
-        <button onClick={() => setNumber(number + 1)}>+</button>:{number}
+        <Button onClick={() => setNumber(number + 1)}>+</Button>：{number}
       </p>
     </>
   )
 }
 ```
 
-### 3.3 componentWillUnmount 场景
+### 2.3 componentWillUnmount 场景
 
 ```jsx
-import React from "react"
+import React from 'react'
+import { Button } from 'antd'
 
 export default function Counter() {
-  const [name, setName] = React.useState("小明")
+  const [name, setName] = React.useState('小明')
   const [number, setNumber] = React.useState(0)
   React.useEffect(() => {
     console.log(number)
@@ -151,10 +117,10 @@ export default function Counter() {
   return (
     <>
       <p>
-        <button onClick={() => setName("小红")}>修改名称</button>:{name}
+        <Button onClick={() => setName('小红')}>修改名称</Button>：{name}
       </p>
       <p>
-        <button onClick={() => setNumber(number + 1)}>+</button>:{number}
+        <Button onClick={() => setNumber(number + 1)}>+</Button>：{number}
       </p>
     </>
   )
@@ -204,8 +170,8 @@ function UseEffect(callback, dependencies) {
 ### 4.1 使用
 
 ```js
-import React from "react"
-import ReactDOM from "react-dom"
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 const Animate = () => {
   const red = React.useRef()
@@ -218,18 +184,18 @@ const Animate = () => {
     green.current.style.transform = `translate(500px)`
     green.current.style.transition = `all 500ms`
   })
-  let style = { width: "100px", height: "100px" }
+  let style = { width: '100px', height: '100px' }
 
   return (
     <div>
-      <div style={{ ...style, backgroundColor: "red" }} ref={red}></div>
-      <div style={{ ...style, backgroundColor: "green" }} ref={green}></div>
+      <div style={{ ...style, backgroundColor: 'red' }} ref={red}></div>
+      <div style={{ ...style, backgroundColor: 'green' }} ref={green}></div>
     </div>
   )
 }
 
 function render() {
-  ReactDOM.render(<Animate />, document.getElementById("root"))
+  ReactDOM.render(<Animate />, document.getElementById('root'))
 }
 render()
 ```
@@ -261,8 +227,8 @@ function useLayoutEffect(callback, dependencies) {
 ### 5.1 使用
 
 ```js
-import React from "react"
-import ReactDOM from "react-dom"
+import React from 'react'
+import ReactDOM from 'react-dom'
 const CounterContext = React.createContext()
 
 function Counter() {
@@ -284,7 +250,7 @@ function App() {
   )
 }
 function render() {
-  ReactDOM.render(<App />, document.getElementById("root"))
+  ReactDOM.render(<App />, document.getElementById('root'))
 }
 render()
 ```
@@ -304,14 +270,14 @@ function useContext(context) {
 ### 6.1 使用
 
 ```js
-import React from "react"
-import ReactDOM from "react-dom"
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 function reducer(state, action) {
   switch (action.type) {
-    case "increment":
+    case 'increment':
       return state + 1
-    case "decrement":
+    case 'decrement':
       return state - 1
     default:
       throw new Error()
@@ -322,13 +288,13 @@ function Counter() {
   return (
     <>
       Count: {state}
-      <button onClick={() => dispatch({ type: "increment" })}>+</button>
-      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
     </>
   )
 }
 function render() {
-  ReactDOM.render(<Counter />, document.getElementById("root"))
+  ReactDOM.render(<Counter />, document.getElementById('root'))
 }
 render()
 ```
