@@ -16,7 +16,7 @@ order: 7
 - `useState`会返回一对值：当前状态和一个让你更新它的函数，
 - `useState`唯一的参数就是初始`state`
 
-  **当执行状态改变函数时（不管此状态的前后值是否相同）会重新渲染本组件中所有组件（包含即使没有传递任何参数的子组件）**
+  **当执行状态改变函数时（状态的前后值不同）会重新渲染本组件中所有组件（包含即使没有传递任何参数的子组件）**
 
 ### 1.1 使用
 
@@ -127,7 +127,7 @@ export default function Counter() {
 }
 ```
 
-### 3.2 实现
+### 2.4 实现
 
 ```js
 let hookStates = []
@@ -161,46 +161,43 @@ function UseEffect(callback, dependencies) {
 }
 ```
 
-## 4.useLayoutEffect
+## 3.useLayoutEffect
 
 - 其函数签名与`useEffect`相同，但它会在所有的`DOM`变更之后同步调用 effect
-- `useEffect`不会阻塞浏览器渲染，而`useLayoutEffect`会阻塞浏览器渲染
-- `useEffect`会在浏览器渲染结束后执行，`useLayoutEffect`则是在`DOM`更新完成后，浏览器绘制之前执行
+- `useEffect`执行的是`宏任务`不会阻塞浏览器渲染，在浏览器`render`后执行，而`useLayoutEffect`执行的是`微任务`会阻塞浏览器渲染，在浏览器`render`前执行
 
-### 4.1 使用
+### 3.1 使用
 
-```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+```jsx
+import React, { useLayoutEffect, useEffect, useRef } from 'react'
 
-const Animate = () => {
-  const red = React.useRef()
-  const green = React.useRef()
-  React.useLayoutEffect(() => {
+export default function Animate() {
+  const red = useRef()
+  const green = useRef()
+  useLayoutEffect(() => {
     red.current.style.transform = `translate(500px)`
     red.current.style.transition = `all 500ms`
-  })
-  React.useEffect(() => {
+  }, [])
+  useEffect(() => {
     green.current.style.transform = `translate(500px)`
     green.current.style.transition = `all 500ms`
-  })
+  }, [])
   let style = { width: '100px', height: '100px' }
 
   return (
-    <div>
-      <div style={{ ...style, backgroundColor: 'red' }} ref={red}></div>
-      <div style={{ ...style, backgroundColor: 'green' }} ref={green}></div>
-    </div>
+    <>
+      <div style={{ ...style, backgroundColor: 'red' }} ref={red}>
+        微任务
+      </div>
+      <div style={{ ...style, backgroundColor: 'green' }} ref={green}>
+        宏任务
+      </div>
+    </>
   )
 }
-
-function render() {
-  ReactDOM.render(<Animate />, document.getElementById('root'))
-}
-render()
 ```
 
-### 4.2 实现
+### 3.2 实现
 
 ```js
 function useLayoutEffect(callback, dependencies) {
@@ -220,28 +217,28 @@ function useLayoutEffect(callback, dependencies) {
 }
 ```
 
-## 5.useContext
+## 4.useContext
 
 - 接收一个`context`对象并返回该`context`的当前值
 
-### 5.1 使用
+### 4.1 使用
 
-```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-const CounterContext = React.createContext()
+```jsx
+import React, { useState, createContext, useContext } from 'react'
+import { Button } from 'antd'
 
+const CounterContext = createContext()
 function Counter() {
-  let { state, setState } = React.useContext(CounterContext)
+  let { state, setState } = useContext(CounterContext)
   return (
     <>
       <p>{state.number}</p>
-      <button onClick={() => setState({ number: state.number + 1 })}>+</button>
-      <button onClick={() => setState({ number: state.number - 1 })}>-</button>
+      <Button onClick={() => setState({ number: state.number + 1 })}>+</Button>
+      <Button onClick={() => setState({ number: state.number - 1 })}>-</Button>
     </>
   )
 }
-function App() {
+export default function App() {
   const [state, setState] = useState({ number: 0 })
   return (
     <CounterContext.Provider value={{ state, setState }}>
@@ -249,13 +246,9 @@ function App() {
     </CounterContext.Provider>
   )
 }
-function render() {
-  ReactDOM.render(<App />, document.getElementById('root'))
-}
-render()
 ```
 
-### 5.2 实现
+### 4.2 实现
 
 ```js
 function useContext(context) {
@@ -263,15 +256,15 @@ function useContext(context) {
 }
 ```
 
-## 6.useReducer
+## 5.useReducer
 
 - 它接收一个形如（state,action）=> newState 的 renducer,并返回当前的 state 以及与其配套的 dispatch 方法
 
-### 6.1 使用
+### 5.1 使用
 
-```js
+```jsx
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { Button, Divider } from 'antd'
 
 function reducer(state, action) {
   switch (action.type) {
@@ -283,23 +276,19 @@ function reducer(state, action) {
       throw new Error()
   }
 }
-function Counter() {
+export default function Counter() {
   const [state, dispatch] = React.useReducer(reducer, 0)
   return (
     <>
       Count: {state}
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+      <Button onClick={() => dispatch({ type: 'increment' })}>+</Button>
+      <Button onClick={() => dispatch({ type: 'decrement' })}>-</Button>
     </>
   )
 }
-function render() {
-  ReactDOM.render(<Counter />, document.getElementById('root'))
-}
-render()
 ```
 
-### 6.2 实现
+### 5.2 实现
 
 ```js
 let hookStates = []
@@ -315,14 +304,133 @@ function useReducer(reducer, initialState) {
 }
 ```
 
-## 7.useMemo
+## 6.useMemo
+
+### 6.1 使用
+
+```jsx
+import React, { useState } from 'react'
+import { Button } from 'antd'
+
+function Child() {
+  console.log('子组件')
+  return <>child</>
+}
+export default function App() {
+  const [state, setState] = useState(0)
+  console.log('父组件')
+  return (
+    <>
+      <Button onClick={() => setState(Math.random())}>按钮</Button>
+      <Child />
+    </>
+  )
+}
+```
+
+- 使用`memo`后
+
+```jsx
+import React, { useState, useMemo, memo } from 'react'
+import { Button } from 'antd'
+
+const Child = memo(() => {
+  console.log('子组件')
+  return <>child</>
+})
+
+export default function App() {
+  const [state, setState] = useState(0)
+  console.log('父组件')
+  return (
+    <>
+      <Button onClick={() => setState(Math.random())}>按钮</Button>
+      <Child />
+    </>
+  )
+}
+```
+
+- 使用`useMemo`后
+
+```jsx
+import React, { useState, useMemo, memo } from 'react'
+import { Button } from 'antd'
+
+const Child = memo(() => {
+  console.log('子组件')
+  return <>child</>
+})
+
+export default function App() {
+  const [state, setState] = useState(0)
+  console.log('父组件')
+  return (
+    <>
+      <Button onClick={() => setState(Math.random())}>按钮</Button>
+      <Child data={useMemo(() => state, [])} />
+    </>
+  )
+}
+```
+
+### 6.2 实现
+
+## 7.useCallback
 
 ### 7.1 使用
 
+```jsx
+import React, { useState, useMemo, memo } from 'react'
+import { Button } from 'antd'
+
+const Child = memo(() => {
+  console.log('子组件')
+  return <>child</>
+})
+
+export default function App() {
+  const [state, setState] = useState(0)
+  console.log('父组件')
+  const handleChange = () => {}
+  return (
+    <>
+      <Button onClick={() => setState(Math.random())}>按钮</Button>
+      <Child data={useMemo(() => state, [])} onChange={handleChange} />
+    </>
+  )
+}
+```
+
+- 使用`useCallback`后
+
+```jsx
+import React, { useState, useMemo, memo, useCallback } from 'react'
+import { Button } from 'antd'
+
+const Child = memo(() => {
+  console.log('子组件')
+  return <>child</>
+})
+
+export default function App() {
+  const [state, setState] = useState(0)
+  console.log('父组件')
+  const handleChange = () => {}
+  return (
+    <>
+      <Button onClick={() => setState(Math.random())}>按钮</Button>
+      <Child
+        data={useMemo(() => state, [])}
+        onChange={useCallback(() => handleChange, [])}
+      />
+    </>
+  )
+}
+```
+
 ### 7.2 实现
 
-## 8.useCallback
+```
 
-### 8.1 使用
-
-### 8.2 实现
+```
