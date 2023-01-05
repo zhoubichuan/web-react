@@ -10,32 +10,32 @@ order: 3
 ---
 
 # React(生命周期)
-
+<Alert type="info"> 前言
 React 生命周期主要包含三个阶段：初始化阶段、运行中阶段和销毁阶段，在 React 不同的生命周期中，会依次触发不同的钩子函数
+</Alert>
+
 
 ## 1.初始化阶段
 
 ### 1.1 类组件
 
-- 创建前/创建后/挂载前
+- **创建前/创建后/挂载前**
 
-  - constructor
+  - `constructor`：设置组件的初始化状态
 
-    设置组件的初始化状态
+    ```js
+    constructor(){
+        super()
+        this.state={name:0 }
+    }
+    ```
 
-  ```js
-  constructor(){
-      super()
-      this.state={name:0 }
-  }
-  ```
+  - `getDerivedStateFromProps`
+  - `render`
 
-  - getDerivedStateFromProps
-  - render
+- **挂载后**
 
-- 挂载后
-
-  - componentDidMount
+  - `componentDidMount`
 
     组件已经被渲染到页面中后触发：此时页面中有了真正的 DOM 元素，可以进行 DOM 相关的操作。
 
@@ -52,8 +52,8 @@ React 生命周期主要包含三个阶段：初始化阶段、运行中阶段�
 
 - 更新前
 
-  - getDerivedStateFromProps
-  - shouldComponentUpdate
+  - `getDerivedStateFromProps`
+  - `shouldComponentUpdate`
 
     组件接收到新属性，或者组件的状态发生改变时触发，组件首次渲染时并不会触发
 
@@ -74,7 +74,7 @@ React 生命周期主要包含三个阶段：初始化阶段、运行中阶段�
   - render
 
 - 更新后
-  - componentDidUpdate
+  - `componentDidUpdate`
     组件被更新完成后触发，页面中产生了新的 DOM 元素，可以进行 DOM 操作。
 
 ### 2.2 函数组件
@@ -89,7 +89,7 @@ React 生命周期主要包含三个阶段：初始化阶段、运行中阶段�
 ### 3.1 类组件
 
 - 销毁前
-- componentWillUnmount
+- `componentWillUnmount`
 
   组件被销毁时触发，这里我们可以进行一些清理操作，例如清理定时器，取消 Redux 的订阅事件。
 
