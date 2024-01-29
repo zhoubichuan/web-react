@@ -56,20 +56,24 @@ function useState(initialState) {
 
 ## 2.useEffect
 
+- useEffect 接受两个参数：一个是副作用函数，另一个是依赖数组
 - useEffect 就是一个`Effect Hook`，给函数组件增加了操作副作用的能力
 - 它跟 class 组件中的`componentDidMount`、`componentDidUpdate`和`componentWillUnmount`具有相同的用途，只不过被合并成了一个 API
 
 ### 2.1 componentDidMount 场景
 
+- 组件已挂载（类似 vue 中 mount）
+
 ```jsx
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function Counter() {
   const [name, setName] = React.useState('接口数据请求中...')
-  React.useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       setName('数据请求成功')
     }, 5000)
+    // 执行一次副作用操作：如果依赖数组为空，副作用函数只会在组件首次渲染时执行一次
   }, [])
   return (
     <>
@@ -81,6 +85,8 @@ export default function Counter() {
 
 ### 2.2 componentDidUpdate 场景
 
+- 数据已经更新（类似 vue 中 watch）
+
 ```jsx
 import React from 'react'
 import { Button } from 'antd'
@@ -90,6 +96,7 @@ export default function Counter() {
   const [number, setNumber] = React.useState(0)
   React.useEffect(() => {
     setName(name === '小红' ? '小明' : '小红')
+    // 监听依赖变化：如果依赖数组中的值发生变化，副作用函数会被重新执行
   }, [number])
   return (
     <>
@@ -104,16 +111,26 @@ export default function Counter() {
 
 ### 2.3 componentWillUnmount 场景
 
+-
+
 ```jsx
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from 'antd'
 
 export default function Counter() {
-  const [name, setName] = React.useState('小明')
-  const [number, setNumber] = React.useState(0)
-  React.useEffect(() => {
-    console.log(number)
-  }, number)
+  const [name, setName] = useState('小明')
+  const [number, setNumber] = useState(0)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log('Hello')
+    }, 1000)
+
+    // 返回清除函数
+    return () => {
+      clearInterval(timer)
+    }
+    // 清除副作用操作：副作用函数可以返回一个清除函数，用于清除副作用操作，比如取消订阅、清除定时器等
+  }, [])
   return (
     <>
       <p>
@@ -159,6 +176,95 @@ function UseEffect(callback, dependencies) {
     setTimeout(callback)
   }
 }
+```
+
+#### useEffect 监测不到依赖数组元素的变化多种情况？
+
+- 当使用 useEffect 时，如果依赖数组元素的变化没有被正确监测到，可能有以下几种情况：
+
+- 依赖数组元素是一个对象或数组：useEffect 使用浅层比较来判断依赖数组元素是否发生变化。如果依赖数组中的元素是一个对象或数组，只有当引用发生变化时，useEffect 才会重新执行。如果您修改了对象或数组的属性，但是引用没有发生变化，useEffect 无法感知到这个变化。
+
+```js
+const [data, setData] = useState({ name: 'John' })
+
+// 错误示例：修改对象属性，但引用未变化
+setData({ ...data, age: 20 }) // useEffect无法感知到属性的变化
+
+// 正确示例：修改对象属性，引用发生变化
+setData(prevData => ({ ...prevData, age: 20 })) // useEffect会感知到属性的变化
+```
+
+- 依赖数组元素是一个闭包变量：如果依赖数组中的元素是一个闭包变量，那么在每次渲染时，useEffect 都会获取到最新的闭包变量。因此，即使闭包变量的值发生了变化，useEffect 也无法感知到这个变化
+
+```js
+const [count, setCount] = useState(0)
+
+// 闭包变量
+const handleClick = () => {
+  setCount(count + 1)
+}
+
+useEffect(() => {
+  console.log(count) // 每次渲染都会获取最新的count值
+}, [count]) // 无法感知到闭包变量的变化
+```
+
+- 如果您希望 useEffect 能够感知到闭包变量的变化，可以使用函数式更新来更新状态，这样可以确保在 useEffect 中获取到的是最新的状态值
+
+```js
+const [count, setCount] = useState(0)
+
+// 函数式更新
+const handleClick = () => {
+  setCount(prevCount => prevCount + 1)
+}
+
+useEffect(() => {
+  console.log(count) // 每次渲染获取最新的count值
+}, [count]) // 可以感知到闭包变量的变化
+```
+
+- 依赖数组元素是一个函数：如果依赖数组中的元素是一个函数，那么 useEffect 会在每次渲染时都认为该函数发生了变化，从而重新执行副作用函数
+
+```js
+const [count, setCount] = useState(0)
+
+const handleClick = () => {
+  setCount(count + 1)
+}
+
+// 错误示例：将函数作为依赖数组元素
+useEffect(() => {
+  console.log(count)
+}, [handleClick]) // 每次渲染都会重新执行副作用函数
+```
+
+- 如果您希望避免在每次渲染时都重新执行副作用函数，可以将函数定义在 useEffect 的外部，并在副作用函数中引用该函数
+
+```js
+const [count, setCount] = useState(0)
+
+const handleClick = () => {
+  setCount(count + 1)
+}
+
+// 正确示例：在副作用函数中引用函数
+useEffect(() => {
+  const handleEffect = () => {
+    console.log(count)
+  }
+
+  handleEffect()
+}, [count]) // 只在count发生变化时执行副作用函数
+
+// 或者使用useCallback包裹函数
+const handleEffect = useCallback(() => {
+  console.log(count)
+}, [count])
+
+useEffect(() => {
+  handleEffect()
+}, [handleEffect])
 ```
 
 ## 3.useLayoutEffect
