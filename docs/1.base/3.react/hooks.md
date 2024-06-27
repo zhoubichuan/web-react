@@ -111,7 +111,7 @@ export default function Counter() {
 
 ### 2.3 componentWillUnmount 场景
 
--
+- 组件销毁时执行`return`内容
 
 ```jsx
 import React, { useEffect, useState } from 'react'
