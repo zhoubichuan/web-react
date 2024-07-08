@@ -20,23 +20,48 @@ order: 7
 
 ### 1.1 使用
 
+### 1.1.1 初始值
+
 ```jsx
 import React, { useState } from 'react'
-import { Button, Divider } from 'antd'
+import { Button } from 'antd'
 export default function Counter() {
   const [number1, setNumber1] = useState(0)
-  const [number2, setNumber2] = useState(0)
+  const handleClick = () => {
+    setNumber1(number1 + 1)
+  }
   return (
     <>
       <p>{number1}</p>
-      <Button onClick={() => setNumber1(number1 + 1)}>+</Button>
-      <Divider />
-      <p>{number2}</p>
-      <Button onClick={() => setNumber2(number2 + 1)}>+</Button>
+      <Button onClick={handleClick}>点击+1</Button>
     </>
   )
 }
 ```
+
+### 1.1.2 函数初始值
+
+### 1.1.3 值更新状态
+
+```jsx
+import React, { useState } from 'react'
+import { Button } from 'antd'
+export default function Counter() {
+  const [number1, setNumber1] = useState({ value: 0 })
+  const handleClick = () => {
+    setNumber1(pre => ({ value: pre.value + 1 }))
+    alert(number1.value)
+  }
+  return (
+    <>
+      <p>{number1.value}</p>
+      <Button onClick={handleClick}>点击+1</Button>
+    </>
+  )
+}
+```
+
+### 1.1.4 函数更新状态
 
 ### 1.2 实现
 
@@ -54,7 +79,11 @@ function useState(initialState) {
 }
 ```
 
-## 2.useEffect
+## 2.userRef
+
+## 3.useImperativeHandle
+
+## 4.useEffect
 
 - useEffect 接受两个参数：一个是副作用函数，另一个是依赖数组
 - useEffect 就是一个`Effect Hook`，给函数组件增加了操作副作用的能力
@@ -267,7 +296,7 @@ useEffect(() => {
 }, [handleEffect])
 ```
 
-## 3.useLayoutEffect
+## 5.useLayoutEffect
 
 - 其函数签名与`useEffect`相同，但它会在所有的`DOM`变更之后同步调用 effect
 - `useEffect`执行的是`宏任务`不会阻塞浏览器渲染，在浏览器`render`后执行，而`useLayoutEffect`执行的是`微任务`会阻塞浏览器渲染，在浏览器`render`前执行
@@ -323,7 +352,7 @@ function useLayoutEffect(callback, dependencies) {
 }
 ```
 
-## 4.useContext
+## 6.useContext
 
 - 接收一个`context`对象并返回该`context`的当前值
 
@@ -362,7 +391,7 @@ function useContext(context) {
 }
 ```
 
-## 5.useReducer
+## 7.useReducer
 
 - 它接收一个形如（state,action）=> newState 的 renducer,并返回当前的 state 以及与其配套的 dispatch 方法
 
@@ -410,7 +439,7 @@ function useReducer(reducer, initialState) {
 }
 ```
 
-## 6.useMemo
+## 8.useMemo
 
 ### 6.1 使用
 
@@ -482,7 +511,7 @@ export default function App() {
 
 ### 6.2 实现
 
-## 7.useCallback
+## 9.useCallback
 
 ### 7.1 使用
 
