@@ -32,8 +32,11 @@ order: 4
 ```jsx
 import React, { Component } from 'react'
 class Child extends Component {
-  state = {
-    name: '小明'
+  constructor(props){
+    super(props)
+    this.  state = {
+      name: '小明'
+    }
   }
   render() {
     return (
@@ -45,9 +48,12 @@ class Child extends Component {
     )
   }
 }
-export default class Parent extends Component {
-  state = {
-    name: ''
+class Parent extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      name: ''
+    }
   }
   getChildData = childData => {
     this.setState({
@@ -63,6 +69,7 @@ export default class Parent extends Component {
     )
   }
 }
+export default Parent
 ```
 
 - 父组件通过 props 向子组件传递函数，子组件通过函数传递数据给父组件，父组件通过函数回调拿到子组件数据

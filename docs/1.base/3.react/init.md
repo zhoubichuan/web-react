@@ -9,5 +9,4 @@ title: create-react-app
 order: 2
 ---
 
-# 一.create-react-app
-
+# 一.脚手架

@@ -369,15 +369,13 @@ ReactDOM.render(
 
 - 构造函数是唯一可以给`this.state`赋值的地方
 
-```js
+```jsx
 import React from 'react'
-import ReactDOM from 'react-dom'
 class Counter extends React.Component {
   constructor(props){
-    super(props){
-      this.state = {
-        number: 0
-      }
+    super(props)
+    this.state = {
+      number: 0
     }
   }
 
@@ -403,10 +401,7 @@ class Counter extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Counter />,
-  document.getElementById('root')
-)
+export default Counter
 ```
 
 ### 2.2 State 的更新可能是异步的
@@ -415,10 +410,10 @@ ReactDOM.render(
 - 因为 this.props 和 this.state 可能会异步更新，所以你不要依赖他们的值来更新下一个状态
 - 可以让 setState()接收一个函数而不是一个对象。这个函数用上一个 state 作为第一个参数
 
-```js
-import React from "react"
-import ReactDOM from "react-dom"
-class Counter extends React.Component {
+```jsx
+import React,{Component} from "react"
+
+class Counter extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -440,27 +435,27 @@ class Counter extends React.Component {
     )
   }
 }
-ReactDOM.render(<Counter />, document.getElementById("root"))
+
+export default Counter
 ```
 
 ### 2.3 State 的更新会被合并
 
 - 当你调用 setState()的时候，React 会把你提供的对象合并到当前的 state
 
-```js
+```jsx
 import React from "react"
-import ReactDOM from "react-dom"
 class Counter extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: "zhufeng",
+      name: "小明",
       number: 0,
     }
   }
   handleClick = () => {
     this.setState((state) => ({ number: state.number + 1 }))
-    this.setState((state) => ({ numbner: state.number + 1 }))
+    this.setState((state) => ({ number: state.number + 1 }))
   }
   render() {
     return (
@@ -473,7 +468,7 @@ class Counter extends React.Component {
     )
   }
 }
-ReactDOM.render(<Counter />, document.getElementById("root"))
+export default Counter
 ```
 
 ### 2.4 数据是向下流动的
@@ -714,4 +709,3 @@ function Example() {
   )
 }
 ```
-

@@ -27,9 +27,12 @@ import React, { useState } from 'react'
 import { Button } from 'antd'
 export default function Counter() {
   const [number1, setNumber1] = useState(0)
+  debugger
   const handleClick = () => {
     setNumber1(number1 + 1)
+    debugger
   }
+
   return (
     <>
       <p>{number1}</p>
@@ -99,6 +102,7 @@ import React, { useEffect } from 'react'
 export default function Counter() {
   const [name, setName] = React.useState('接口数据请求中...')
   useEffect(() => {
+    debugger
     setTimeout(() => {
       setName('数据请求成功')
     }, 5000)
