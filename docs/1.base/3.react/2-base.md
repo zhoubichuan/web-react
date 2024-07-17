@@ -5,11 +5,11 @@ nav:
 group:
   title: React 17.x 全家桶
   order: 4
-title: React(函数组件)
-order: 6
+title: React(基础)
+order: 3
 ---
 
-# 二.React(基础)
+# React(基础)
 
 ## 1.什么是 React
 

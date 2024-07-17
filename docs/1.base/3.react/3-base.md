@@ -5,11 +5,11 @@ nav:
 group:
   title: React 17.x 全家桶
   order: 4
-title: React(类组件)
-order: 5
+title: React(基础)
+order: 4
 ---
 
-# 二.React(类组件)
+# React(基础)
 
 ## 1.组件分类
 

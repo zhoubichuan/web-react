@@ -5,8 +5,8 @@ nav:
 group:
   title: React 17.x 全家桶
   order: 4
-title: Ant-design
+title: 组件库（Antd）
 order: 10
 ---
 
-# 七.Ant-design
+# 组件库（Antd）

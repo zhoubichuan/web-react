@@ -6,7 +6,7 @@ group:
   title: React 17.x 全家桶
   order: 4
 title: React(类组件-生命周期)
-order: 3
+order: 5
 ---
 
 # React(类组件-生命周期)

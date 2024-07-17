@@ -6,7 +6,7 @@ group:
   title: React 17.x 全家桶
   order: 4
 title: React(类组件-组件间通信)
-order: 4
+order: 7
 ---
 
 # 类组件-组件通信

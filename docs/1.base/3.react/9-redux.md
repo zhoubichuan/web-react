@@ -5,8 +5,8 @@ nav:
 group:
   title: React 17.x 全家桶
   order: 4
-title: create-react-app
-order: 2
+title: 全家桶（redux）
+order: 9
 ---
 
-# 一.脚手架
+# 全家桶（redux）

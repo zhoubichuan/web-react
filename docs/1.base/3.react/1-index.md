@@ -4,7 +4,7 @@ nav:
   order: 1
 group:
   title: React 17.x 全家桶
-  order: 4
+  order: 1
 title: 大纲
 order: 1
 ---

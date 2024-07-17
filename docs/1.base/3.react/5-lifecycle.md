@@ -5,11 +5,11 @@ nav:
 group:
   title: React 17.x 全家桶
   order: 4
-title: React(hooks)
-order: 7
+title: React(函数组件-生命周期)
+order: 6
 ---
 
-# 二.React(hooks)
+# React(类组件-生命周期)
 
 ## 1.useState
 

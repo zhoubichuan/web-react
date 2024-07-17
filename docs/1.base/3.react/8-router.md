@@ -5,8 +5,7 @@ nav:
 group:
   title: React 17.x 全家桶
   order: 4
-title: React-redux
-order: 9
+title: 全家桶（router）
+order: 8
 ---
-
-# 六.React-redux
+# 全家桶（router）
