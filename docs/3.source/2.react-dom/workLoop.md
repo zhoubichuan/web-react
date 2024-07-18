@@ -12,3 +12,9 @@ order: 8
 # 渲染 root（workLoop）
 
 循环更新节点
+
+## 1.performUnitOfWork
+
+## 2.beginWork
+
+- IndeterminateComponent

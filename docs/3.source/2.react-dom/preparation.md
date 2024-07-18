@@ -15,15 +15,15 @@ order: 1
 
 主要步骤：创建 root --> 渲染 root --> 提交 root
 
-- 1 ReactRoot
-  - 1.1 通过`createFiberRoot`创建一个`FiberRoot`节点，通过`FiberNode`创建一个`RootFiber`节点，作为`root`节点相互引用
+- 1 初始阶段
+  - 1.1 `ReactDom.render`带上`root`节点进入源码内部，通过`createFiberRoot`创建一个`FiberRoot`节点，通过`FiberNode`创建一个`RootFiber`节点，作为`root`节点相互引用
   - 1.2 更新过期时间，给任务定义优先级
   - 1.3 创建更新，将更新队列挂载到`RootFiber`上
-- 2 renderRoot
+- 2 渲染阶段：创建fiber tree 、计算数据、diff、创建更新队列
   - 2.1 拷贝 fiber 节点作为副本修改后，前后可以比较
-  - 2.2 循环单元更新节点
+  - 2.2 循环单元更新节点，初始化时从根节点遍历整个组件，创建`fiber tree`，更新过程可以被打断，打断时将任务放入异步队列，当优先级更高的任务完成后，异步队列中的任务开始执行，重新循环更新 `fiber tree`，需要更新的部分放入更新队列
   - 2.3 onComplete
-- 3 commitRoot：将更新反馈到 dom 上
+- 3 提交阶段：遍历更新队列，将更新反馈到 dom 上
   - 3.1 commitBeforeMutationLifecycles：遍历 effect 链、更新 state
   - 3.2 commitAllHostEffects：遍历 effect 链，不同的 effectTag 执行不同的操作
   - 3.3 commitAllLifeCycles：componentDidMount、componentDidUpdate、setState 回调函数、清空 commitUpdateQueue
