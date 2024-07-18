@@ -12,10 +12,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.17.0"
-      - name: 安装yarn
-        run: yarn
-      - name: Install yarn dependencies
-        run: yarn install
+      - name: Install npm dependencies
+        run: npm install
       - name: Run build task
         run: npm run build
       - name: copy file  via ssh key
