@@ -11,38 +11,7 @@ order: 3
 
 # React(基础)
 
-## 1.什么是 React
-
-- React 是一个用于构建用户界面的 javascript 库，核心专注于视图，目的实现组件化开发
-
-## 2.组件化的概念
-
-我们可以很直观的将一个复杂的页面分割成若干个独立的组件，每个组件包含自己的逻辑和样式，在将这些独立的组件完成一个复杂的页面，这样既减少了逻辑复杂度，又实现了代码的重用
-
-- 可组合：一个组件可以和其他组件一起使用或者可以直接嵌套在另一个组件内部
-
-- 可重用：每个组件都是具有独立功能的，他可以被使用在多个场景中
-- 可维护：每个小的组件仅仅包含自身的逻辑，更容易被理解和维护
-
-## 3.react 开发环境
-
-### 1.用 react 脚手架快速搭建项目
-
-```
-npm install create-react-app -g
-create-react-app my-project
-cd my-project && npm start
-```
-
-- 系统会自动安装 React，react 由两部分组成
-  - react.js 是 React 的核心库
-  - react-dom.js 是提供与 dom 相关的功能，会在 window 下增加 ReactDOM 属性，内部比较重要的方法是 render，将 react 元素或者 react 组件插入到页面中
-
-## 4.jsx
-
-- jsx 是一种 js 和 html 混合的语法，将组件的结构、数据甚至样式都聚合在一起定义组件，会编译成普通的 javascript.需要注意的是 jsx 并不是 html，在 jsx 中属性不能包含关键字，像 class 需要写成 className，for 需要写成 htmlFor,并且属性名需要采用驼峰命名法。
-
-## 5.createElement
+## 1.createElement
 
 - jax 其实只是一种语法糖，最终会通过 babel 转译成 creactElement 语法
 
@@ -68,33 +37,6 @@ ReactDOM.render(
 ```
 
 - 一般使用 React.createElement 来创建一个虚拟 dom 元素
-
-## 6.react 元素/jsx 元素
-
-```js
-function ReactElement(type, props) {
-  this.type = type
-  this.props = props
-}
-let React = {
-  createElement(type, props = {}, ...childrens) {
-    childrens.length === 1 ? (childrens = childrens[0]) : void 0
-    return new ReactElement(type, { ...props, children: childrens })
-  },
-}
-```
-
-ReactElement 就是虚拟 dom 的概念，具有一个 type 属性代表当前的节点类型，还有节点的属性 props
-
-## 7.模拟 render 实现
-
-## 8.jsx 表达式的用法
-
-## 9.jsx 属性
-
-## 10.组件的特点声明方式
-
-## 11.组件的两种定义方式
 
 ## 12.组件中属性和状态的区别
 
@@ -296,7 +238,7 @@ class Parent extends Component {
     const btnEl = document.getElementById("btn");
     btnEl.addEventListener('click',()=>{
       debugger
-      this.setState(()=>{
+      this.setState(() => {
         debugger
         return {
           name: 'asdfasd'
@@ -391,6 +333,8 @@ export default Parent
 ```
 
 当我们在 state 中保存的状态是集合类型,比如数组时, 在进行状态更新时,需要生成一个新的数组进行赋值,而不是直接在原数组上进行操作,比如增删改
+
+- 通过源码分析可以知道：`setState`执行后，会将相关参数添加到当前`fiber`上的任务队列中，通过`executionContext`参数控制后续执行流程中是否继续执行任务队列中的任务，默认`executionContext`参数`NotContext`下会继续执行任务队列中的任务，这时业务代码表现为同步执行`setState`,当`setState`被`react合成事件包裹时`，执行合成事件会修改为`EventContent`,此时不会继续执行任务队列中的任务，业务代码表现为异步
 
 ## 16.复合组件
 

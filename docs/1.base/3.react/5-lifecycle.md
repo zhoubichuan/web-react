@@ -27,8 +27,8 @@ import React, { useState } from 'react'
 import { Button } from 'antd'
 export default function Counter() {
   const [number1, setNumber1] = useState(0)
-  debugger
   const handleClick = () => {
+    debugger
     setNumber1(number1 + 1)
     debugger
   }
@@ -43,6 +43,29 @@ export default function Counter() {
 ```
 
 ### 1.1.2 函数初始值
+
+```jsx
+import React, { useState } from 'react'
+import { Button } from 'antd'
+export default function Counter() {
+  const [number1, setNumber1] = useState({val:0})
+  const handleClick = () => {
+    debugger
+    setNumber1(pre=>{
+      debugger
+      return ({val:number1.val + 1})
+    })
+    debugger
+  }
+
+  return (
+    <>
+      <p>{number1.val}</p>
+      <Button onClick={handleClick}>点击+1</Button>
+    </>
+  )
+}
+```
 
 ### 1.1.3 值更新状态
 
@@ -63,6 +86,35 @@ export default function Counter() {
   )
 }
 ```
+
+- 在原生 DOM 事件中
+
+```jsx
+import React, { useState,useEffect } from 'react'
+import { Button } from 'antd'
+export default function Counter() {
+  const [number1, setNumber1] = useState({ value: 0 })
+  useEffect(()=>{
+    const btnEl = document.getElementById("btn");
+    btnEl.addEventListener('click',()=>{
+      debugger
+      setNumber1(pre=>{
+        debugger
+        return ({val:number1.val + 1})
+      })
+      debugger
+    })
+  },[])
+  return (
+    <>
+      <button id="btn">按钮</button>
+      <p>{number1.value}</p>
+    </>
+  )
+}
+```
+
+内部过程其实和`setState`差不多，通过参数控制任务队列是否继续执行，默认继续执行，合成事件下不执行，等到后续遍历`fiber`才执行
 
 ### 1.1.4 函数更新状态
 

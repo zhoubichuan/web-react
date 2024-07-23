@@ -28,29 +28,38 @@ class MyComponent extends Component {
       counter: 0
     };
   }
- 
+  getDerivedStateFromProps(props,state){
+    debugger
+    return {
+      counter: 10
+    }
+  }
+  shouldComponentUpdate(){
+    debugger
+    return true
+  }
+  getSnapshotBeforeUpdate(){
+    debugger
+  }
   componentDidMount() {
     debugger
     console.log('组件已挂载');
   }
- 
   componentDidUpdate() {
     debugger
     console.log('组件已更新');
   }
- 
   componentWillUnmount() {
     debugger
     console.log('组件即将卸载');
   }
- 
   render() {
     debugger
     return (
       <div>
         <p>{this.state.counter}</p>
         <button onClick={() => this.setState({ counter: this.state.counter + 1 })}>
-          Increment
+          更新数据
         </button>
       </div>
     );
